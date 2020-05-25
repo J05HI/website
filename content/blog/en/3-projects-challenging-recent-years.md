@@ -8,11 +8,11 @@ cover: blog/3-projects-challenging-recent-years-cover.jpg
 created: 2019-08-30T16:41:28.000Z
 published: 2019-08-30T21:20:28.000Z
 ---
-I'm a dynamic and motivated Full Stack Developer with more than 10 years of experience. I started as a Freelance in Web projects focused on the Frontend but over the years my knowledge was diversified by getting involved in scientific projects that required complex resources (statistics, pattern identification, data analysis, interpretation of third-party research, etc.), as well as web projects focused on the Backend. 
+I'm a dynamic and motivated Full Stack Developer with more than 10 years of experience. I started as a Freelance in Web projects focused on the Frontend but over the years my knowledge was diversified by getting involved in scientific projects that required complex resources (statistics, pattern identification, data analysis, interpretation of third-party research, etc.), as well as web projects, focused on the Backend.
 
-Over the years, I have only used intuitive languages with an acceptable percentage of market presence: JavaScript, PHP and Python. I prefer to work on projects that combine innovation and quality. That kind of projects fulfil me the most because new great things can be created. 
+Over the years, I have only used intuitive languages with an acceptable percentage of market presence: JavaScript, PHP, and Python. I prefer to work on projects that combine innovation and quality. Those kinds of projects fulfill me the most because new great things can be created.
 
-In the latest years, I've worked on great projects, three of them have challenged me considerably, they have tested my ability to solve problems, also, to remind me my love for creating new things and making contributions to the community. Today, I present you those three projects: Statusfy, Mapset and my first Scientific Research.
+In the latest years, I've worked on great projects, three of them have challenged me considerably, they have tested my ability to solve problems, also, to remind me my love for creating new things and making contributions to the community. Today, I present to you those three projects: Statusfy, Mapset, and my first Scientific Research.
 
 ## A Marvelous Open Source Status Page system
 
@@ -42,7 +42,7 @@ Due to we wanted to offer a low-cost solution, we had to lower our server expens
 
 When I was at college, I worked as a Research Assistant in the **Satellite Geodesy and Seismotectonics Laboratory** of the *Simon Bolivar University* (Caracas, Venezuela). We worked for a few years in a very interesting project, finding *the interaction of the North Andes plate with the Caribbean and South American plates in northwestern South America from GPS geodesy and seismic data*. 
 
-The work done on this project taught me many things: statistics, data analysis, interpretation of third-party research in addition to the importance of the teamwork, great communication and the commitment to your boss and to the community to whom you're trying to give you scientific input.
+The work done on this project taught me many things: statistics, data analysis, interpretation of third-party research in addition to the importance of teamwork, great communication and the commitment to your boss and to the community to whom you're trying to give you scientific input.
 
 If you want to know more about this research you can download for free the Article in PDF format at the [Geophysical Journal International](https://academic.oup.com/gji/article/214/3/1986/5035819).
 
