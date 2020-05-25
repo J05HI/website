@@ -40,6 +40,22 @@ $ yarn dev
 $ yarn generate
 ```
 
+## Netlify CMS
+
+### Development
+
+```bash
+# start netlify proxy server
+$ yarn netlify-cms:dev
+```
+
+Then open http://localhost:8080/admin and start editing.
+
+### Production
+
+Some environment variables must be defined in your production evironment (`.env.example`).
+
+
 
 [vue]: https://vuejs.org
 [nuxt]: https://nuxtjs.org
