@@ -5,6 +5,9 @@ import readingTime from 'reading-time'
 import colors from '@tailwindcss/ui/colors'
 // @ts-ignore
 import { $content } from '@nuxt/content'
+// @ts-ignore
+import rehypeKatex from 'rehype-katex'
+import visit from 'unist-util-visit'
 
 import pkg from './package.json'
 import { ampify } from './utils/ampify'
@@ -116,6 +119,7 @@ const config: NuxtConfiguration = {
    ** Global CSS
    */
   css: [
+    'katex/dist/katex.css',
     'github-markdown-css/github-markdown.css',
     '~/assets/css/svg-icon.css',
     '~/assets/inter/inter.css',
@@ -397,8 +401,25 @@ const config: NuxtConfiguration = {
     },
     'content:file:beforeInsert': (document) => {
       if (document.extension === '.md') {
-        const { minutes } = readingTime(document.text)
+        // hack for rehype-katex
+        const transformMath = rehypeKatex()
 
+        visit(document.body, 'element', (element) => {
+          element.properties = element.props
+        })
+
+        transformMath(document.body)
+
+        visit(document.body, 'element', (element) => {
+          element.props = element.properties
+          element.tag = element.tagName || element.tag
+
+          delete element.properties
+          delete element.tagName
+        })
+
+        // add reading time
+        const { minutes } = readingTime(document.text)
         document.readingTime = minutes
       }
     },
@@ -435,6 +456,7 @@ const config: NuxtConfiguration = {
 
   content: {
     markdown: {
+      plugins: ['remark-math'],
       prism: {
         theme: '~/assets/css/prism-theme.css',
       },

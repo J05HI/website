@@ -98,6 +98,8 @@ module.exports = {
         /token/,
         /language/,
         /line-numbers/,
+        /^katex/,
+        /^math/,
       ],
       whitelistPatternsChildren: [
         /^svg/,
@@ -110,6 +112,8 @@ module.exports = {
         /token/,
         /language/,
         /line-numbers/,
+        /^katex/,
+        /^math/,
       ],
     },
   },
