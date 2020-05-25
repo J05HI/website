@@ -15,7 +15,7 @@ I start by assuming a model to fit the data, a linear model to begin with.  A l
 
 $y=ax+b$
 
-Once the model has been stablished is time to set the conditions for Least Squares.  The purpose is to minimize a quadratic function ($L^2$) that contains the squared sum of differences or errors between the data and the prediction of the model assumed for that data.
+Once the model has been established is time to set the conditions for Least Squares.  The purpose is to minimize a quadratic function ($L^2$) that contains the squared sum of differences or errors between the data and the prediction of the model assumed for that data.
 
 Mathematically it would look like this:
 
@@ -35,7 +35,7 @@ Where "p" is a vector with the parameters to fit. Once you solve that system of 
 
 If we take a closer look at the structure of the system of equations of the Least Squares problem, one can see a structure. What is the purpose of "A" and "t"?
 
-At this moment I say: "A" relates the data to the chosen model, one can say that it shows the way in which your data is seen through the model, and "t" is related to the desired output of the fit, in this case, the best output in the sense of minimizing the quadratic error.    At this point students tend to blindly believe me, so I take another approach to the Least Squares problem to clarify the tricky points of my dubious interpretation.
+At this moment I say: "A" relates the data to the chosen model, one can say that it shows how your data is seen through the model, and "t" is related to the desired output of the fit, in this case, the best output in the sense of minimizing the quadratic error.    At this point students tend to blindly believe me, so I take another approach to the Least Squares problem to clarify the tricky points of my dubious interpretation.
 
 In order to make my point, I start the exercise from another formulation, a formulation that resembles somehow the system of equations from the very beginning.  What I want is this:
 
