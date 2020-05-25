@@ -6,16 +6,6 @@
       "GA_TRACKING_ID": "UA-71683195-1"
     }
   },
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@now/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    },
-    { "src": "api/cms/*.js", "use": "@now/node" }
-  ],
   "routes": [
     {
       "src": "/(.*)",
@@ -30,9 +20,6 @@
       },
       "continue": true
     },
-
-    { "src": "/api/cms/auth", "dest": "/api/cms/auth.js" },
-    { "src": "/api/cms/complete", "dest": "/api/cms/complete.js" },
 
     { "src": "/contact", "headers": { "location": "/" }, "status": 301 },
     { "src": "/es/contact", "headers": { "location": "/" }, "status": 301 },
