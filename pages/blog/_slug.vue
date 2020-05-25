@@ -166,11 +166,11 @@ export default Vue.extend({
   async asyncData({ app, params, $sentry, $content }) {
     try {
       const { slug } = params
-      const post: BlogPostContent = await $content(
+      const post: BlogPostContent = (await $content(
         'blog',
         app.i18n.locale,
         slug
-      ).fetch()
+      ).fetch()) as any
 
       const title = `${post.title} - Blog`
       const {

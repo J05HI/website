@@ -25,9 +25,4 @@ declare module '@nuxt/types' {
     $isAMP?: boolean
     $colorMode: ColorMode
   }
-
-  interface Context {
-    // TODO: change when types get ready
-    $content: any
-  }
 }
