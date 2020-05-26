@@ -27,7 +27,7 @@ It allows you to design and modify BMS’s from our Cloud-Based System and then 
 
 ### 2. Inexpensive
 
-This innovative product reduces the design and modification time of a BMS. The final product is completely free of errors. With an exponential learning curve, reducing training costs. "That mean savings to your company".
+This innovative product reduces the design and modification time of a BMS. The final product is completely free of errors. With an exponential learning curve, reducing training costs. "That means savings to your company".
 
 ### 3. Faster
 
@@ -49,7 +49,7 @@ The core of the product is to draw through our Drag & Drop interface and summari
 
 ### Create
 
-Allows you to generate a new BMS from scratch or any other existing BMS file using our re-engineering system. Create Projects and upload BMS files to them individually or massively. Simplify operations with BMS files.
+It allows you to generate a new BMS from scratch or any other existing BMS file using our re-engineering system. Create Projects and upload BMS files to them individually or massively. Simplify operations with BMS files.
 
 ### Convert
 
@@ -69,7 +69,7 @@ With Mapset, we automatically generate HTML files from existing BMS by using the
 
 ### 3. Different File Formats Generation
 
-In addition to generating HTML files from your BMS, you can also download in plain text your designs created by our editor.
+In addition to generating HTML files from your BMS, you can also download in plain-text your designs created by our editor.
 
 You can even generate PDF reports of your BMS designs to be evaluated and accepted by other people.
 
@@ -85,4 +85,4 @@ Mapset is 15x faster than conventional methods or any other tool available. It i
 
 - - -
 
-We're very proud with this product, and we're really sure that this tool could be a game-changing. **Don't be afraid and try it at** <https://mapset.app>.
+We're very proud of this product, and we're sure that this tool could be a game-changing. **Don't be afraid and try it at** <https://mapset.app>.
