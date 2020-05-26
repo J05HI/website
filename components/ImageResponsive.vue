@@ -139,7 +139,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
           // @ts-ignore
           'data-srcset': this.srcset,
           class: {
-            ...properties,
+            ...properties.class,
             lazy: true,
           },
         }
