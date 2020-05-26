@@ -43,6 +43,8 @@ const config: NuxtConfiguration = {
   mode: 'universal',
   target: 'static',
 
+  telemetry: isProd,
+
   components: {
     dirs: [
       { path: '~/components', pattern: '*.vue' },
