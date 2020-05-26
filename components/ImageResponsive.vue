@@ -1,10 +1,9 @@
 <template>
   <div
-    v-lazy-container="{ selector: 'img' }"
     :class="{
       'rounded-full': rounded,
     }"
-    class="overflow-hidden leading-none inline-block"
+    class="overflow-hidden leading-none inline-block responsive-image"
   >
     <Component
       :is="$isAMP ? 'amp-img' : 'img'"
@@ -16,8 +15,35 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import LazyLoad from 'vanilla-lazyload'
 
-export default Vue.extend({
+interface Data {
+  lazyLoadInstance: typeof LazyLoad | null
+}
+
+interface Methods {
+  updateLazy: () => void
+}
+
+interface Computed {
+  srcset: string
+  placeholder: string
+  imageProperties: { [key: string]: any }
+}
+
+interface Props {
+  source: string
+  alt: string
+  width: string | number
+  height: string | number
+  classes: string
+  fluid: boolean
+  rounded: boolean
+  placeholderColor: string
+  ampLayout: string
+}
+
+export default Vue.extend<Data, Methods, Computed, Props>({
   props: {
     source: {
       type: [String, Object],
@@ -55,6 +81,13 @@ export default Vue.extend({
       type: String,
       default: 'intrinsic',
     },
+  },
+  data() {
+    const lazyLoadInstance: typeof LazyLoad | null = null
+
+    return {
+      lazyLoadInstance,
+    }
   },
   computed: {
     srcset() {
@@ -105,20 +138,48 @@ export default Vue.extend({
           'data-loading': this.placeholder,
           // @ts-ignore
           'data-srcset': this.srcset,
+          class: {
+            ...properties,
+            lazy: true,
+          },
         }
       }
 
       return properties
     },
   },
+
+  mounted() {
+    this.updateLazy()
+  },
+
+  updated() {
+    this.updateLazy()
+  },
+
+  methods: {
+    updateLazy() {
+      setTimeout(() => {
+        if (this.lazyLoadInstance) {
+          this.lazyLoadInstance.update()
+        } else {
+          this.lazyLoadInstance = new LazyLoad({
+            elements_selector: '.responsive-image .lazy',
+          })
+        }
+      }, 1000)
+    },
+  },
 })
 </script>
 
-<style scoped>
+<style>
 /* purgecss start ignore */
-img {
-  &[lazy='loading'] {
-    @apply filter-blur;
+.responsive-image {
+  img {
+    &.lazy:not(.loaded) {
+      @apply filter-blur;
+    }
   }
 }
 /* purgecss end ignore */

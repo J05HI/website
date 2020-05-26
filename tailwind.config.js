@@ -12,7 +12,7 @@ module.exports = {
     darkSelector: '.dark-mode',
     filter: {
       none: 'none',
-      blur: 'blur(15px)',
+      blur: 'blur(8px)',
     },
     colors: {
       transparent: 'transparent',
