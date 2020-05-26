@@ -1,4 +1,48 @@
+import React from 'react'
+import createClass from 'create-react-class'
 import { CmsCollection } from 'netlify-cms-core'
+
+const h = React.createElement
+
+export const blogPostPreview = createClass({
+  render() {
+    const entry = this.props.entry
+    const cover = entry.getIn(['data', 'cover'])
+    const coverImage = this.props.getAsset(cover)
+
+    return h(
+      'div',
+      { className: 'p-3 mt-4 mr-4' },
+      h(
+        'h1',
+        {
+          className: 'mb-2',
+        },
+        entry.getIn(['data', 'title'])
+      ),
+      h(
+        'div',
+        { className: 'lead mb-2 mt-4' },
+        entry.getIn(['data', 'description'])
+      ),
+      h(
+        'div',
+        {
+          className: 'overflow-hidden inline-block shadow rounded-lg',
+        },
+        h('img', {
+          className: 'img-fluid rounded-lg',
+          src: coverImage.toString(),
+        })
+      ),
+      h(
+        'div',
+        { className: 'markdown-body mt-4' },
+        this.props.widgetFor('body')
+      )
+    )
+  },
+})
 
 export const blogPostsCollectionEn: CmsCollection = {
   name: 'posts_en',
@@ -10,9 +54,6 @@ export const blogPostsCollectionEn: CmsCollection = {
   // @ts-ignore
   media_folder: '/assets/images/content/blog/',
   public_folder: 'blog/',
-  editor: {
-    preview: false,
-  },
   preview_path: 'blog/{{fields.slug}}',
   slug: '{{fields.slug}}',
   sortableFields: ['title', 'created', 'published'],
