@@ -205,16 +205,6 @@ const config: NuxtConfiguration = {
         },
       },
     },
-    templates: [
-      {
-        src: './templates/netlify-cms-config.yml.tpl',
-        dst: '../static/admin/config.yml',
-        options: {
-          isProd,
-          baseURL,
-        },
-      },
-    ],
   },
 
   /*
@@ -311,7 +301,7 @@ const config: NuxtConfiguration = {
    */
   sitemap: {
     hostname: baseURL,
-    exclude: ['/amp/**'],
+    exclude: ['/amp/**', '/es/amp/**', '/admin', '/es/admin'],
     i18n: 'en',
     defaults: {
       changefreq: EnumChangefreq.WEEKLY,
