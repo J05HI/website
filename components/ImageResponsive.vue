@@ -99,16 +99,15 @@ export default Vue.extend<Data, Methods, Computed, Props>({
       }
     },
     placeholder() {
-      const template =
-        '<svg width="%{w}" height="%{h}" ' +
-        'xmlns="http://www.w3.org/2000/svg" ' +
-        'viewBox="0 0 %{w} %{h}" preserveAspectRatio="none">' +
-        `<rect width="100%" height="100%" style="fill:${this.placeholderColor};"></rect>` +
-        '</svg>'
+      const width = Number(this.width) * 2
+      const height = Number(this.height) * 2
 
-      const image = template
-        .replace('%{w}', `${this.width}`)
-        .replace('%{h}', `${this.height}`)
+      const image =
+        `<svg width="${width}" height="${height}" ` +
+        'xmlns="http://www.w3.org/2000/svg" ' +
+        `viewBox="0 0 ${width} ${height}" preserveAspectRatio="none">` +
+        `<rect width="100%" height="100%" style="fill:${this.placeholderColor.toLowerCase()};"></rect>` +
+        '</svg>'
 
       return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(image)}`
     },
