@@ -25,100 +25,10 @@
 
 #marquez {
   .markdown-body {
-    @apply text-lg;
-
-    .anchor {
-      @apply hidden;
-    }
-
-    &,
-    p,
-    ul {
-      @apply text-gray-900;
-    }
-
-    h1,
-    h2 {
-      border-bottom: none;
-      padding-bottom: .5rem;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    p,
-    td {
-      img[svgimg="1"] {
-        @apply inline;
-      }
-    }
-
-    p {
-      @apply overflow-x-auto;
-    }
-
-    .table-responsive {
-      @apply -my-2 py-2 overflow-x-auto;
-
-      @screen sm {
-        @apply -mx-6 px-6;
-      }
-
-      @screen lg {
-        @apply -mx-8 px-8;
-      }
-    }
-
-    .table-container {
-      @apply align-middle inline-block min-w-full shadow overflow-hidden border-b border-gray-200;
-
-      @screen md {
-        @apply rounded-lg;
-      }
-    }
-
-    .table {
-      @apply min-w-full table m-0;
-
-      th {
-        @apply px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-sm leading-4 font-medium text-gray-600 uppercase tracking-wider;
-      }
-
-      td {
-        @apply px-6 py-4 whitespace-no-wrap leading-5 text-gray-800;
-      }
-
-      tr {
-        @apply bg-transparent;
-
-        &:not(:last-child) {
-          td {
-            @apply border-b border-gray-200;
-          }
-        }
-      }
-    }
-
-    .highlight pre,
-    pre {
-      @apply rounded-lg;
-    }
-
-    ol, ul {
-      list-style: none;
-      margin: 1.5rem 0;
-      padding: 0;
-    }
-
     ol {
-      list-style-type: none;
       counter-reset: item;
 
       > li {
-        @apply relative pl-10;
-
         &:before {
           @apply bg-gray-900 text-gray-100 w-6 h-6 rounded-full absolute top-0 left-0 flex text-sm font-semibold items-center justify-center;
 
@@ -131,9 +41,6 @@
 
     ul {
       > li {
-        position: relative;
-        padding-left: 1.5rem;
-
         &:before {
           @apply bg-gray-900;
 
@@ -151,8 +58,6 @@
 
     /* taken from https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/ */
     a {
-      @apply underline text-blue-600;
-
       /* These are technically the same, but use both */
       overflow-wrap: break-word;
       word-wrap: break-word;
@@ -170,55 +75,14 @@
       -webkit-hyphens: auto;
       hyphens: auto;
     }
-
-    .super {
-      @apply text-gray-800 text-sm;
-      vertical-align: super;
-    }
-
-    blockquote {
-      margin-top: 1.5rem;
-    }
-  }
-
-  code[class*="language-"],
-  pre[class*="language-"] {
-    @apply font-mono;
   }
 }
 
 .dark-mode {
   #marquez {
     .markdown-body {
-      &,
-      p,
-      ul {
-        @apply text-gray-100;
-      }
-
-      .table-container {
-        @apply border-gray-800;
-      }
-
-      .table {
-        th {
-          @apply border-gray-600 bg-gray-800 text-gray-300;
-        }
-
-        tr {
-          @apply border-gray-800;
-
-          &:not(:last-child) td,
-          & td {
-            @apply border-b border-gray-800 text-gray-100;
-          }
-        }
-      }
-
       ol {
         > li {
-          @apply relative pl-10;
-
           &:before {
             @apply bg-gray-100 text-gray-900;
           }
@@ -231,10 +95,6 @@
             @apply bg-gray-100;
           }
         }
-      }
-
-      a {
-        @apply text-blue-400;
       }
     }
   }

@@ -1,6 +1,6 @@
 <template>
   <article
-    class="mx-auto max-w-3xl pt-16 pb-20 px-5 md:px-0 lg:pt-24 lg:pb-18"
+    class="mx-auto max-w-3xl pt-16 pb-10 px-5 md:px-0 lg:pt-24"
     itemscope
     itemtype="http://schema.org/BlogPosting"
   >
@@ -120,7 +120,7 @@
         <NuxtContent
           :document="post"
           itemprop="articleBody"
-          class="markdown-body"
+          class="markdown-body text-lg"
         />
 
         <aside

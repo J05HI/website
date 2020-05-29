@@ -7,10 +7,13 @@ import colors from '@tailwindcss/ui/colors'
 import { $content } from '@nuxt/content'
 // @ts-ignore
 import rehypeKatex from 'rehype-katex'
+// @ts-ignore
+import rehypeAddClasses from 'rehype-add-classes'
 import visit from 'unist-util-visit'
 
 import pkg from './package.json'
 import { ampify } from './utils/ampify'
+import { rehypeResposiveTables } from './utils/markdown'
 import { BlogPostParsed } from './interfaces'
 
 const isProd = process.env.NODE_ENV === 'production'
@@ -122,7 +125,6 @@ const config: NuxtConfiguration = {
    */
   css: [
     'katex/dist/katex.css',
-    'github-markdown-css/github-markdown.css',
     '~/assets/css/svg-icon.css',
     '~/assets/inter/inter.css',
     '~/assets/css/main.css',
@@ -389,18 +391,64 @@ const config: NuxtConfiguration = {
     },
     'content:file:beforeInsert': (document) => {
       if (document.extension === '.md') {
-        // hack for rehype-katex
         const transformMath = rehypeKatex()
+        const responsiveTables = rehypeResposiveTables(
+          'table',
+          'div.align-middle.inline-block.min-w-full.shadow.overflow-hidden.rounded-lg.border-b.border-gray-200.mt-6',
+          'div.-my-2.py-2.overflow-x-auto.px-2'
+        )
+        const extraClasses: { [key: string]: string } = {
+          table: 'min-w-full',
+          'table a': 'dark:text-blue-600',
+          'thead > tr > th':
+            'px-6 py-3 border-b border-gray-200 bg-gray-100 text-left leading-4 font-medium text-gray-600 tracking-wider',
+          tbody: 'bg-white dark:bg-gray-200',
+          'tbody > tr > td':
+            'px-6 py-4 whitespace-no-wrap border-b border-gray-200 leading-5 font-medium text-gray-900',
+          p: 'overflow-x-auto mt-6',
+          'p, ul': 'text-gray-900 dark:text-gray-100',
+          '.math-inline': 'rounded-lg p-1 bg-gray-100 inline-block',
+          'p > .math-inline, p > strong > .math-inline, li > .math-inline':
+            'dark:bg-gray-800',
+          'table td > .math-inline': 'dark:bg-transparent',
+          h2: 'mt-12 mb-4 text-2xl font-semibold',
+          h3: 'mt-12 mb-4 text-xl font-medium',
+          'h4, h5, h6': 'mt-12 mb-4 font-medium',
+          a: 'underline text-blue-600 dark:text-blue-400',
+          'p img, td img': 'inline',
+          img: 'max-w-full h-auto',
+          '.nuxt-content-highlight pre': 'rounded-lg font-mono text-lg',
+          '.nuxt-content-highlight pre code': 'text-lg',
+          'ol, ul': 'my-6 mx-0 p-0',
+          'ol > li': 'relative pl-10',
+          'ul > li': 'relative pl-6',
+          'blockquote, hr': 'mt-6',
+        }
+        const addClasses = rehypeAddClasses(extraClasses)
 
         visit(document.body, 'element', (element) => {
-          element.properties = element.props
+          element.properties = element.props || {}
+          element.tagName = element.tag
         })
 
         transformMath(document.body)
+        addClasses(document.body)
+        responsiveTables(document.body)
 
         visit(document.body, 'element', (element) => {
           element.props = element.properties
           element.tag = element.tagName || element.tag
+
+          // @ts-ignore
+          const { className } = element.props
+
+          if (className && typeof className === 'string') {
+            // @ts-ignore
+            element.props.className = className.split(' ')
+          } else if (className === '') {
+            // @ts-ignore
+            delete element.props.className
+          }
 
           delete element.properties
           delete element.tagName

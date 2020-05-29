@@ -5,6 +5,7 @@
     :height="height"
     :classes="classes"
     :alt="alt"
+    class="mt-4 rounded-lg"
   />
 </template>
 

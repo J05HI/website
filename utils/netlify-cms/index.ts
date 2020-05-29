@@ -58,7 +58,7 @@ export function getCMS(locale: string, isDev: boolean) {
 
   /* register previews templates */
   CMS.registerPreviewStyle(
-    'https://cdn.jsdelivr.net/combine/npm/bootstrap@4/dist/css/bootstrap.min.css,npm/github-markdown-css@4'
+    'https://cdn.jsdelivr.net/combine/npm/bootstrap@4/dist/css/bootstrap.min.css'
   )
   CMS.registerPreviewTemplate('posts_en', blogPostPreview)
   CMS.registerPreviewTemplate('posts_es', blogPostPreview)
