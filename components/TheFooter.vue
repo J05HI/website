@@ -34,10 +34,11 @@
         </div>
         <div class="px-5 py-2">
           <a
-            href="#"
+            :href="`${github.url}/website`"
             class="text-base leading-6 text-gray-500 hover:text-gray-900 dark-hover:text-gray-100"
-            >Source</a
           >
+            {{ $t('links.source') }}
+          </a>
         </div>
       </nav>
       <div class="mt-8 flex justify-center">
@@ -101,6 +102,7 @@ export default Vue.extend({
       social,
       routeName: this.$route?.name || '',
       email: process.env.email,
+      github: social.find((s) => s.name === 'Github'),
     }
   },
 })
