@@ -13,37 +13,41 @@
     raw-loader "^4.0.1"
     url-loader "^4.1.0"
 
-"@ampproject/toolbox-core@^2.4.0-alpha.1":
-  version "2.4.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@ampproject/toolbox-core/-/toolbox-core-2.4.0-alpha.1.tgz#2e073fafedf46ef4f85326162e5b6c0080076142"
-  integrity sha512-QEIIXBdpevMJSan5JWJ5qLy3/R+V1cngWchKdenmkRzvoDhWWcZyCnUz5+xKhetD9ilPaM71bSJ0dF78OrYBIQ==
+"@ampproject/toolbox-core@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@ampproject/toolbox-core/-/toolbox-core-2.5.0.tgz#8ea4575f1c0d0048e73f64bf7e5cfc8a8e5bd6ef"
+  integrity sha512-aQjE8wORKXJ2tLWHuevdSL31zhQdUhC+skyEhESBV/8eOzd7ROaOzR/F43bS7uAhnYta1G0Zd/HqofgN7LRSfw==
   dependencies:
     cross-fetch "3.0.4"
+    lru-cache "5.1.1"
 
-"@ampproject/toolbox-optimizer@2.4.0":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@ampproject/toolbox-optimizer/-/toolbox-optimizer-2.4.0.tgz#16bde73913f8b58a9bf617d37cdc1f21a1222f38"
-  integrity sha512-Bmb+eMF9/VB3H0qPdZy0V5yPSkWe5RwuGbXiMxzqYdJgmMat+NL75EtozQnlpa0uBlESnOGe7bMojm/SA1ImrA==
+"@ampproject/toolbox-optimizer@2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@ampproject/toolbox-optimizer/-/toolbox-optimizer-2.5.0.tgz#cc5e5dd43919ec8b9731148f44b2a9feb43d6aa7"
+  integrity sha512-aMUx4pyxx2j+HA1qT3RuzGj9unjMO7HEt5FBsV5hqc4g+6MkKlLi/GOktvhHArVWKWOy0qNOzCIHhPzIP5xQTA==
   dependencies:
-    "@ampproject/toolbox-core" "^2.4.0-alpha.1"
-    "@ampproject/toolbox-runtime-version" "^2.4.0-alpha.1"
+    "@ampproject/toolbox-core" "^2.5.0"
+    "@ampproject/toolbox-runtime-version" "^2.5.0"
     "@ampproject/toolbox-script-csp" "^2.3.0"
     "@ampproject/toolbox-validator-rules" "^2.3.0"
+    cross-fetch "3.0.4"
     cssnano "4.1.10"
+    dom-serializer "1.0.1"
     domhandler "3.0.0"
     domutils "2.1.0"
     htmlparser2 "4.1.0"
     lru-cache "5.1.1"
     normalize-html-whitespace "1.0.0"
+    postcss "7.0.31"
     postcss-safe-parser "4.0.2"
-    terser "4.6.13"
+    terser "4.7.0"
 
-"@ampproject/toolbox-runtime-version@^2.4.0-alpha.1":
-  version "2.4.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@ampproject/toolbox-runtime-version/-/toolbox-runtime-version-2.4.0-alpha.1.tgz#448c7206d9136e242ac99810141b6bbae6b1674f"
-  integrity sha512-iPOlATHFcaLyiuVdzCKiM4DamTvPpysHc5eW2oYoSMXsxOsAdp4LNyt05biFRJA/7za5+b9P15blPtOucj2WyQ==
+"@ampproject/toolbox-runtime-version@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@ampproject/toolbox-runtime-version/-/toolbox-runtime-version-2.5.0.tgz#671823d749121ffb1b745912a8c2fc8dce27da80"
+  integrity sha512-mDeHgbxkBag1L/HsH3WhA7rRqoq3H7iiqZ8g/1Mvre4wP1YuN2iOjM/8EJvBJ4JM+UQsu3Kyljc88Mf8FHkSmg==
   dependencies:
-    "@ampproject/toolbox-core" "^2.4.0-alpha.1"
+    "@ampproject/toolbox-core" "^2.5.0"
 
 "@ampproject/toolbox-script-csp@^2.3.0":
   version "2.3.0"
@@ -73,7 +77,7 @@
     invariant "^2.2.4"
     semver "^5.5.0"
 
-"@babel/core@>=7.9.0", "@babel/core@^7.1.0", "@babel/core@^7.10.0", "@babel/core@^7.7.5":
+"@babel/core@>=7.9.0", "@babel/core@^7.1.0", "@babel/core@^7.10.1", "@babel/core@^7.7.5":
   version "7.10.1"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.10.1.tgz#2a0ad0ea693601820defebad2140206503d89af3"
   integrity sha512-u8XiZ6sMXW/gPmoP5ijonSUln4unazG291X0XAQ5h0s8qnAFr6BRRZGUEK+jtRWdmB0NTJQt7Uga25q8GetIIg==
@@ -120,7 +124,7 @@
     "@babel/helper-explode-assignable-expression" "^7.10.1"
     "@babel/types" "^7.10.1"
 
-"@babel/helper-compilation-targets@^7.10.0", "@babel/helper-compilation-targets@^7.10.1":
+"@babel/helper-compilation-targets@^7.10.1":
   version "7.10.1"
   resolved "https://registry.yarnpkg.com/@babel/helper-compilation-targets/-/helper-compilation-targets-7.10.1.tgz#ad6f69b4c3bae955081ef914a84e5878ffcaca63"
   integrity sha512-YuF8IrgSmX/+MV2plPkjEnzlC2wf+gaok8ehMNN0jodF3/sejZauExqpEVGbJua62oaWoNYIXwz4RmAsVcGyHw==
@@ -321,7 +325,7 @@
     "@babel/helper-remap-async-to-generator" "^7.10.1"
     "@babel/plugin-syntax-async-generators" "^7.8.0"
 
-"@babel/plugin-proposal-class-properties@^7.10.1", "@babel/plugin-proposal-class-properties@^7.8.3":
+"@babel/plugin-proposal-class-properties@^7.10.1":
   version "7.10.1"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-class-properties/-/plugin-proposal-class-properties-7.10.1.tgz#046bc7f6550bb08d9bd1d4f060f5f5a4f1087e01"
   integrity sha512-sqdGWgoXlnOdgMXU+9MbhzwFRgxVLeiGBqTrnuS7LC2IBU31wSsESbTUreT2O418obpfPdGUR2GbEufZF1bpqw==
@@ -329,7 +333,7 @@
     "@babel/helper-create-class-features-plugin" "^7.10.1"
     "@babel/helper-plugin-utils" "^7.10.1"
 
-"@babel/plugin-proposal-decorators@^7.10.0":
+"@babel/plugin-proposal-decorators@^7.10.1":
   version "7.10.1"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-decorators/-/plugin-proposal-decorators-7.10.1.tgz#9373c2d8db45345c6e30452ad77b469758e5c8f7"
   integrity sha512-xBfteh352MTke2U1NpclzMDmAmCdQ2fBZjhZQQfGTjXw6qcRYMkt528sA1U8o0ThDCSeuETXIj5bOGdxN+5gkw==
@@ -708,7 +712,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.10.1"
 
-"@babel/plugin-transform-runtime@^7.10.0":
+"@babel/plugin-transform-runtime@^7.10.1":
   version "7.10.1"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-runtime/-/plugin-transform-runtime-7.10.1.tgz#fd1887f749637fb2ed86dc278e79eb41df37f4b1"
   integrity sha512-4w2tcglDVEwXJ5qxsY++DgWQdNJcCCsPxfT34wCUwIf2E7dI7pMpH8JczkMBbgBTNzBX62SZlNJ9H+De6Zebaw==
@@ -770,7 +774,7 @@
     "@babel/helper-create-regexp-features-plugin" "^7.10.1"
     "@babel/helper-plugin-utils" "^7.10.1"
 
-"@babel/preset-env@^7.10.0":
+"@babel/preset-env@^7.10.1":
   version "7.10.1"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.10.1.tgz#099e1b76379739bdcbfab3d548dc7e7edb2ac808"
   integrity sha512-bGWNfjfXRLnqbN2T4lB3pMfoic8dkRrmHpVZamSFHzGy5xklyHTobZ28TVUD2grhE5WDnu67tBj8oslIhkiOMQ==
@@ -851,7 +855,7 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.0", "@babel/runtime@^7.2.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.1", "@babel/runtime@^7.2.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
   version "7.10.1"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.1.tgz#b6eb75cac279588d3100baecd1b9894ea2840822"
   integrity sha512-nQbbCbQc9u/rpg1XCxoMYQTbSMVZjCDxErQ1ClCn9Pvcmv1lGads19ep0a2VsEiIJeHqjZley6EQGEC3Yo1xMA==
@@ -1544,30 +1548,30 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@nuxt/babel-preset-app-edge@2.13.0-26510426.5c348c06":
-  version "2.13.0-26510426.5c348c06"
-  resolved "https://registry.yarnpkg.com/@nuxt/babel-preset-app-edge/-/babel-preset-app-edge-2.13.0-26510426.5c348c06.tgz#e26c8b75e0c570fa605f18d79f2af6070572633b"
-  integrity sha512-zUzRlkLwf76u48Tpxz32FfwbOCyKMOmpKxiEycuzsSBPZTJWd3SiSVU+fK1iXMUJ5doVznpW6acXN8TjrBoa1A==
+"@nuxt/babel-preset-app-edge@2.13.0-26511862.a544fc72":
+  version "2.13.0-26511862.a544fc72"
+  resolved "https://registry.yarnpkg.com/@nuxt/babel-preset-app-edge/-/babel-preset-app-edge-2.13.0-26511862.a544fc72.tgz#11a48805ce51096e60de78252d844172440cbb7c"
+  integrity sha512-MgyulTXU0+BHRehmR+BUwd3z/PVoeYPrdiXF/Ti+ZSNOTa/ngTqFes6mqyuCxY5OV+z6jVdtBlVi4Gr1klxsxA==
   dependencies:
-    "@babel/core" "^7.10.0"
-    "@babel/helper-compilation-targets" "^7.10.0"
-    "@babel/plugin-proposal-class-properties" "^7.8.3"
-    "@babel/plugin-proposal-decorators" "^7.10.0"
-    "@babel/plugin-transform-runtime" "^7.10.0"
-    "@babel/preset-env" "^7.10.0"
-    "@babel/runtime" "^7.10.0"
+    "@babel/core" "^7.10.1"
+    "@babel/helper-compilation-targets" "^7.10.1"
+    "@babel/plugin-proposal-class-properties" "^7.10.1"
+    "@babel/plugin-proposal-decorators" "^7.10.1"
+    "@babel/plugin-transform-runtime" "^7.10.1"
+    "@babel/preset-env" "^7.10.1"
+    "@babel/runtime" "^7.10.1"
     "@vue/babel-preset-jsx" "^1.1.2"
     core-js "^2.6.5"
 
-"@nuxt/builder-edge@2.13.0-26510426.5c348c06":
-  version "2.13.0-26510426.5c348c06"
-  resolved "https://registry.yarnpkg.com/@nuxt/builder-edge/-/builder-edge-2.13.0-26510426.5c348c06.tgz#91fdb901cc6ddcfc5c08e0a085d2131051fb0398"
-  integrity sha512-OjCbmRO3zCTVHS9LFdidtlgPunFIx3b89XopzkFAv6u9HXwmg9J2D9snOgInb9JwpEhn9Q99sV2q3ZaM3YShqg==
+"@nuxt/builder-edge@2.13.0-26511862.a544fc72":
+  version "2.13.0-26511862.a544fc72"
+  resolved "https://registry.yarnpkg.com/@nuxt/builder-edge/-/builder-edge-2.13.0-26511862.a544fc72.tgz#77a56d9cb2a245693ef727fa8be7e3e328ba89b8"
+  integrity sha512-UeeThPoTTcSYKth5tZnpk/o8jcTc6kCmJb7tpt1p3pmyQxtpeEhHtDWBPytXXSgRdTZ3pr2VvMMKCoMRFoyGxw==
   dependencies:
     "@nuxt/devalue" "^1.2.4"
-    "@nuxt/utils-edge" "2.13.0-26510426.5c348c06"
-    "@nuxt/vue-app-edge" "2.13.0-26510426.5c348c06"
-    "@nuxt/webpack-edge" "2.13.0-26510426.5c348c06"
+    "@nuxt/utils-edge" "2.13.0-26511862.a544fc72"
+    "@nuxt/vue-app-edge" "2.13.0-26511862.a544fc72"
+    "@nuxt/webpack-edge" "2.13.0-26511862.a544fc72"
     chalk "^3.0.0"
     chokidar "^3.4.0"
     consola "^2.12.2"
@@ -1578,16 +1582,16 @@
     lodash "^4.17.15"
     pify "^4.0.1"
     semver "^7.3.2"
-    serialize-javascript "^3.0.0"
+    serialize-javascript "^3.1.0"
     upath "^1.2.0"
 
-"@nuxt/cli-edge@2.13.0-26510426.5c348c06":
-  version "2.13.0-26510426.5c348c06"
-  resolved "https://registry.yarnpkg.com/@nuxt/cli-edge/-/cli-edge-2.13.0-26510426.5c348c06.tgz#358815e24ea107fa288ad5a6ef09296909a56367"
-  integrity sha512-dk8CG51xIW0Rksyf9lg/8QFSfSHcFP4b9Pr0zYhOzJNU9PUBaHtGcqeYRmYVE7HVCAtMdykFdSgCGupTVG8PJQ==
+"@nuxt/cli-edge@2.13.0-26511862.a544fc72":
+  version "2.13.0-26511862.a544fc72"
+  resolved "https://registry.yarnpkg.com/@nuxt/cli-edge/-/cli-edge-2.13.0-26511862.a544fc72.tgz#acab368af009b744c8ebb314029b0a9280d2f943"
+  integrity sha512-SSxY9FmI2A0Pmo9pMjoYTrOAklbxPJF/W6aFVORs59miVG99WAzhnkS9S6ds6HNg/OOkJ3uYBIhGVcYgIinKRA==
   dependencies:
-    "@nuxt/config-edge" "2.13.0-26510426.5c348c06"
-    "@nuxt/utils-edge" "2.13.0-26510426.5c348c06"
+    "@nuxt/config-edge" "2.13.0-26511862.a544fc72"
+    "@nuxt/utils-edge" "2.13.0-26511862.a544fc72"
     boxen "^4.2.0"
     chalk "^3.0.0"
     compression "^1.7.4"
@@ -1606,21 +1610,22 @@
     wrap-ansi "^6.2.0"
 
 "@nuxt/components@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@nuxt/components/-/components-0.3.0.tgz#6a931d54efdf9436f948c2157dc5cfad3c7efa20"
-  integrity sha512-iL5k77INTCocB0/cWF8k8wByPmc9PT4Jhi9Ntcg30B7gi0lhNgmhmfPkhnphPiBcQSEHcX+0n8HXf/yw7znfeA==
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@nuxt/components/-/components-0.3.1.tgz#b495fe96879c6f057cd765b36d1dc8149dfc3755"
+  integrity sha512-nYk3M/4UNmysiUQLKIsejhrzvVqPityJSq4atiP0A4I/UX6/kma/lPrhrn/ZdgbkMASdbUzo1sJTF/IYnlo4bg==
 
-"@nuxt/config-edge@2.13.0-26510426.5c348c06":
-  version "2.13.0-26510426.5c348c06"
-  resolved "https://registry.yarnpkg.com/@nuxt/config-edge/-/config-edge-2.13.0-26510426.5c348c06.tgz#9915c4b6a85632b4d34702c910def9a9b8853abf"
-  integrity sha512-AoJ1UUJLPtbVDnj+EDln8MIeUrYsz3ecJtnyMDLVPHAl01xnQb7v8j+nwFn4pgWScXeckviutSlc7sL1fg+Ikg==
+"@nuxt/config-edge@2.13.0-26511862.a544fc72":
+  version "2.13.0-26511862.a544fc72"
+  resolved "https://registry.yarnpkg.com/@nuxt/config-edge/-/config-edge-2.13.0-26511862.a544fc72.tgz#c17d042c47e0b92c0cd26968769238ec4d7ee3c4"
+  integrity sha512-4bAt2MpAUQ9Ua1DDxFA2MEUYW3h0IxwKE/NV+lgXob9W9j645Xsws3UIaLNP8Dnh2pWV72q7J2eIjiP3HcDybA==
   dependencies:
-    "@nuxt/utils-edge" "2.13.0-26510426.5c348c06"
+    "@nuxt/utils-edge" "2.13.0-26511862.a544fc72"
     consola "^2.12.2"
     defu "^2.0.4"
-    destr "^0.1.7"
+    destr "^0.1.9"
     dotenv "^8.2.0"
     esm "^3.2.25"
+    rc9 "^0.0.6"
     std-env "^2.2.1"
 
 "@nuxt/content@1.2.0":
@@ -1661,16 +1666,16 @@
     unified "^9.0.0"
     ws "^7.3.0"
 
-"@nuxt/core-edge@2.13.0-26510426.5c348c06":
-  version "2.13.0-26510426.5c348c06"
-  resolved "https://registry.yarnpkg.com/@nuxt/core-edge/-/core-edge-2.13.0-26510426.5c348c06.tgz#5833858219fc234610e00a05f92a7c694fdd830c"
-  integrity sha512-MGLgUjLmKy1mmSPq/k69MDGOTXZj8em5JAXNcfJcMhExk8VPInX4jpA3jc6zoZAmi/omYX/4GbkUqsoSTepWhg==
+"@nuxt/core-edge@2.13.0-26511862.a544fc72":
+  version "2.13.0-26511862.a544fc72"
+  resolved "https://registry.yarnpkg.com/@nuxt/core-edge/-/core-edge-2.13.0-26511862.a544fc72.tgz#eaf86b14feda3f6153fb41d6c0326293f576110c"
+  integrity sha512-MyKijGOOtFs4fmTHrqdjcHEF4llHLdH8JZ3mYBIrCQl58SCFSTM124Algs40POPBkATJnnw5krTGYSDE0xGr/g==
   dependencies:
-    "@nuxt/config-edge" "2.13.0-26510426.5c348c06"
+    "@nuxt/config-edge" "2.13.0-26511862.a544fc72"
     "@nuxt/devalue" "^1.2.4"
-    "@nuxt/server-edge" "2.13.0-26510426.5c348c06"
-    "@nuxt/utils-edge" "2.13.0-26510426.5c348c06"
-    "@nuxt/vue-renderer-edge" "2.13.0-26510426.5c348c06"
+    "@nuxt/server-edge" "2.13.0-26511862.a544fc72"
+    "@nuxt/utils-edge" "2.13.0-26511862.a544fc72"
+    "@nuxt/vue-renderer-edge" "2.13.0-26511862.a544fc72"
     consola "^2.12.2"
     debug "^4.1.1"
     esm "^3.2.25"
@@ -1696,12 +1701,12 @@
     error-stack-parser "^2.0.0"
     string-width "^2.0.0"
 
-"@nuxt/generator-edge@2.13.0-26510426.5c348c06":
-  version "2.13.0-26510426.5c348c06"
-  resolved "https://registry.yarnpkg.com/@nuxt/generator-edge/-/generator-edge-2.13.0-26510426.5c348c06.tgz#9265950facac6a2e87ca7f67a992e46e9a540184"
-  integrity sha512-Oy/R2xQf5NVS7CYDpHlw1AFQ6DRGcDcoGsZDa3Pfy5hh/QDb3CFS97FYAg/8n07OcFg5rU+k0fbuci69dGmiQw==
+"@nuxt/generator-edge@2.13.0-26511862.a544fc72":
+  version "2.13.0-26511862.a544fc72"
+  resolved "https://registry.yarnpkg.com/@nuxt/generator-edge/-/generator-edge-2.13.0-26511862.a544fc72.tgz#ac9c10be61d34f71e798067529d5c1e3ebc10162"
+  integrity sha512-t8diRiZV5Tycdh9pDy6CxZ3XR9ygbH5Jql7u5CERi14BDLvGQjgJujn6w2vnh1Zfc5u9GikRMgyhqyE/o6NlaQ==
   dependencies:
-    "@nuxt/utils-edge" "2.13.0-26510426.5c348c06"
+    "@nuxt/utils-edge" "2.13.0-26511862.a544fc72"
     chalk "^3.0.0"
     consola "^2.12.2"
     fs-extra "^8.1.0"
@@ -1727,14 +1732,14 @@
     consola "^2.10.1"
     node-fetch "^2.6.0"
 
-"@nuxt/server-edge@2.13.0-26510426.5c348c06":
-  version "2.13.0-26510426.5c348c06"
-  resolved "https://registry.yarnpkg.com/@nuxt/server-edge/-/server-edge-2.13.0-26510426.5c348c06.tgz#26908383cb018451e3761c89e23ecb7998296094"
-  integrity sha512-VJcN0bMrobjUyQVmbige1FJCGsjyqBZoNJzCj/I+loOc8Uqvt/X1CF/YSk1U8wLSsvmFwfESp1WYfCdm9K82fQ==
+"@nuxt/server-edge@2.13.0-26511862.a544fc72":
+  version "2.13.0-26511862.a544fc72"
+  resolved "https://registry.yarnpkg.com/@nuxt/server-edge/-/server-edge-2.13.0-26511862.a544fc72.tgz#559797eb1b0367267c501ee5b966fcb250d038e8"
+  integrity sha512-BLDIjYC6G/53ivaEG2PPHKKHnfUAmsa5B6GXYfSRoghBkRgVexBLsjL80T8nF2TW9e+sSfIEkcywJitng1xe5Q==
   dependencies:
-    "@nuxt/config-edge" "2.13.0-26510426.5c348c06"
-    "@nuxt/utils-edge" "2.13.0-26510426.5c348c06"
-    "@nuxt/vue-renderer-edge" "2.13.0-26510426.5c348c06"
+    "@nuxt/config-edge" "2.13.0-26511862.a544fc72"
+    "@nuxt/utils-edge" "2.13.0-26511862.a544fc72"
+    "@nuxt/vue-renderer-edge" "2.13.0-26511862.a544fc72"
     "@nuxtjs/youch" "^4.2.3"
     chalk "^3.0.0"
     compression "^1.7.4"
@@ -1811,24 +1816,24 @@
     ts-node "^8.10.1"
     typescript "~3.8"
 
-"@nuxt/utils-edge@2.13.0-26510426.5c348c06":
-  version "2.13.0-26510426.5c348c06"
-  resolved "https://registry.yarnpkg.com/@nuxt/utils-edge/-/utils-edge-2.13.0-26510426.5c348c06.tgz#19a7e945167c7c1e955416fb926737f122ad9ea3"
-  integrity sha512-2Avc5hs2g+h+l0TN9fQUsjVmqLWzYhvEMCi6ikm7q9VL5Xb2ZPlG7Juq72MLJpD3+ZdEMkrZPhL+HDIsvkpfOQ==
+"@nuxt/utils-edge@2.13.0-26511862.a544fc72":
+  version "2.13.0-26511862.a544fc72"
+  resolved "https://registry.yarnpkg.com/@nuxt/utils-edge/-/utils-edge-2.13.0-26511862.a544fc72.tgz#86da6a30d7b3685ceb95874e78bf12f124e30e5a"
+  integrity sha512-82YX+ubCjoSeguIwPCiDNb6Vc3GwyWIjzIG26BH30iWGHSowsBaBL9LgrVX4WdRH8OgQah2kPLhLy31lr8PO3g==
   dependencies:
     consola "^2.12.2"
     fs-extra "^8.1.0"
     hash-sum "^2.0.0"
     proper-lockfile "^4.1.1"
     semver "^7.3.2"
-    serialize-javascript "^3.0.0"
+    serialize-javascript "^3.1.0"
     signal-exit "^3.0.3"
     ua-parser-js "^0.7.21"
 
-"@nuxt/vue-app-edge@2.13.0-26510426.5c348c06":
-  version "2.13.0-26510426.5c348c06"
-  resolved "https://registry.yarnpkg.com/@nuxt/vue-app-edge/-/vue-app-edge-2.13.0-26510426.5c348c06.tgz#5c81edbad56d94dbc836509151862e7388ec8d3a"
-  integrity sha512-sxfxssdAzq6N2+vA5dOgqUe8+eU1sGcE9jUyHH/LWtZlAMz+GH8NZ4L/aSDv/RqnX65qM2Z5lz2q7ZkbNkUqvw==
+"@nuxt/vue-app-edge@2.13.0-26511862.a544fc72":
+  version "2.13.0-26511862.a544fc72"
+  resolved "https://registry.yarnpkg.com/@nuxt/vue-app-edge/-/vue-app-edge-2.13.0-26511862.a544fc72.tgz#85a1e4b42a0c684a8c70f23819a3489b229b259d"
+  integrity sha512-IqtmZe7pujes1iFTY77oz1sTMZk5fsz4A7RfjkRMvwQe48e3Lr/2vCGmeSJHW/9FF/WyjKmfm9WstUDZkEviBA==
   dependencies:
     node-fetch "^2.6.0"
     unfetch "^4.1.0"
@@ -1840,13 +1845,13 @@
     vue-template-compiler "^2.6.11"
     vuex "^3.4.0"
 
-"@nuxt/vue-renderer-edge@2.13.0-26510426.5c348c06":
-  version "2.13.0-26510426.5c348c06"
-  resolved "https://registry.yarnpkg.com/@nuxt/vue-renderer-edge/-/vue-renderer-edge-2.13.0-26510426.5c348c06.tgz#684aa8315a22b552602ea3cc387e374e3f89ef43"
-  integrity sha512-gGgUWytzfJxw7IXYGKsZ0nhYgpjs2xSyHykEJSNJMTvHQ2g8Q0zveIiEPOAXRDwjwK4xRVgKDzFmM+6d7tNKPQ==
+"@nuxt/vue-renderer-edge@2.13.0-26511862.a544fc72":
+  version "2.13.0-26511862.a544fc72"
+  resolved "https://registry.yarnpkg.com/@nuxt/vue-renderer-edge/-/vue-renderer-edge-2.13.0-26511862.a544fc72.tgz#34fa25e1158f4c3d4ecc9289b90585bfc575370d"
+  integrity sha512-FCd0DpjwAexgIk/U6E3mCJ/MwIrPAso+NsUjPImgf1o8u9/UEaN9oRaISYFS0oj4mQ7cJDUtqqTtg3NVyoz3qQ==
   dependencies:
     "@nuxt/devalue" "^1.2.4"
-    "@nuxt/utils-edge" "2.13.0-26510426.5c348c06"
+    "@nuxt/utils-edge" "2.13.0-26511862.a544fc72"
     consola "^2.12.2"
     fs-extra "^8.1.0"
     lru-cache "^5.1.1"
@@ -1854,15 +1859,15 @@
     vue-meta "^2.3.4"
     vue-server-renderer "^2.6.11"
 
-"@nuxt/webpack-edge@2.13.0-26510426.5c348c06":
-  version "2.13.0-26510426.5c348c06"
-  resolved "https://registry.yarnpkg.com/@nuxt/webpack-edge/-/webpack-edge-2.13.0-26510426.5c348c06.tgz#ced73cd2d1389aa570ab143c3d4fea5107dd4a55"
-  integrity sha512-TxUgnNHtDjfyc8Ng1+k2cyOSsKpXVMzubyhAirlaB0e+HqybfMCxdAcWHTSbsbbTBi05XXom9tIDlfhH5cy3Rg==
+"@nuxt/webpack-edge@2.13.0-26511862.a544fc72":
+  version "2.13.0-26511862.a544fc72"
+  resolved "https://registry.yarnpkg.com/@nuxt/webpack-edge/-/webpack-edge-2.13.0-26511862.a544fc72.tgz#b6f25ba377065846d18fa4dba47bbff86ab6eab3"
+  integrity sha512-XoHG8UGXRBjH8Y3pX0tRdys6ZRNzKLsAqsclS9IFt0PfumIF3Fh91qKVif8for2shZZVktVoNln+DmlHzzWosA==
   dependencies:
-    "@babel/core" "^7.10.0"
-    "@nuxt/babel-preset-app-edge" "2.13.0-26510426.5c348c06"
+    "@babel/core" "^7.10.1"
+    "@nuxt/babel-preset-app-edge" "2.13.0-26511862.a544fc72"
     "@nuxt/friendly-errors-webpack-plugin" "^2.5.0"
-    "@nuxt/utils-edge" "2.13.0-26510426.5c348c06"
+    "@nuxt/utils-edge" "2.13.0-26511862.a544fc72"
     babel-loader "^8.1.0"
     cache-loader "^4.1.0"
     caniuse-lite "^1.0.30001066"
@@ -2398,7 +2403,7 @@
     "@types/istanbul-lib-coverage" "*"
     "@types/istanbul-lib-report" "*"
 
-"@types/json-schema@^7.0.3":
+"@types/json-schema@^7.0.3", "@types/json-schema@^7.0.4":
   version "7.0.4"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.4.tgz#38fd73ddfd9b55abb1e1b2ed578cb55bd7b7d339"
   integrity sha512-8+KAKzEvSUdeo+kmqnKrqgeE+LcA0tjYWFY7RPProVYwnqDjukzO+3b6dLD56rYX5TdWejnEOLJYOIeh4CXKuA==
@@ -3070,7 +3075,7 @@ ajv-keywords@^3.1.0, ajv-keywords@^3.4.1:
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-3.4.1.tgz#ef916e271c64ac12171fd8384eaae6b2345854da"
   integrity sha512-RO1ibKvd27e6FEShVFfPALuHI3WjSVNeK5FIsmme/LYRNxjKuNj+Dt7bucLa6NdSv3JcVTyMlm9kGR84z1XpaQ==
 
-ajv@^6.1.0, ajv@^6.10.0, ajv@^6.10.2, ajv@^6.12.0, ajv@^6.5.5:
+ajv@^6.1.0, ajv@^6.10.0, ajv@^6.10.2, ajv@^6.12.2, ajv@^6.5.5:
   version "6.12.2"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.12.2.tgz#c629c5eced17baf314437918d2da88c99d5958cd"
   integrity sha512-k+V+hzjm5q/Mr8ef/1Y9goCmlsK4I6Sm74teeyGvFk1XrOsbsKLjEdrvny42CZ+a8sXbk8KWpY/bDwS+FLL2UQ==
@@ -5642,7 +5647,7 @@ des.js@^1.0.0:
     inherits "^2.0.1"
     minimalistic-assert "^1.0.0"
 
-destr@^0.1.4, destr@^0.1.7:
+destr@^0.1.4, destr@^0.1.9:
   version "0.1.9"
   resolved "https://registry.yarnpkg.com/destr/-/destr-0.1.9.tgz#dcba2eece57db00dec5292c9c61dc104bff384f8"
   integrity sha512-5Ro7GLjdeXObdf5mYN37utIG++nyJxfMmvExopgHRZOVj4Ft8574EFIEvhSvgniN65BLecUKilkeB2H9GpHzsw==
@@ -5775,6 +5780,15 @@ dom-serializer@0, dom-serializer@^0.2.1:
   integrity sha512-2/xPb3ORsQ42nHYiSunXkDjPLBaEj/xTwUO4B7XCZQTRk7EBtTOPaygh10YAAh2OI1Qrp6NWfpAhzswj0ydt9g==
   dependencies:
     domelementtype "^2.0.1"
+    entities "^2.0.0"
+
+dom-serializer@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/dom-serializer/-/dom-serializer-1.0.1.tgz#79695eb49af3cd8abc8d93a73da382deb1ca0795"
+  integrity sha512-1Aj1Qy3YLbdslkI75QEOfdp9TkQ3o8LRISAzxOibjBs/xWwr1WxZFOQphFkZuepHFGo+kB8e5FVJSS0faAJ4Rw==
+  dependencies:
+    domelementtype "^2.0.1"
+    domhandler "^3.0.0"
     entities "^2.0.0"
 
 dom-serializer@~0.1.1:
@@ -6965,6 +6979,13 @@ flat-cache@^2.0.1:
     rimraf "2.6.3"
     write "1.0.3"
 
+flat@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/flat/-/flat-5.0.0.tgz#dab7d71d60413becb0ac2de9bf4304495e3af6af"
+  integrity sha512-6KSMM+cHHzXC/hpldXApL2S8Uz+QZv+tq5o/L0KQYleoG+GcwrnIJhTWC7tCOiKQp8D/fIvryINU1OZCCwevjA==
+  dependencies:
+    is-buffer "~2.0.4"
+
 flatted@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-2.0.2.tgz#4575b21e2bcee7434aa9be662f4b7b5f9c2b5138"
@@ -8123,14 +8144,14 @@ ignore@^5.1.1, ignore@^5.1.4, ignore@^5.1.6:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.1.6.tgz#643194ad4bf2712f37852e386b6998eff0db2106"
   integrity sha512-cgXgkypZBcCnOgSihyeqbo6gjIaIyDqPQB7Ra4vhE9m6kigdGoQDMHjviFhRZo3IMlRy6yElosoviMs5YxZXUA==
 
-imagemin-mozjpeg@8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/imagemin-mozjpeg/-/imagemin-mozjpeg-8.0.0.tgz#d2ca4e8c982c7c6eda55069af89dee4c1cebcdfd"
-  integrity sha512-+EciPiIjCb8JWjQNr1q8sYWYf7GDCNDxPYnkD11TNIjjWNzaV+oTg4DpOPQjl5ZX/KRCPMEgS79zLYAQzLitIA==
+imagemin-mozjpeg@9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/imagemin-mozjpeg/-/imagemin-mozjpeg-9.0.0.tgz#d1af26d0b43d75a41c211051c1910da59d9d2324"
+  integrity sha512-TwOjTzYqCFRgROTWpVSt5UTT0JeCuzF1jswPLKALDd89+PmrJ2PdMMYeDLYZ1fs9cTovI9GJd68mRSnuVt691w==
   dependencies:
-    execa "^1.0.0"
+    execa "^4.0.0"
     is-jpg "^2.0.0"
-    mozjpeg "^6.0.0"
+    mozjpeg "^7.0.0"
 
 imagemin-pngquant@8.0.0:
   version "8.0.0"
@@ -8439,7 +8460,7 @@ is-buffer@^1.1.5:
   resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
   integrity sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==
 
-is-buffer@^2.0.0:
+is-buffer@^2.0.0, is-buffer@~2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-2.0.4.tgz#3e572f23c8411a5cfd9557c849e3665e0b290623"
   integrity sha512-Kq1rokWXOPXWuaMAqZiJW4XxsmD9zGx9q4aePabbn3qCRGedtH7Cm+zV8WETitMfu1wdh+Rvd6w5egwSngUX2A==
@@ -9586,10 +9607,10 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-lint-staged@10.2.6:
-  version "10.2.6"
-  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-10.2.6.tgz#7d9658bd89dee946a859cbfc6e09566a9fb50b53"
-  integrity sha512-2oEBWyPZHkdyjKcIv2U6ay80Q52ZMlZZrUnfsV0WTVcgzPlt3o2t5UFy2v8ETUTsIDZ0xSJVnffWCgD3LF6xTQ==
+lint-staged@10.2.7:
+  version "10.2.7"
+  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-10.2.7.tgz#6e47860af3d86a6a01849cbf8ba80f7754aae6eb"
+  integrity sha512-srod2bTpF8riaLz+Bgr6v0mI/nSntE8M9jbh4WwAhoosx0G7RKEUIG7mI5Nu5SMbTF9o8GROPgK0Lhf5cDnUUw==
   dependencies:
     chalk "^4.0.0"
     cli-truncate "2.1.0"
@@ -10326,9 +10347,9 @@ min-document@^2.19.0:
     dom-walk "^0.1.0"
 
 min-indent@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/min-indent/-/min-indent-1.0.0.tgz#cfc45c37e9ec0d8f0a0ec3dd4ef7f7c3abe39256"
-  integrity sha1-z8RcN+nsDY8KDsPdTvf3w6vjklY=
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/min-indent/-/min-indent-1.0.1.tgz#a63f681673b30571fbe8bc25686ae746eefa9869"
+  integrity sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==
 
 mini-svg-data-uri@^1.0.3:
   version "1.2.3"
@@ -10489,10 +10510,10 @@ move-concurrently@^1.0.1:
     rimraf "^2.5.4"
     run-queue "^1.0.3"
 
-mozjpeg@^6.0.0:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/mozjpeg/-/mozjpeg-6.0.1.tgz#56969dddb5741ef2bcb1af066cae21e61a91a27b"
-  integrity sha512-9Z59pJMi8ni+IUvSH5xQwK5tNLw7p3dwDNCZ3o1xE+of3G5Hc/yOz6Ue/YuLiBXU3ZB5oaHPURyPdqfBX/QYJA==
+mozjpeg@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/mozjpeg/-/mozjpeg-7.0.0.tgz#c20f67a538fcaaa388d325875c53c0e7bc432f7d"
+  integrity sha512-mH7atSbIusVTO3A4H43sEdmveN3aWn54k6V0edefzCEvOsTrbjg5murY2TsNznaztWnIgaRbWxeLVp4IgKdedQ==
   dependencies:
     bin-build "^3.0.0"
     bin-wrapper "^4.0.0"
@@ -10912,9 +10933,9 @@ no-case@^3.0.3:
     tslib "^1.10.0"
 
 node-abi@^2.7.0:
-  version "2.17.0"
-  resolved "https://registry.yarnpkg.com/node-abi/-/node-abi-2.17.0.tgz#f167c92780497ff01eeaf473fcf8138e0fcc87fa"
-  integrity sha512-dFRAA0ACk/aBo0TIXQMEWMLUTyWYYT8OBYIzLmEUrQTElGRjxDCvyBZIsDL0QA7QCaj9PrawhOmTEdsuLY4uOQ==
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/node-abi/-/node-abi-2.18.0.tgz#1f5486cfd7d38bd4f5392fa44a4ad4d9a0dffbf4"
+  integrity sha512-yi05ZoiuNNEbyT/xXfSySZE+yVnQW6fxPZuFbLyS1s6b5Kw3HzV2PHOM4XR+nsjzkHxByK+2Wg+yCQbe35l8dw==
   dependencies:
     semver "^5.4.1"
 
@@ -11184,25 +11205,25 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-nuxt-edge@2.13.0-26510426.5c348c06:
-  version "2.13.0-26510426.5c348c06"
-  resolved "https://registry.yarnpkg.com/nuxt-edge/-/nuxt-edge-2.13.0-26510426.5c348c06.tgz#7cacac255349db3647fe687a7c0bd6de6c366a07"
-  integrity sha512-++uU5kCVxXelSzoko5M2//60pVChxg5HoZo5O+SFCxlXvqedsHEt5X9MZ6c4NMlAhea+N5X02q4QKKVcrxhlrw==
+nuxt-edge@2.13.0-26511862.a544fc72:
+  version "2.13.0-26511862.a544fc72"
+  resolved "https://registry.yarnpkg.com/nuxt-edge/-/nuxt-edge-2.13.0-26511862.a544fc72.tgz#cdc848e64086421b3759b0022c1147f2ea351389"
+  integrity sha512-tZl834c6lO/R3E+EQWEXM7ObZcS0VO1GkzIKsaxLIFUOeQtQxodS5zCcftoveqvbFk3Q5t/58QfjsROL9Lg/5g==
   dependencies:
-    "@nuxt/builder-edge" "2.13.0-26510426.5c348c06"
-    "@nuxt/cli-edge" "2.13.0-26510426.5c348c06"
+    "@nuxt/builder-edge" "2.13.0-26511862.a544fc72"
+    "@nuxt/cli-edge" "2.13.0-26511862.a544fc72"
     "@nuxt/components" "^0.3.0"
-    "@nuxt/core-edge" "2.13.0-26510426.5c348c06"
-    "@nuxt/generator-edge" "2.13.0-26510426.5c348c06"
+    "@nuxt/core-edge" "2.13.0-26511862.a544fc72"
+    "@nuxt/generator-edge" "2.13.0-26511862.a544fc72"
     "@nuxt/loading-screen" "^1.2.0"
     "@nuxt/opencollective" "^0.3.0"
     "@nuxt/telemetry" "^0.0.4"
-    "@nuxt/webpack-edge" "2.13.0-26510426.5c348c06"
+    "@nuxt/webpack-edge" "2.13.0-26511862.a544fc72"
 
-nuxt-i18n@6.12.0:
-  version "6.12.0"
-  resolved "https://registry.yarnpkg.com/nuxt-i18n/-/nuxt-i18n-6.12.0.tgz#d56a500dec6d3028790a8971dac32fbf625c1031"
-  integrity sha512-d4bn8J13XVyCIbt2ARq7tk+9yiN4rrWAkCe/UA/pvhkJGAxUbrO56xL4xIPzSlT5fZ66lqTssxKq/F7H9MTMdA==
+nuxt-i18n@6.12.1:
+  version "6.12.1"
+  resolved "https://registry.yarnpkg.com/nuxt-i18n/-/nuxt-i18n-6.12.1.tgz#e92710bcc7d85a46687f3bb06c263100349e718c"
+  integrity sha512-IkdYTnwREM+cuds2w3bqTnCB52wK2Sbs4VwXQgRyXzLpHGUn0TN9vuQ4OhQzw3VP+xWNNPke+bzMkjIKw8YlNQ==
   dependencies:
     "@babel/parser" "^7.5.5"
     "@babel/traverse" "^7.5.5"
@@ -11211,7 +11232,7 @@ nuxt-i18n@6.12.0:
     cookie "^0.4.0"
     is-https "^1.0.0"
     js-cookie "^2.2.1"
-    vue-i18n "^8.17.3"
+    vue-i18n "^8.18.1"
 
 nuxt-vitals@1.0.7:
   version "1.0.7"
@@ -11358,9 +11379,9 @@ onetime@^5.1.0:
     mimic-fn "^2.1.0"
 
 opencollective-postinstall@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/opencollective-postinstall/-/opencollective-postinstall-2.0.2.tgz#5657f1bede69b6e33a45939b061eb53d3c6c3a89"
-  integrity sha512-pVOEP16TrAO2/fjej1IdOyupJY8KDUM1CvsaScRbw6oddvpQoOfGk4ywha0HKKVAD6RkW4x6Q+tNBwhf3Bgpuw==
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/opencollective-postinstall/-/opencollective-postinstall-2.0.3.tgz#7a0fff978f6dbfa4d006238fbac98ed4198c3259"
+  integrity sha512-8AV/sCtuzUeTo8gQK5qDZzARrulB3egtLzFgteqB2tcT4Mw7B8Kt7JcDHmltjz6FOAHsvTevk70gZEbhM4ZS9Q==
 
 opener@1.5.1, opener@^1.5.1:
   version "1.5.1"
@@ -12739,7 +12760,7 @@ postcss@7.0.28:
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-postcss@7.x.x, postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.11, postcss@^7.0.14, postcss@^7.0.16, postcss@^7.0.17, postcss@^7.0.18, postcss@^7.0.2, postcss@^7.0.21, postcss@^7.0.26, postcss@^7.0.27, postcss@^7.0.30, postcss@^7.0.31, postcss@^7.0.5, postcss@^7.0.6, postcss@^7.0.7:
+postcss@7.0.31, postcss@7.x.x, postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.11, postcss@^7.0.14, postcss@^7.0.16, postcss@^7.0.17, postcss@^7.0.18, postcss@^7.0.2, postcss@^7.0.21, postcss@^7.0.26, postcss@^7.0.27, postcss@^7.0.30, postcss@^7.0.31, postcss@^7.0.5, postcss@^7.0.6, postcss@^7.0.7:
   version "7.0.31"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.31.tgz#332af45cb73e26c0ee2614d7c7fb02dfcc2bd6dd"
   integrity sha512-a937VDHE1ftkjk+8/7nj/mrjtmkn69xxzJgRETXdAUU+IgOYPQNJF17haGWbeDxSyk++HA14UA98FurvPyBJOA==
@@ -13176,6 +13197,15 @@ rbush@2.0.2:
   integrity sha512-XBOuALcTm+O/H8G90b6pzu6nX6v2zCKiFG4BJho8a+bY6AER6t8uQUZdi5bomQc0AprCWhEGa7ncAbbRap0bRA==
   dependencies:
     quickselect "^1.0.1"
+
+rc9@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/rc9/-/rc9-0.0.6.tgz#5943a94dcec5070093134203c8e4909157a4c235"
+  integrity sha512-zJ6/hL0BG2Hs9g/1EHVncgAhDDCO86zntU16fRbUPyAIIEnWPb4ojmoQE8KL4VuO4jMRyLa/DyxOicwr8sdWyw==
+  dependencies:
+    defu "^2.0.4"
+    destr "^0.1.9"
+    flat "^5.0.0"
 
 rc@^1.2.7:
   version "1.2.8"
@@ -14363,11 +14393,12 @@ schema-utils@^1.0.0:
     ajv-keywords "^3.1.0"
 
 schema-utils@^2.0.0, schema-utils@^2.5.0, schema-utils@^2.6.1, schema-utils@^2.6.5, schema-utils@^2.6.6:
-  version "2.6.6"
-  resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-2.6.6.tgz#299fe6bd4a3365dc23d99fd446caff8f1d6c330c"
-  integrity sha512-wHutF/WPSbIi9x6ctjGGk2Hvl0VOz5l3EKEuKbjPlB30mKZUzb9A5k9yEXRX3pwyqVLPvpfZZEllaFq/M718hA==
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-2.7.0.tgz#17151f76d8eae67fbbf77960c33c676ad9f4efc7"
+  integrity sha512-0ilKFI6QQF5nxDZLFn2dMjvc4hjg/Wkg7rHd3jK6/A4a1Hl9VFdQWvgB1UMGoU94pad1P/8N7fMcEnLnSiju8A==
   dependencies:
-    ajv "^6.12.0"
+    "@types/json-schema" "^7.0.4"
+    ajv "^6.12.2"
     ajv-keywords "^3.4.1"
 
 section-matter@^1.0.0:
@@ -14470,7 +14501,7 @@ serialize-javascript@^2.1.2:
   resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-2.1.2.tgz#ecec53b0e0317bdc95ef76ab7074b7384785fa61"
   integrity sha512-rs9OggEUF0V4jUSecXazOYsLfu7OGK2qIn3c7IPBiffz32XniEp/TX9Xmc9LQfK2nQ2QKHvZ2oygKUGU0lG4jQ==
 
-serialize-javascript@^3.0.0:
+serialize-javascript@^3.0.0, serialize-javascript@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-3.1.0.tgz#8bf3a9170712664ef2561b44b691eafe399214ea"
   integrity sha512-JIJT1DGiWmIKhzRsG91aS6Ze4sFUrYbltlkg2onR5OrnNM02Kl/hnY/T4FN2omvyeBbQmMJv+K4cPOpGzOTFBg==
@@ -15649,16 +15680,7 @@ terser-webpack-plugin@^2.3.5:
     terser "^4.6.12"
     webpack-sources "^1.4.3"
 
-terser@4.6.13:
-  version "4.6.13"
-  resolved "https://registry.yarnpkg.com/terser/-/terser-4.6.13.tgz#e879a7364a5e0db52ba4891ecde007422c56a916"
-  integrity sha512-wMvqukYgVpQlymbnNbabVZbtM6PN63AzqexpwJL8tbh/mRT9LE5o+ruVduAGL7D6Fpjl+Q+06U5I9Ul82odAhw==
-  dependencies:
-    commander "^2.20.0"
-    source-map "~0.6.1"
-    source-map-support "~0.5.12"
-
-terser@^4.1.2, terser@^4.3.9, terser@^4.6.12, terser@^4.6.3:
+terser@4.7.0, terser@^4.1.2, terser@^4.3.9, terser@^4.6.12, terser@^4.6.3:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/terser/-/terser-4.7.0.tgz#15852cf1a08e3256a80428e865a2fa893ffba006"
   integrity sha512-Lfb0RiZcjRDXCC3OSHJpEkxJ9Qeqs6mp2v4jf2MHfy8vGERmVDuvjXdd/EnP5Deme5F2yBRBymKmKHCBg2echw==
@@ -15981,9 +16003,9 @@ ts-loader@^7.0.5:
     semver "^6.0.0"
 
 ts-node@^8.10.1:
-  version "8.10.1"
-  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-8.10.1.tgz#77da0366ff8afbe733596361d2df9a60fc9c9bd3"
-  integrity sha512-bdNz1L4ekHiJul6SHtZWs1ujEKERJnHs4HxN7rjTyyVOFf3HaJ6sLqe6aPG62XTzAB/63pKRh5jTSWL0D7bsvw==
+  version "8.10.2"
+  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-8.10.2.tgz#eee03764633b1234ddd37f8db9ec10b75ec7fb8d"
+  integrity sha512-ISJJGgkIpDdBhWVu3jufsWpK3Rzo7bdiIXJjQc0ynKxVOVcg2oIrf2H2cejminGrptVc6q6/uynAHNCuWGbpVA==
   dependencies:
     arg "^4.1.0"
     diff "^4.0.1"
@@ -16700,7 +16722,7 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
 
-vue-i18n@^8.17.3:
+vue-i18n@^8.18.1:
   version "8.18.1"
   resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-8.18.1.tgz#2e683ac93a15617bdcd210f99359d6034e8425dd"
   integrity sha512-K+hFQJksF8Ph23pnhbwSyoQx+4Y1q/rh2o7GiXI/3rLCCrwanUbzudC8+trp0Mb8rn9y83DYF6RXNrMd+VsuCw==
@@ -16746,9 +16768,9 @@ vue-no-ssr@^1.1.1:
   integrity sha512-ZMjqRpWabMPqPc7gIrG0Nw6vRf1+itwf0Itft7LbMXs2g3Zs/NFmevjZGN1x7K3Q95GmIjWbQZTVerxiBxI+0g==
 
 vue-router@^3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.3.1.tgz#7d0545dd8ebf4f45494ca185b7eccb38d67689c1"
-  integrity sha512-2E2Xlks6oDzU559/NcSGD08g3XCDZznx8CK/jHIHkrbAdnCu1ghUcnz5e78SZ35gaOKtHGS01vJG8Yv4iJFTug==
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.3.2.tgz#0099de402edb2fe92f9711053ab5a2156f239cad"
+  integrity sha512-5sEbcfb7MW8mY8lbUVbF4kgcipGXsagkM/X+pb6n0MhjP+RorWIUTPAPSqgPaiPOxVCXgAItBl8Vwz8vq78faA==
 
 vue-scrollto@2.18.1:
   version "2.18.1"
