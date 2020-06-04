@@ -166,8 +166,6 @@ export default Vue.extend({
   async asyncData({ app, params, $sentry, $content }) {
     try {
       const { slug } = params
-      // TODO: check on next @nuxt/content update
-      // @ts-ignore
       const post = await $content('blog', app.i18n.locale, slug).fetch<
         BlogPostContent
       >()
