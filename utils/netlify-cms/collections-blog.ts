@@ -1,14 +1,15 @@
 import React from 'react'
 import createClass from 'create-react-class'
-import { CmsCollection } from 'netlify-cms-core'
+import { CmsCollection, PreviewTemplateComponentProps } from 'netlify-cms-core'
 
 const h = React.createElement
 
-export const blogPostPreview = createClass({
+export const blogPostPreview = createClass<PreviewTemplateComponentProps>({
   render() {
-    const entry = this.props.entry
+    const props: PreviewTemplateComponentProps = this.props
+    const entry = props.entry
     const cover = entry.getIn(['data', 'cover'])
-    const coverImage = this.props.getAsset(cover)
+    const coverImage = props.getAsset(cover)
 
     return h(
       'div',
@@ -35,11 +36,7 @@ export const blogPostPreview = createClass({
           src: coverImage.toString(),
         })
       ),
-      h(
-        'div',
-        { className: 'markdown-body mt-4' },
-        this.props.widgetFor('body')
-      )
+      h('div', { className: 'markdown-body mt-4' }, props.widgetFor('body'))
     )
   },
 })
