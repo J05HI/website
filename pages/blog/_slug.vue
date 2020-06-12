@@ -4,7 +4,7 @@
     itemscope
     itemtype="http://schema.org/BlogPosting"
   >
-    <LazyHydrate v-if="head" ssr-only>
+    <LazyHydrate v-if="head && post" ssr-only>
       <div>
         <meta itemprop="dateCreated" :content="head.created" />
         <meta itemprop="datePublished" :content="head.published" />
@@ -62,7 +62,7 @@
       </div>
     </LazyHydrate>
 
-    <LazyHydrate when-idle>
+    <LazyHydrate v-if="post" when-idle>
       <div>
         <div class="pb-4">
           <h1
