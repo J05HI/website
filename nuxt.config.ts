@@ -133,7 +133,11 @@ const config: NuxtConfiguration = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/vue-svgicon', '~/plugins/global-components'],
+  plugins: [
+    '~/plugins/vue-svgicon',
+    '~/plugins/global-components',
+    '~/plugins/vanilla-lazyload.client',
+  ],
 
   /*
    ** Nuxt.js modules

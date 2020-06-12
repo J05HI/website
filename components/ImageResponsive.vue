@@ -15,15 +15,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import LazyLoad from 'vanilla-lazyload'
-
-interface Data {
-  lazyLoadInstance: typeof LazyLoad | null
-}
-
-interface Methods {
-  updateLazy: () => void
-}
 
 interface Computed {
   srcset: string
@@ -43,7 +34,7 @@ interface Props {
   ampLayout: string
 }
 
-export default Vue.extend<Data, Methods, Computed, Props>({
+export default Vue.extend<{}, {}, Computed, Props>({
   props: {
     source: {
       type: [String, Object],
@@ -81,13 +72,6 @@ export default Vue.extend<Data, Methods, Computed, Props>({
       type: String,
       default: 'intrinsic',
     },
-  },
-  data() {
-    const lazyLoadInstance: typeof LazyLoad | null = null
-
-    return {
-      lazyLoadInstance,
-    }
   },
   computed: {
     srcset() {
@@ -145,28 +129,6 @@ export default Vue.extend<Data, Methods, Computed, Props>({
       }
 
       return properties
-    },
-  },
-
-  mounted() {
-    this.updateLazy()
-  },
-
-  updated() {
-    this.updateLazy()
-  },
-
-  methods: {
-    updateLazy() {
-      setTimeout(() => {
-        if (this.lazyLoadInstance) {
-          this.lazyLoadInstance.update()
-        } else {
-          this.lazyLoadInstance = new LazyLoad({
-            elements_selector: '.responsive-image .lazy',
-          })
-        }
-      }, 1000)
     },
   },
 })
