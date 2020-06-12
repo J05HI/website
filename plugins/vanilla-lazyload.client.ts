@@ -1,6 +1,7 @@
-/* eslint-disable */
 import Vue, { PluginObject } from 'vue'
 import { Plugin } from '@nuxt/types'
+
+require('intersection-observer')
 
 const LazyLoadPlugin: Plugin = () => {
   return import(
@@ -16,7 +17,6 @@ const LazyLoadPlugin: Plugin = () => {
           } else {
             lazyLoadInstance = new LazyLoad({
               elements_selector: '.responsive-image .lazy',
-              use_native: true,
             })
           }
         }
