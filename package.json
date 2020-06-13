@@ -33,7 +33,7 @@
     "netlify-cms-app": "2.12.14",
     "netlify-cms-locales": "1.15.0",
     "netlify-cms-oauth-provider-node": "1.1.0",
-    "nuxt-edge": "2.13.0-26532943.8cf3961e",
+    "nuxt-edge": "2.13.0-26533461.7d0da3ff",
     "nuxt-i18n": "6.12.2",
     "nuxt-vitals": "1.0.7",
     "url-parse": "1.4.7",
@@ -102,7 +102,7 @@
     "tailwindcss-filters": "3.0.0",
     "ts-jest": "26.1.0",
     "unist-util-visit": "2.0.2",
-    "vue-jest": "4.0.0-beta.2"
+    "vue-jest": "4.0.0-beta.3"
   },
   "engines": {
     "node": ">=12"
