@@ -27,7 +27,7 @@ export default Vue.extend<Data, {}, {}, {}>({
     const netlifyCMS = await import(
       /* webpackChunkName: "netlify-cms" */ '~/utils/netlify-cms'
     )
-    netlifyCMS.getCMS(this.$i18n.locale, this.isDev)
+    netlifyCMS.getCMS(this.$config, this.$i18n.locale, this.isDev)
   },
 
   head() {

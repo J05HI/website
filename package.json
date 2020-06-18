@@ -33,7 +33,7 @@
     "netlify-cms-app": "2.12.15",
     "netlify-cms-locales": "1.16.0",
     "netlify-cms-oauth-provider-node": "1.1.0",
-    "nuxt-edge": "2.13.0-26536342.7d0da3ff",
+    "nuxt": "2.13.0",
     "nuxt-i18n": "6.12.2",
     "nuxt-vitals": "1.0.7",
     "url-parse": "1.4.7",
@@ -48,6 +48,7 @@
     "@ampproject/toolbox-optimizer": "2.5.3",
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
+    "@nuxt/types": "2.13.0",
     "@nuxt/typescript-build": "1.0.3",
     "@nuxt/typescript-runtime": "0.4.10",
     "@nuxtjs/color-mode": "1.0.0",
@@ -115,5 +116,9 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "resolutions": {
+    "@nuxt/typescript-build/@nuxt/types": "2.13.0",
+    "@nuxt/typescript-runtime/@nuxt/types": "2.13.0"
   }
 }

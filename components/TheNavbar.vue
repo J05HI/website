@@ -49,7 +49,7 @@
             </NuxtLink>
 
             <a
-              :href="`mailto:${email}`"
+              :href="`mailto:${$config.email}`"
               target="_blank"
               class="ml-10 font-medium text-gray-500 hover:text-gray-900 dark-hover:text-gray-100 dark-focus:text-gray-100 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
             >
@@ -156,7 +156,7 @@
               </div>
               <div>
                 <a
-                  :href="`mailto:${email}`"
+                  :href="`mailto:${$config.email}`"
                   target="_blank"
                   class="block w-full px-5 py-3 text-center font-medium text-gray-600 bg-gray-100 hover:bg-gray-200 hover:text-gray-700 dark:bg-gray-700 dark:text-gray-100 dark-hover:text-gray-100 dark-hover:bg-gray-900 dark-focus:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-700 transition duration-150 ease-in-out"
                 >
@@ -185,7 +185,6 @@ export default Vue.extend({
     return {
       isMenuOpen: this.$isAMP,
       github: social.find((s) => s.name === 'Github'),
-      email: process.env.email,
     }
   },
 

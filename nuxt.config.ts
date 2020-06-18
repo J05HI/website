@@ -59,15 +59,12 @@ const config: NuxtConfiguration = {
     ],
   },
 
-  /*
-   ** Env Variables
-   */
-  env: {
+  publicRuntimeConfig: {
     mainColor,
-    secondColor,
     baseHost: baseURL,
     email: 'julio@marquez.co',
   },
+
   /*
    ** Headers of the page
    */

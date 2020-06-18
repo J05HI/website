@@ -27,7 +27,7 @@
         </div>
         <div class="px-5 py-2">
           <a
-            :href="`mailto:${email}`"
+            :href="`mailto:${$config.email}`"
             class="text-base leading-6 text-gray-500 hover:text-gray-900 dark-hover:text-gray-100"
             >Email</a
           >
@@ -101,7 +101,6 @@ export default Vue.extend({
     return {
       social,
       routeName: this.$route?.name || '',
-      email: process.env.email,
       github: social.find((s) => s.name === 'Github'),
     }
   },

@@ -13,7 +13,7 @@ export default {
     const fullPath = this.$isAMP
       ? this.$route.fullPath.replace(/^\/amp(\/.*)?/, '$1')
       : this.$route.fullPath
-    const currentAbsoluteUrl = `${process.env.baseHost}${fullPath}`
+    const currentAbsoluteUrl = `${this.$config.baseHost}${fullPath}`
 
     const ogImage = [
       {

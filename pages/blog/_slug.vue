@@ -163,7 +163,7 @@ interface Data {
 
 export default Vue.extend({
   mixins: [SeoHead, FormatDate],
-  async asyncData({ app, params, $sentry, $content }) {
+  async asyncData({ app, params, $sentry, $content, $config }) {
     try {
       const { slug } = params
       const post = await $content('blog', app.i18n.locale, slug).fetch<
@@ -182,7 +182,7 @@ export default Vue.extend({
       } = post
 
       const postUrl = app.localePath({ name: 'blog-slug', params: { slug } })
-      const postAbsoluteUrl = `${process.env.baseHost}${postUrl}`
+      const postAbsoluteUrl = `${$config.baseHost}${postUrl}`
 
       const image = require(`~/assets/images/content/${post.cover}`)
 
@@ -207,7 +207,7 @@ export default Vue.extend({
                     '@type': 'ListItem',
                     position: 1,
                     item: {
-                      '@id': process.env.baseHost,
+                      '@id': $config.baseHost,
                       name: 'Home',
                     },
                   },
@@ -215,7 +215,7 @@ export default Vue.extend({
                     '@type': 'ListItem',
                     position: 2,
                     item: {
-                      '@id': `${process.env.baseHost}/blog`,
+                      '@id': `${$config.baseHost}/blog`,
                       name: 'Blog',
                     },
                   },

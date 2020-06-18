@@ -29,3 +29,9 @@ export interface BlogPostContent extends BlogPostIndex {
 export interface BlogPostParsed extends BlogPostContent {
   text: string
 }
+
+export interface NuxtRuntimeConfig {
+  mainColor: string
+  baseHost: string
+  email: string
+}

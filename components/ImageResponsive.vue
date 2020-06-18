@@ -66,7 +66,7 @@ export default Vue.extend<{}, {}, Computed, Props>({
     },
     placeholderColor: {
       type: String,
-      default: `${process.env.mainColor}`,
+      default: null,
     },
     ampLayout: {
       type: String,
@@ -85,17 +85,19 @@ export default Vue.extend<{}, {}, Computed, Props>({
     placeholder() {
       const width = Number(this.width) * 2
       const height = Number(this.height) * 2
+      const placeholderColor = this.placeholderColor || this.$config.mainColor
 
       const image =
         `<svg width="${width}" height="${height}" ` +
         'xmlns="http://www.w3.org/2000/svg" ' +
         `viewBox="0 0 ${width} ${height}" preserveAspectRatio="none">` +
-        `<rect width="100%" height="100%" style="fill:${this.placeholderColor.toLowerCase()};"></rect>` +
+        `<rect width="100%" height="100%" style="fill:${placeholderColor.toLowerCase()};"></rect>` +
         '</svg>'
 
       return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(image)}`
     },
     imageProperties() {
+      const placeholderColor = this.placeholderColor || this.$config.mainColor
       let properties: { [key: string]: any } = {
         width: `${this.width}`,
         height: `${this.height}`,
@@ -115,10 +117,10 @@ export default Vue.extend<{}, {}, Computed, Props>({
         properties = {
           ...properties,
           // @ts-ignore
-          src: this.placeholder,
+          src: placeholderColor,
           'data-src': this.source,
           // @ts-ignore
-          'data-loading': this.placeholder,
+          'data-loading': placeholderColor,
           // @ts-ignore
           'data-srcset': this.srcset,
           class: {

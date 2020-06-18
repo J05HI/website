@@ -29,7 +29,7 @@ export default {
               familyName: 'Marquez',
               givenName: 'Julio',
               url: 'https://marquez.co' + this.localePath('index'),
-              email: `${process.env.email}`,
+              email: this.$config.email,
               gender: 'http://schema.org/Male',
               logo: 'https://marquez.co' + require('~/assets/images/logo.png'),
               memberOf: [

@@ -3,6 +3,7 @@ import CMS from 'netlify-cms-app'
 import { InitOptions } from 'netlify-cms-core'
 // @ts-ignore
 import { es } from 'netlify-cms-locales'
+import { NuxtRuntimeConfig } from '@nuxt/types/config/runtime'
 
 import {
   blogPostsCollectionEn,
@@ -14,7 +15,11 @@ import {
   blogMathEquationEditorComponent,
 } from './editor-components'
 
-export function getCMS(locale: string, isDev: boolean) {
+export function getCMS(
+  $config: NuxtRuntimeConfig,
+  locale: string,
+  isDev: boolean
+) {
   if (locale === 'es') {
     CMS.registerLocale('es', es)
   }
@@ -90,9 +95,9 @@ export function getCMS(locale: string, isDev: boolean) {
       name: 'github',
       repo: 'juliomrqz/website',
       branch: 'master',
-      base_url: process.env.baseHost,
+      base_url: $config.baseHost,
       auth_endpoint: '/api/cms/auth',
-      site_domain: process.env.baseHost,
+      site_domain: $config.baseHost,
       // @ts-ignore
       squash_merges: true,
       commit_messages: {
