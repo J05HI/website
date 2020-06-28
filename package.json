@@ -89,7 +89,7 @@
     "jest": "26.1.0",
     "lint-staged": "10.2.11",
     "netlify-cms-proxy-server": "1.2.9",
-    "postcss-combine-duplicated-selectors": "8.1.0",
+    "postcss-combine-duplicated-selectors": "9.0.0",
     "postcss-nested": "4.2.1",
     "prettier": "2.0.5",
     "reading-time": "1.2.0",
