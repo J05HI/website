@@ -30,6 +30,10 @@ export const ampify = async (debug: boolean, html: string) => {
     $(this).removeAttr('ariahidden')
   })
 
+  $('a[tab-index]').each(function (this: any) {
+    $(this).removeAttr('tab-index')
+  })
+
   /* improve style definitions */
   let styleConcat = ''
 
