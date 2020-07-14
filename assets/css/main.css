@@ -23,80 +23,25 @@
   }
 }
 
-#marquez {
-  .markdown-body {
-    ol {
-      counter-reset: item;
+.prose {
+  /* taken from https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/ */
+  a {
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
 
-      > li {
-        &:before {
-          @apply bg-gray-900 text-gray-100 w-6 h-6 rounded-full absolute top-0 left-0 flex text-sm font-semibold items-center justify-center;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
 
-          margin-top: 1.5px;
-          content: counter(item);
-          counter-increment: item;
-        }
-      }
-    }
+    /* Instead use this non-standard one: */
+    word-break: break-word;
 
-    ul {
-      > li {
-        &:before {
-          @apply bg-gray-900;
-
-          position: absolute;
-          top: 0;
-          left: 0;
-          margin-top: 10px;
-          height: 0.5rem;
-          width: 0.5rem;
-          border-radius: 9999px;
-          content: '';
-        }
-      }
-    }
-
-    /* taken from https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/ */
-    a {
-      /* These are technically the same, but use both */
-      overflow-wrap: break-word;
-      word-wrap: break-word;
-      -ms-word-break: break-all;
-
-      /* This is the dangerous one in WebKit, as it breaks things wherever */
-      word-break: break-all;
-
-      /* Instead use this non-standard one: */
-      word-break: break-word;
-
-      /* Adds a hyphen where the word breaks, if supported (No Blink) */
-      -ms-hyphens: auto;
-      -moz-hyphens: auto;
-      -webkit-hyphens: auto;
-      hyphens: auto;
-    }
-  }
-}
-
-.dark-mode {
-  #marquez {
-    .markdown-body {
-      ol {
-        > li {
-          &:before {
-            @apply bg-gray-100 text-gray-900;
-          }
-        }
-      }
-
-      ul {
-        > li {
-          &:before {
-            @apply bg-gray-100;
-          }
-        }
-      }
-    }
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
   }
 }
 /* purgecss end ignore */

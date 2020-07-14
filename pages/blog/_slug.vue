@@ -117,11 +117,15 @@
           />
         </div>
 
-        <NuxtContent
-          :document="post"
-          itemprop="articleBody"
-          class="markdown-body text-lg"
-        />
+        <!-- TODO: it seems that dark mode doesn't work on dark mode -->
+        <div
+          :class="{
+            'prose-dark': $colorMode.preference === 'dark',
+          }"
+          class="max-w-none prose prose lg:prose-lg xl:prose-xl"
+        >
+          <NuxtContent :document="post" itemprop="articleBody" />
+        </div>
 
         <aside
           v-if="post.canonical"

@@ -3,7 +3,7 @@
     :class="{
       'rounded-full': rounded,
     }"
-    class="overflow-hidden leading-none inline-block responsive-image"
+    class="overflow-hidden leading-none responsive-image"
   >
     <Component
       :is="$isAMP ? 'amp-img' : 'img'"

@@ -24,6 +24,124 @@ module.exports = {
         400: colors.blue['400'],
       },
     },
+    typography: {
+      default: {
+        css: {
+          color: colors['cool-gray']['900'],
+          a: {
+            color: colors.blue['600'],
+            textDecoration: 'underline',
+            '&:hover': {
+              color: colors.blue['500'],
+            },
+          },
+          img: {
+            maxWidth: '100%',
+            height: 'auto',
+          },
+          'div img': {
+            marginLeft: 'auto',
+            marginRight: 'auto',
+          },
+          'p > code': {
+            backgroundColor: colors.gray['100'],
+            borderRadius: defaultTheme.borderRadius.lg,
+            paddingLeft: defaultTheme.spacing['1'],
+            paddingRight: defaultTheme.spacing['1'],
+            '&:before': {
+              content: 'none',
+            },
+            '&:after': {
+              content: 'none',
+            },
+          },
+          'p > strong code': {
+            backgroundColor: colors.gray['100'],
+            borderRadius: defaultTheme.borderRadius.lg,
+            paddingLeft: defaultTheme.spacing['1'],
+            paddingRight: defaultTheme.spacing['1'],
+            '&:before': {
+              content: 'none',
+            },
+            '&:after': {
+              content: 'none',
+            },
+          },
+          '.nuxt-content-highlight pre': {
+            borderRadius: defaultTheme.borderRadius.lg,
+            fontFamily: defaultTheme.fontFamily.mono,
+            fontSize: defaultTheme.fontSize.lg,
+          },
+          '.nuxt-content-highlight pre code': {
+            fontSize: defaultTheme.fontSize.lg,
+          },
+          '.math-inline': {
+            borderRadius: defaultTheme.borderRadius.lg,
+            padding: defaultTheme.spacing['1'],
+            backgroundColor: colors.gray['100'],
+            display: 'inline-block',
+          },
+        },
+      },
+      lg: {
+        css: {
+          '.nuxt-content-highlight pre': {
+            fontSize: defaultTheme.fontSize.xl,
+          },
+          '.nuxt-content-highlight pre code': {
+            fontSize: defaultTheme.fontSize.xl,
+          },
+        },
+      },
+      xl: {
+        css: {
+          '.nuxt-content-highlight pre': {
+            fontSize: defaultTheme.fontSize['2xl'],
+          },
+          '.nuxt-content-highlight pre code': {
+            fontSize: defaultTheme.fontSize['2xl'],
+          },
+        },
+      },
+      dark: {
+        css: {
+          color: colors['cool-gray']['300'],
+          backgroundColor: 'transparent',
+          code: {
+            color: colors['cool-gray']['300'],
+          },
+          p: {
+            color: colors['cool-gray']['300'],
+          },
+          'p > code': {
+            color: colors['cool-gray']['800'],
+            backgroundColor: colors.gray['300'],
+          },
+          'p > strong code': {
+            color: colors['cool-gray']['800'],
+            backgroundColor: colors.gray['300'],
+          },
+          '.math-inline': {
+            backgroundColor: colors.gray['800'],
+          },
+          h1: {
+            color: colors['cool-gray']['300'],
+          },
+          h2: {
+            color: colors['cool-gray']['300'],
+          },
+          h3: {
+            color: colors['cool-gray']['300'],
+          },
+          h4: {
+            color: colors['cool-gray']['300'],
+          },
+          strong: {
+            color: colors['cool-gray']['300'],
+          },
+        },
+      },
+    },
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
@@ -31,6 +149,8 @@ module.exports = {
     },
   },
   variants: {
+    typography: ['responsive', 'dark'],
+    maxWidth: ['responsive'],
     filter: ['responsive'],
     backgroundColor: [
       'responsive',
@@ -66,6 +186,9 @@ module.exports = {
     require('@tailwindcss/ui'),
     require('tailwindcss-filters'),
     require('tailwindcss-dark-mode')(),
+    require('@tailwindcss/typography')({
+      modifiers: ['lg', 'xl'],
+    }),
   ],
   purge: {
     enabled: true,
@@ -92,7 +215,6 @@ module.exports = {
         /code/,
         /pre/,
         /table$/,
-        /markdown-body/,
         /* prism */
         /limit/,
         /token/,
@@ -106,7 +228,6 @@ module.exports = {
         /code/,
         /pre/,
         /table$/,
-        /markdown-body/,
         /* prism */
         /limit/,
         /token/,
