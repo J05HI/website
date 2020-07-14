@@ -29,6 +29,7 @@
       "@types/node",
       "@nuxt/types",
       "@nuxt/content",
+      "@nuxt/components",
       "@nuxtjs/sentry",
       "nuxt-i18n"
     ]

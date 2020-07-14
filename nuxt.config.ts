@@ -28,9 +28,6 @@ const environment = isProd
 
 // TODO: remove when types get updated
 interface NuxtConfiguration extends Partial<NuxtOptions> {
-  components?: any
-  export: NuxtOptions['generate']
-
   hooks: NuxtOptions['hooks'] & {
     'content:file:beforeInsert'?(document: BlogPostParsed): void
   }
