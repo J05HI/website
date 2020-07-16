@@ -7,6 +7,24 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('@tailwindcss/ui/colors')
 
+const inlineCodeStyles = {
+  backgroundColor: colors.gray['100'],
+  borderRadius: defaultTheme.borderRadius.lg,
+  paddingLeft: defaultTheme.spacing['1'],
+  paddingRight: defaultTheme.spacing['1'],
+  '&:before': {
+    content: 'none',
+  },
+  '&:after': {
+    content: 'none',
+  },
+}
+
+const inlineCodeDarkStyles = {
+  color: colors['cool-gray']['800'],
+  backgroundColor: colors.gray['300'],
+}
+
 module.exports = {
   theme: {
     darkSelector: '.dark-mode',
@@ -43,30 +61,10 @@ module.exports = {
             marginLeft: 'auto',
             marginRight: 'auto',
           },
-          'p > code': {
-            backgroundColor: colors.gray['100'],
-            borderRadius: defaultTheme.borderRadius.lg,
-            paddingLeft: defaultTheme.spacing['1'],
-            paddingRight: defaultTheme.spacing['1'],
-            '&:before': {
-              content: 'none',
-            },
-            '&:after': {
-              content: 'none',
-            },
-          },
-          'p > strong code': {
-            backgroundColor: colors.gray['100'],
-            borderRadius: defaultTheme.borderRadius.lg,
-            paddingLeft: defaultTheme.spacing['1'],
-            paddingRight: defaultTheme.spacing['1'],
-            '&:before': {
-              content: 'none',
-            },
-            '&:after': {
-              content: 'none',
-            },
-          },
+          'p > code': inlineCodeStyles,
+          'p > strong code': inlineCodeStyles,
+          'ul > li > code': inlineCodeStyles,
+          'p a > code': inlineCodeStyles,
           '.nuxt-content-highlight pre': {
             borderRadius: defaultTheme.borderRadius.lg,
             fontFamily: defaultTheme.fontFamily.mono,
@@ -113,14 +111,10 @@ module.exports = {
           p: {
             color: colors['cool-gray']['300'],
           },
-          'p > code': {
-            color: colors['cool-gray']['800'],
-            backgroundColor: colors.gray['300'],
-          },
-          'p > strong code': {
-            color: colors['cool-gray']['800'],
-            backgroundColor: colors.gray['300'],
-          },
+          'p > code': inlineCodeDarkStyles,
+          'p > strong code': inlineCodeDarkStyles,
+          'ul > li > code': inlineCodeDarkStyles,
+          'p a > code': inlineCodeDarkStyles,
           '.math-inline': {
             backgroundColor: colors.gray['800'],
           },

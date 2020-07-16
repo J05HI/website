@@ -11,7 +11,11 @@
 </template>
 
 <script>
+import DarkModeFromAMPMixin from '@/components/mixins/DarkModeFromAMP'
+
 export default {
+  mixins: [DarkModeFromAMPMixin],
+
   head() {
     return {
       __dangerouslyDisableSanitizers: ['script'],

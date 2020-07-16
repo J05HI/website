@@ -9,7 +9,11 @@
             class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0"
           >
             <div class="flex items-center justify-between w-full md:w-auto">
-              <NuxtLink :to="localePath('index')" class="navbar-brand">
+              <NuxtLink
+                :to="localePath('index')"
+                aria-label="Julio Marquez Logo"
+                class="navbar-brand"
+              >
                 <Component
                   :is="$isAMP ? 'amp-img' : 'img'"
                   :layout="$isAMP ? 'fixed' : undefined"
@@ -174,8 +178,10 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import '~/components/icons/menu'
 import social from '~/helpers/social'
+
+import '~/components/icons/cross'
+import '~/components/icons/menu'
 
 const sidebarBaseClass =
   'absolute top-0 inset-x-0 p-2 origin-top-right z-10 md:hidden'
@@ -217,16 +223,6 @@ export default Vue.extend({
     $route() {
       this.isMenuOpen = false
     },
-  },
-
-  mounted() {
-    if ('amp-dark-mode' in this.$route.query) {
-      this.$colorMode.preference = 'dark'
-
-      this.$nextTick(() => {
-        this.$router.replace(this.$route.fullPath.replace('amp-dark-mode', ''))
-      })
-    }
   },
 })
 </script>

@@ -47,6 +47,11 @@ const config: NuxtConfiguration = {
         prefix: 'blog',
         pattern: '*.vue',
       },
+      {
+        path: '~/components/docs/',
+        prefix: 'docs',
+        pattern: '*.vue',
+      },
     ],
   },
 
