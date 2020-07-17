@@ -8,7 +8,7 @@ import { $content } from '@nuxt/content'
 
 import pkg from './package.json'
 import { ampify } from './utils/ampify'
-import { BlogPostParsed } from './interfaces'
+import { NuxtContentBase } from './interfaces'
 
 const isProd = process.env.NODE_ENV === 'production'
 const gaTrackingID = process.env.GA_TRACKING_ID || 'UA-XXXXXXXXX-Y'
@@ -29,7 +29,7 @@ const environment = isProd
 // TODO: remove when types get updated
 interface NuxtConfiguration extends Partial<NuxtOptions> {
   hooks: NuxtOptions['hooks'] & {
-    'content:file:beforeInsert'?(document: BlogPostParsed): void
+    'content:file:beforeInsert'?(document: NuxtContentBase): void
   }
 }
 
@@ -304,7 +304,7 @@ const config: NuxtConfiguration = {
    */
   googleAnalytics: {
     id: gaTrackingID,
-    debug: isProd ? {} : { enabled: true, sendHitTask: true },
+    // debug: isProd ? {} : { enabled: true, sendHitTask: true },
   },
 
   /*

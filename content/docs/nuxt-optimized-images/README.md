@@ -29,24 +29,37 @@ Image sizes can often get reduced up to 60%, but this is not the only thing `@ac
 
 ## Installation
 
-```bash 
-npm install --save-dev @aceforth/nuxt-optimized-images
-```
+<docs-code-group>
+  <docs-code-block label="Yarn" active>
 
-or
+  ```bash
+  yarn add --dev @aceforth/nuxt-optimized-images
+  ```
 
-```bash 
-yarn add --dev @aceforth/nuxt-optimized-images
-```
+  </docs-code-block>
+  <docs-code-block label="NPM">
 
-::: warning
+  ```bash
+  npm install --save-dev @aceforth/nuxt-optimized-images
+  ```
+
+  </docs-code-block>
+</docs-code-group>
+
+<docs-alert>
+
 Node >= 10 and Nuxt.js >= 2 are required.
-:::
+
+</docs-alert>
 
 
 Add `@aceforth/nuxt-optimized-images` to `buildModules` section of nuxt.config.js:
 
-:warning: If you are using Nuxt `< 2.9.0`, use `modules` instead. 
+<docs-alert>
+
+If you are using Nuxt `< 2.9.0`, use `modules` instead. 
+
+</docs-alert>
 
 ```js
 {
@@ -63,12 +76,14 @@ Add `@aceforth/nuxt-optimized-images` to `buildModules` section of nuxt.config.j
 See the [configuration](./configuration/README.md) section for all available options.
 
 
-::: tip
+<docs-alert variant="info">
+
 Images won't get optimized out of the box. You have to install the optimization packages you really need in addition to this module.
 
 This doesn't force you to download big optimization libraries you don't even use.
 Please check out the table of all [optional optimization packages](#optimization-packages).
-:::
+
+</docs-alert>
 
 ## Optimization Packages
 
@@ -101,6 +116,7 @@ yarn add --dev imagemin-mozjpeg imagemin-pngquant imagemin-svgo
 ```
 
 To install **all** optional packages, run:
+
 ```bash
 npm install --save-dev imagemin-mozjpeg imagemin-pngquant imagemin-gifsicle imagemin-svgo  webp-loader lqip-loader responsive-loader sqip-loader sharp
 
@@ -109,13 +125,17 @@ npm install --save-dev imagemin-mozjpeg imagemin-pngquant imagemin-gifsicle imag
 yarn add --dev imagemin-mozjpeg imagemin-pngquant imagemin-gifsicle imagemin-svgo  webp-loader lqip-loader responsive-loader sqip-loader sharp
 ```
 
-::: warning
-Please note that by default, images are only optimized for **production builds, not development builds**. However, this can get changed with the [`optimizeImagesInDev` config](./configuration/README.md#optimizeimagesindev).
-:::
+<docs-alert>
 
-::: tip
+Please note that by default, images are only optimized for **production builds, not development builds**. However, this can get changed with the [`optimizeImagesInDev` config](./configuration/README.md#optimizeimagesindev).
+
+</docs-alert>
+
+<docs-alert variant="info">
+
 Depending on your build/deployment setup, it is also possible to install these as devDependencies. Just make sure that the packages are available when you build your project.
-:::
+
+</docs-alert>
 
 
 

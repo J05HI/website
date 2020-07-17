@@ -6,7 +6,7 @@
       rel="noopener"
       class="text-gray-600 dark:text-gray-400 text-sm font-medium hover:underline flex items-center"
     >
-      {{ $t('article.github') }}
+      {{ $t('docs.labels.github') }}
       <SvgIcon
         name="external-link"
         :fill="false"

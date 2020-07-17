@@ -20,7 +20,7 @@
           <ProjectCard
             v-for="project in projects"
             :key="project.id"
-            :attributes="project"
+            :project="project"
           />
         </div>
       </div>
@@ -28,22 +28,23 @@
   </LazyHydrate>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
 import SeoHead from '~/components/mixins/SeoHead'
-import Projects from '~/helpers/projects'
+import { projects } from '~/data/projects'
 
-export default {
+export default Vue.extend({
   mixins: [SeoHead],
   data() {
     const $t = this.$t.bind(this)
 
     return {
-      projects: Projects,
+      projects,
       head: {
         title: $t('projects.title'),
         description: $t('projects.description'),
       },
     }
   },
-}
+})
 </script>

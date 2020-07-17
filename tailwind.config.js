@@ -32,16 +32,6 @@ module.exports = {
       none: 'none',
       blur: 'blur(8px)',
     },
-    colors: {
-      transparent: 'transparent',
-      black: '#000',
-      white: '#fff',
-      gray: colors['cool-gray'],
-      blue: {
-        600: colors.blue['600'],
-        400: colors.blue['400'],
-      },
-    },
     typography: {
       default: {
         css: {
@@ -63,8 +53,9 @@ module.exports = {
           },
           'p > code': inlineCodeStyles,
           'p > strong code': inlineCodeStyles,
-          'ul > li > code': inlineCodeStyles,
-          'p a > code': inlineCodeStyles,
+          'li > code': inlineCodeStyles,
+          'a > code': inlineCodeStyles,
+          'td > code': inlineCodeStyles,
           '.nuxt-content-highlight pre': {
             borderRadius: defaultTheme.borderRadius.lg,
             fontFamily: defaultTheme.fontFamily.mono,
@@ -113,8 +104,9 @@ module.exports = {
           },
           'p > code': inlineCodeDarkStyles,
           'p > strong code': inlineCodeDarkStyles,
-          'ul > li > code': inlineCodeDarkStyles,
-          'p a > code': inlineCodeDarkStyles,
+          'li > code': inlineCodeDarkStyles,
+          'a > code': inlineCodeDarkStyles,
+          'td > code': inlineCodeDarkStyles,
           '.math-inline': {
             backgroundColor: colors.gray['800'],
           },
@@ -139,11 +131,17 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        colors: {
+          black: '#000',
+          white: '#fff',
+          gray: colors['cool-gray'],
+        },
       },
     },
   },
   variants: {
     typography: ['responsive', 'dark'],
+    display: ['responsive'],
     maxWidth: ['responsive'],
     filter: ['responsive'],
     backgroundColor: [
@@ -185,7 +183,7 @@ module.exports = {
     }),
   ],
   purge: {
-    enabled: true,
+    enabled: process.env.NODE_ENV === 'production',
     content: [
       'components/**/*.vue',
       'layouts/**/*.vue',

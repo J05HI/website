@@ -29,24 +29,38 @@ El tamaño de las imágenes puede reducirse hasta un 60%, pero esto no es lo ún
 
 ## Instalación
 
-```bash 
-npm install --save-dev @aceforth/nuxt-optimized-images
-```
+<docs-code-group>
+  <docs-code-block label="Yarn" active>
 
-o
+  ```bash
+  yarn add --dev @aceforth/nuxt-optimized-images
+  ```
 
-```bash 
-yarn add --dev @aceforth/nuxt-optimized-images
-```
+  </docs-code-block>
+  <docs-code-block label="NPM">
 
-::: warning Advertencia
+  ```bash
+  npm install --save-dev @aceforth/nuxt-optimized-images
+  ```
+
+  </docs-code-block>
+</docs-code-group>
+
+
+<docs-alert>
+
 Node >= 10 y Nuxt.js >= 2 son necesarios.
-:::
+
+</docs-alert>
 
 
 Añade `@aceforth/nuxt-optimized-images` a la sección `buildModules` de nuxt.config.js:
 
-:warning: Si estás usando Nuxt `< 2.9.0`, usa `modules` en su lugar. 
+<docs-alert>
+
+Si estás usando Nuxt `< 2.9.0`, usa `modules` en su lugar. 
+
+</docs-alert>
 
 ```js
 {
@@ -63,11 +77,13 @@ Añade `@aceforth/nuxt-optimized-images` a la sección `buildModules` de nuxt.co
 Ve la sección de [configuración](./configuration/README.md) para todas las opciones disponibles.
 
 
-::: tip
+<docs-alert variant="info">
+
 Las imágenes no se optimizan por defecto. Tienes que instalar los paquetes de optimización además de este módulo.
 
 Esto no te obliga a descargar grandes librerías de optimización que ni siquiera utilizas. Por favor, consulta la tabla de todos los [paquetes de optimización opcionales](#paquetes-de-optimizacion).
-:::
+
+</docs-alert>
 
 ## Paquetes de Optimización
 
@@ -109,13 +125,17 @@ npm install --save-dev imagemin-mozjpeg imagemin-pngquant imagemin-gifsicle imag
 yarn add --dev imagemin-mozjpeg imagemin-pngquant imagemin-gifsicle imagemin-svgo  webp-loader lqip-loader responsive-loader sqip-loader sharp
 ```
 
-::: warning Advertencia
-Ten en cuenta que, por defecto, las imágenes sólo se optimizan para **compilaciones de producción, no para compilaciones de desarrollo**. Sin embargo, esto puede cambiar con la [configuración de `optimizeImagesInDev`](./configuration/README.md#optimizeimagesindev).
-:::
+<docs-alert>
 
-::: tip
+Ten en cuenta que, por defecto, las imágenes sólo se optimizan para **compilaciones de producción, no para compilaciones de desarrollo**. Sin embargo, esto puede cambiar con la [configuración de `optimizeImagesInDev`](./configuration/README.md#optimizeimagesindev).
+
+</docs-alert>
+
+<docs-alert variant="info">
+
 Dependiendo de tu configuración de compilación/despliegue, también es posible instalarlos como devDependencies. Sólo asegúrate de que los paquetes estén disponibles cuando construyas tu proyecto.
-:::
+
+</docs-alert>
 
 
 [imagemin-mozjpeg]: https://www.npmjs.com/package/imagemin-mozjpeg

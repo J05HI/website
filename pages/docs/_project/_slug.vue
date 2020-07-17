@@ -28,12 +28,13 @@ import Vue from 'vue'
 import Clipboard from 'clipboard'
 
 import SeoHead from '~/components/mixins/SeoHead'
+import { DocArticleContent } from '~/interfaces'
 
 // TODO: improve this
 type Doc = { [key: string]: string | boolean | number }
 
 interface Data {
-  doc: Doc
+  doc: DocArticleContent
 }
 
 export default Vue.extend<Data, {}, {}>({
@@ -94,12 +95,12 @@ export default Vue.extend<Data, {}, {}>({
       },
     })
 
-    copyCode.on('success', function (event) {
+    copyCode.on('success', (event) => {
       event.clearSelection()
 
       event.trigger.textContent = 'Copied!'
 
-      window.setTimeout(function () {
+      window.setTimeout(() => {
         event.trigger.textContent = 'Copy'
       }, 2000)
     })

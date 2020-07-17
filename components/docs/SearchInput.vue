@@ -19,7 +19,7 @@
           v-model="q"
           class="block w-full pl-10 pr-3 py-2 truncate leading-5 placeholder-gray-500 border border-transparent text-gray-700 dark:text-white dark-focus:text-white focus:border-gray-300 dark-focus:border-gray-700 rounded-md focus:outline-none focus:bg-white dark-focus:bg-gray-900 bg-gray-200 dark:bg-gray-800"
           :class="{ 'rounded-b-none': focus && results.length }"
-          :placeholder="$t('search.placeholder')"
+          :placeholder="$t('docs.labels.searchPlaceholder')"
           type="search"
           autocomplete="off"
           @focus="onFocus"
@@ -72,11 +72,16 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
+import { RawLocation } from 'vue-router'
+
+import { DocArticleContent } from '~/interfaces'
+
 import '~/components/icons/search'
 import '~/components/icons/chevron-right'
 
-export default {
+export default Vue.extend({
   data() {
     return {
       q: '',
@@ -84,7 +89,7 @@ export default {
       focusIndex: -1,
       open: false,
       searching: false,
-      results: [],
+      results: [] as DocArticleContent[],
     }
   },
   watch: {
@@ -94,11 +99,13 @@ export default {
       if (!q) {
         this.searching = false
         this.results = []
+
         return
       }
 
       const { project } = this.$route.params
       const contentArgs = ['docs', project]
+
       if (this.$i18n.locale !== 'en') {
         contentArgs.push(this.$i18n.locale)
       }
@@ -128,9 +135,9 @@ export default {
       this.focus = false
       this.$emit('focus', false)
     },
-    keyup(e) {
+    keyup(e: KeyboardEvent) {
       if (e.key === '/') {
-        this.$refs.search.focus()
+        ;(this.$refs.search as HTMLElement).focus()
       }
     },
     increment() {
@@ -152,19 +159,21 @@ export default {
       const result =
         this.focusIndex === -1 ? this.results[0] : this.results[this.focusIndex]
 
-      const to = {
+      const to: RawLocation = {
         name: 'docs-project-slug',
         params: {
+          // @ts-ignore
           slug: result.slug !== 'index' ? result.slug : undefined,
           project,
         },
       }
 
-      this.$router.push(this.localePath(to))
       // Unfocus the input and reset the query.
-      this.$refs.search.blur()
+      this.$router.push(this.localePath(to))
+      ;(this.$refs.search as HTMLElement).blur()
+
       this.q = ''
     },
   },
-}
+})
 </script>

@@ -1,6 +1,9 @@
-export default [
+import { Project, DocsProject } from '~/interfaces'
+
+export const projects: Project[] = [
   {
     id: 'statusfy',
+    version: '0.5.0',
     title: {
       en: 'Statusfy: A marvelous Open Source Status Page system',
       es:
@@ -17,6 +20,7 @@ export default [
   },
   {
     id: 'nuxt-optimized-images',
+    version: '1.0.1',
     title: {
       en: 'Nuxt Optimized Images',
       es: 'Nuxt Optimized Images',
@@ -49,6 +53,7 @@ export default [
   },
   {
     id: 'vue-warehouse',
+    version: '2.1.0',
     title: {
       en: 'Vue.js Warehouse',
       es: 'Vue.js Warehouse',
@@ -112,5 +117,58 @@ export default [
     },
     url: 'http://www.geochemicalengineering.com/Equilibria.html',
     category: 'closed-source',
+  },
+]
+
+export const docsProjects: DocsProject[] = [
+  ...projects.filter((p) => p.category === 'open-source'),
+  {
+    id: 'nuxt-netlify',
+    version: '1.0.0',
+    title: {
+      en: 'Nuxt Netlify',
+      es: 'Nuxt Netlify',
+    },
+    description: {
+      en:
+        'Dynamically generate "_headers" and "_redirects" files for Netlify in your Nuxt.js projects.',
+      es:
+        'Genera dinámicamente archivos "_headers" y "_redirects" para Netlify en tus proyectos de Nuxt.js.',
+    },
+    url: 'https://github.com/juliomrqz/nuxt-netlify',
+    category: 'open-source',
+  },
+  {
+    id: 'nativescript-vibrate',
+    version: '3.0.0',
+    title: {
+      en: 'NativeScript Vibrate',
+      es: 'NativeScript Vibrate',
+    },
+    description: {
+      en: 'A vibrate NativeScript plugin for Android and iOS.',
+      es:
+        'Un plugin para NativeScript que facilita la vibración de dispositivos Android e iOS.',
+    },
+    url: 'https://github.com/juliomrqz/nativescript-vibrate',
+    category: 'open-source',
+  },
+  {
+    id: 'social',
+    version: '2.1.3',
+    title: {
+      en: 'Social Template',
+      es: 'Social Template',
+    },
+
+    description: {
+      en:
+        'A responsive admin & frontend template compatible with Bootstrap and the latest versions of jQuery. This template comes with easy to use components and a huge collection of plugins.',
+      es:
+        'Un Template de administración y para el frontend compatible compatible con Bootstrap y las últimas versiones de jQuery. Este Template viene con componentes fáciles de usar y una gran colección de complementos.',
+    },
+    category: 'closed-source',
+    url:
+      'https://themeforest.net/item/social-premium-responsive-admin-template/4611337?ref=julio-marquez',
   },
 ]

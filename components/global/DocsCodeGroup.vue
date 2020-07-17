@@ -1,20 +1,22 @@
 <template>
   <div class="code-group">
     <div
-      class="rounded-t border-b-2 border-gray-700 px-2 bg-gray-800 text-sm text-white relative"
+      class="rounded-t border-b-2 border-gray-700 px-2 bg-gray-900 text-sm text-white relative"
     >
       <button
         v-for="({ label }, i) in tabs"
         ref="tabs"
         :key="label"
-        class="px-4 py-3 text-gray-400 font-bold font-mono"
+        class="px-4 py-3 text-gray-400 font-bold font-mono dark:text-gray-700"
         :class="[activeTabIndex === i && 'active']"
         @click="updateTabs(i)"
       >
         {{ label }}
       </button>
+
       <span ref="highlight-underline" class="highlight-underline" />
     </div>
+
     <slot />
   </div>
 </template>
@@ -88,15 +90,17 @@ export default {
 button {
   outline: none;
 }
+
 .highlight-underline {
-  @apply bg-green-600 absolute;
+  @apply bg-gray-500 absolute;
   bottom: -2px;
   height: 2px;
   transition: left 150ms, width 150ms;
 }
+
 .code-group ::v-deep {
   & pre[class*='language-'] {
-    @apply rounded-t-none;
+    @apply rounded-t-none mt-0;
   }
 }
 </style>

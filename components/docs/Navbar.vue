@@ -8,7 +8,7 @@
         <div class="w-1/2 lg:w-1/6 flex items-center" @click.stop="noop">
           <NuxtLink
             :to="localePath('index')"
-            class="flex-shrink-0"
+            class="flex items-center flex-shrink-0"
             aria-label="Julio Marquez Logo"
           >
             <Component
@@ -21,6 +21,8 @@
               width="32"
               height="32"
             />
+
+            <span class="ml-2 text-xl font-medium">Docs</span>
           </NuxtLink>
         </div>
         <div
@@ -30,27 +32,20 @@
         </div>
         <div class="flex items-center justify-end w-1/6">
           <a
-            href="https://twitter.com/julomrqz"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Twitter"
-            name="Twitter"
-            class="hidden lg:block hover:text-green-500 mr-2"
-          >
-            <SvgIcon name="twitter" width="20" height="20" class="w-6 h-6" />
-          </a>
-          <a
             :href="githubLink"
             target="_blank"
             rel="noopener noreferrer"
             title="Github"
             name="Github"
-            class="hidden lg:block hover:text-green-500 mr-4"
+            class="hidden lg:block hover:text-gray-500 mr-4"
           >
-            <SvgIcon name="github" width="20" height="20" class="w-6 h-6" />
+            <SvgIcon name="github" width="24" height="24" class="w-6 h-6" />
           </a>
+
+          <DarkModeToggle class="hidden lg:block" />
+
           <button
-            class="lg:hidden p-2 rounded-md hover:text-green-500 focus:outline-none focus:outline-none -mr-2"
+            class="lg:hidden p-2 rounded-md hover:text-gray-500 focus:outline-none focus:outline-none -mr-2"
             aria-label="Hamburger Menu"
             @click.stop="menu = !menu"
           >
@@ -76,13 +71,15 @@
   </nav>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
+
 import '~/components/icons/menu'
 import '~/components/icons/cross'
 import '~/components/icons/github'
 import '~/components/icons/twitter'
 
-export default {
+export default Vue.extend({
   computed: {
     menu: {
       get() {
@@ -102,9 +99,10 @@ export default {
       if (window.innerWidth >= 1280) {
         return
       }
+
       window.scrollTo(0, 0)
     },
     noop() {},
   },
-}
+})
 </script>

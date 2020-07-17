@@ -22,8 +22,9 @@ export default {
 <style scoped>
 .code-block {
   display: none;
-}
-.code-block.active {
-  display: block;
+
+  &.active {
+    display: block;
+  }
 }
 </style>

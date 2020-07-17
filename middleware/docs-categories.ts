@@ -3,11 +3,11 @@ import { Middleware } from '@nuxt/types'
 const docsCategires: Middleware = async function ({
   store,
   app,
-  params,
+  route,
   redirect,
 }) {
-  const slug = `${params.slug}`.toLowerCase()
-  const { project } = params
+  const slug = `${route.params.slug}`.toLowerCase()
+  const { project } = route.params
 
   if (slug === 'index' || slug === 'readme') {
     redirect('/')

@@ -151,7 +151,7 @@
             <ProjectCard
               v-for="project in projects"
               :key="project.id"
-              :attributes="project"
+              :project="project"
             />
           </div>
         </div>
@@ -169,22 +169,30 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
 import SeoHead from '~/components/mixins/SeoHead'
-import projects from '~/helpers/projects'
+import { projects } from '~/data/projects'
 
-export default {
+import { BlogPostContent } from '~/interfaces'
+
+type Posts = Pick<
+  BlogPostContent,
+  'slug' | 'title' | 'description' | 'published' | 'cover'
+>[]
+
+export default Vue.extend({
   mixins: [SeoHead],
   async asyncData({ app, $sentry, $content }) {
     const title = `${app.i18n.t('subTitle')} ${app.i18n.t('title')}`
-    let posts = []
+    let posts: Posts = []
 
     try {
       posts = await $content('blog', app.i18n.locale)
         .only(['slug', 'title', 'description', 'published', 'cover'])
         .sortBy('created', 'desc')
         .limit(3)
-        .fetch()
+        .fetch<Posts>()
     } catch (error) {
       $sentry.captureException(error)
     }
@@ -201,7 +209,7 @@ export default {
   data: () => ({
     projects: projects.slice(0, 3),
   }),
-}
+})
 </script>
 
 <style scoped>

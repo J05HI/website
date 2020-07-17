@@ -8,9 +8,12 @@ position: 6
 category: "Primeros Pasos"
 ---
 
-::: warning Nota
+<docs-alert>
+
 Esta página sólo está disponible en inglés.
-:::
+
+</docs-alert>
+
 
 ```
 MIT License

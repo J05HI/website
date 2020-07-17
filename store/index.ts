@@ -33,6 +33,11 @@ export const mutations: MutationTree<RootState> = {
 export const actions: ActionTree<RootState, RootState> = {
   async fetchCategories({ commit, state }) {
     const { project } = this.$router.app.$route.params
+
+    if (!project) {
+      return
+    }
+
     const index = `${this.$i18n.locale}-${project}`
 
     // Avoid re-fetching in production

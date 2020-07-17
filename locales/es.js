@@ -11,7 +11,7 @@ export default {
     about: 'Acerca de mí',
     more: 'Conoce más acerca de mí',
     more2: '¿Quíen soy?',
-    source: 'Fuente',
+    docs: 'Docs',
   },
   actions: {
     openMenu: 'Abrir Menú',
@@ -141,6 +141,20 @@ export default {
       title: 'Ocurrió un error',
       title2: 'Ocurrió un error',
       description: 'Lo sentimos, pero no podemos cumplir con tu solicitud',
+    },
+  },
+  docs: {
+    title: 'Documentación',
+    description:
+      'Familiarízate y explora las características de mi productos y proyectos de Código Abierto.',
+    labels: {
+      github: 'Edita esta página en GitHub',
+      more: 'Más',
+      toc: 'En esta Página',
+      searchPlaceholder:
+        'Busca en la documentación (Presiona "/" para enfocar)',
+      moreInfo: 'Más Info',
+      goToDocs: 'Ir a la Documentación',
     },
   },
 }

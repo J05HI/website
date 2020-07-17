@@ -43,7 +43,7 @@
           </div>
           <div class="hidden md:block">
             <NuxtLink
-              v-for="(item, index) in ['blog', 'projects', 'about']"
+              v-for="(item, index) in ['blog', 'projects', 'about', 'docs']"
               :key="index"
               :to="localePath(item)"
               :class="{ 'ml-10': index > 0 }"
@@ -58,15 +58,6 @@
               class="ml-10 font-medium text-gray-500 hover:text-gray-900 dark-hover:text-gray-100 dark-focus:text-gray-100 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
             >
               Email
-            </a>
-
-            <a
-              :href="`${github.url}/website`"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="ml-10 font-medium text-gray-500 hover:text-gray-900 dark-hover:text-gray-100 dark-focus:text-gray-100 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
-            >
-              {{ $t('links.source') }}
             </a>
           </div>
           <div
@@ -140,7 +131,7 @@
               </div>
               <div class="px-2 pt-2 pb-3">
                 <NuxtLink
-                  v-for="(item, index) in ['blog', 'projects', 'about']"
+                  v-for="(item, index) in ['blog', 'projects', 'about', 'docs']"
                   :key="index"
                   :to="localePath(item)"
                   :class="{ 'mt-1': index > 0 }"
@@ -148,15 +139,6 @@
                 >
                   {{ $t(`links.${item}`) }}
                 </NuxtLink>
-
-                <a
-                  :href="`${github.url}/website`"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-100 dark-hover:text-gray-100 dark-hover:bg-gray-900 dark-focus:text-gray-900 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
-                >
-                  {{ $t('links.source') }}
-                </a>
               </div>
               <div>
                 <a

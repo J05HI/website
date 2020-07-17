@@ -43,9 +43,11 @@ Para desactivar completamente el inlineado de la imagen, establece este valor en
 
 El nombre de archivo de las imágenes optimizadas.
 
-::: warning Advertencia
+<docs-alert>
+
 Asegúrate de mantener el fragmento `[hash]` para que reciban un nuevo nombre de archivo si el contenido cambia.
-:::
+
+</docs-alert>
 
 ## responsiveImagesName
 
@@ -54,9 +56,11 @@ Asegúrate de mantener el fragmento `[hash]` para que reciban un nuevo nombre de
 
 El nombre de archivo de las imágenes responsive.
 
-::: warning Advertencia
+<docs-alert>
+
 Asegúrate de mantener el fragmento `[hash]` para que reciban un nuevo nombre de archivo si el contenido cambia.
-:::
+
+</docs-alert>
 
 ## optimizeImagesInDev
 
@@ -67,9 +71,11 @@ Para un desarrollo más rápido y HMR, las imágenes no se optimizan de forma pr
 
 ## mozjpeg
 
-::: warning Advertencia
-Requiere el paquete de optimización opcional [`imagemin-mozjpeg`][imagemin-mozjpeg]
-:::
+<docs-alert>
+
+Requiere el paquete de optimización opcional [`imagemin-mozjpeg`][imagemin-mozjpeg].
+
+</docs-alert>
 
 - Tipo: `object`
 - Por defecto: `{}`
@@ -78,9 +84,11 @@ Requiere el paquete de optimización opcional [`imagemin-mozjpeg`][imagemin-mozj
 
 ## pngquant
 
-::: warning Advertencia
-Requiere el paquete de optimización opcional [`imagemin-pngquant`][imagemin-pngquant]
-:::
+<docs-alert>
+
+Requiere el paquete de optimización opcional [`imagemin-pngquant`][imagemin-pngquant].
+
+</docs-alert>
 
 - Tipo: `object`
 - Por defecto: `{}`
@@ -89,9 +97,11 @@ Requiere el paquete de optimización opcional [`imagemin-pngquant`][imagemin-png
 
 ## optipng
 
-::: warning Advertencia
-Requiere el paquete de optimización opcional [`imagemin-optipng`][imagemin-optipng]
-:::
+<docs-alert>
+
+Requiere el paquete de optimización opcional [`imagemin-optipng`][imagemin-optipng].
+
+</docs-alert>
 
 - Tipo: `object`
 - Por defecto: `{}`
@@ -100,9 +110,11 @@ Requiere el paquete de optimización opcional [`imagemin-optipng`][imagemin-opti
 
 ## gifsicle
 
-::: warning Advertencia
-Requiere el paquete de optimización opcional [`imagemin-gifsicle`][imagemin-gifsicle]
-:::
+<docs-alert>
+
+Requiere el paquete de optimización opcional [`imagemin-gifsicle`][imagemin-gifsicle].
+
+</docs-alert>
 
 - Tipo: `object`
 - Por defecto:
@@ -118,9 +130,11 @@ Requiere el paquete de optimización opcional [`imagemin-gifsicle`][imagemin-gif
 
 ## svgo
 
-::: warning Advertencia
-Requiere el paquete de optimización opcional [`imagemin-svgo`][imagemin-svgo]
-:::
+<docs-alert>
+
+Requiere el paquete de optimización opcional [`imagemin-svgo`][imagemin-svgo].
+
+</docs-alert>
 
 - Tipo: `object`
 - Por defecto: `{}`
@@ -141,9 +155,11 @@ Los plugins svgo pueden deshabilitarse o habilitarse en el array de plugins:
 
 ## webp
 
-::: warning Advertencia
-Requiere el paquete de optimización opcional [`webp-loader`][webp-loader]
-:::
+<docs-alert>
+
+Requiere el paquete de optimización opcional [`webp-loader`][webp-loader].
+
+</docs-alert>
 
 - Tipo: `object`
 - Por defecto: `{}`
@@ -152,9 +168,11 @@ Requiere el paquete de optimización opcional [`webp-loader`][webp-loader]
 
 ## responsive
 
-::: warning Advertencia
-Requiere el paquete de optimización opcional [`responsive-loader`][responsive-loader]
-:::
+<docs-alert>
+
+Requiere el paquete de optimización opcional [`responsive-loader`][responsive-loader].
+
+</docs-alert>
 
 - Tipo: `object`
 - Por defecto: `{}`
@@ -163,22 +181,26 @@ La configuración para [`responsive-loader`][responsive-loader] puede definirse 
 
 ## defaultImageLoader
 
-::: warning Advertencia
-Requiere el paquete de optimización opcional `responsive-loader`
-:::
+<docs-alert>
+
+Requiere el paquete de optimización opcional `responsive-loader`.
+
+</docs-alert>
 
 - Tipo: `string`
 - Por defecto: `'img-loader'`
 
 Por defecto, img-loader maneja la mayoría de las peticiones.
 
-::: tip
+<docs-alert variant="info">
+
 Si usas mucho `responsive-loader` y no quieres añadir el parámetro de consulta [`?resize`](./usage/README.md#resize) a cada requerimiento, puedes establecer este valor en `'responsive-loader'`.
 
 Después de eso, `responsive-loader` manejará *todas* las imágenes JPEG y PNG por defecto, incluso sin un parámetro de consulta adicional. Ten en cuenta que no puedes usar ninguno de los [parámetros de consulta que `@aceforth/nuxt-optimized-images`](./usage/README.md)  ofrece en estas imágenes porque la petición se reenvía y no se modifica.
 
 Todos los demás formatos (SVG, WEBP y GIF) siguen funcionando como antes con `img-loader` y por lo tanto tienen todos los parámetros de consulta disponibles.
-:::
+
+</docs-alert>
 
 ## optimizeImages
 
@@ -187,9 +209,11 @@ Todos los demás formatos (SVG, WEBP y GIF) siguen funcionando como antes con `i
 
 Si no deseas que las imágenes sean optimizadas, puedes establecer este valor en `false'.
 
-::: warning Advertencia
+<docs-alert>
+
 Si no tienes ningún paquete de optimización instalado y esta opción está configurada como `true`, no se optimizará ninguna imagen. En este caso, se imprime una advertencia en la consola durante la compilación para informarte sobre una posible mala configuración.
-:::
+
+</docs-alert>
 
 
 [imagemin-mozjpeg]: https://www.npmjs.com/package/imagemin-mozjpeg
