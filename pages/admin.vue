@@ -24,10 +24,21 @@ export default Vue.extend<Data, {}, {}, {}>({
   },
 
   async mounted() {
-    const netlifyCMS = await import(
-      /* webpackChunkName: "netlify-cms" */ '~/utils/netlify-cms'
-    )
-    netlifyCMS.getCMS(this.$config, this.$i18n.locale, this.isDev)
+    // @ts-ignore
+    await this.mountCMS()
+  },
+
+  methods: {
+    async mountCMS() {
+      if (!this.$isAMP) {
+        if (process.client) {
+          const netlifyCMS = await import(
+            /* webpackChunkName: "netlify-cms" */ '~/utils/netlify-cms'
+          )
+          netlifyCMS.getCMS(this.$config, this.$i18n.locale, this.isDev)
+        }
+      }
+    },
   },
 
   head() {
