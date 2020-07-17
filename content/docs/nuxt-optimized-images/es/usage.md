@@ -26,12 +26,12 @@ o
 
 <docs-alert>
 
-Tenga en cuenta que las imágenes sólo se optimizan [en producción de forma predeterminada](./configuration/README.md#optimizeimagesindev) para reducir el tiempo de compilación en tu entorno de desarrollo.
+Tenga en cuenta que las imágenes sólo se optimizan [en producción de forma predeterminada](/es/docs/nuxt-optimized-images/configuration#optimizeimagesindev) para reducir el tiempo de compilación en tu entorno de desarrollo.
 
 </docs-alert>
 
 
-Si el archivo está por debajo del [límite para imágenes en línea](./configuration/README.md#inlineimagelimit), el `require(...)` devolverá una una `data-uri` del tipo base64 (`data:image/jpeg;base64,...`).
+Si el archivo está por debajo del [límite para imágenes en línea](/es/docs/nuxt-optimized-images/configuration#inlineimagelimit), el `require(...)` devolverá una una `data-uri` del tipo base64 (`data:image/jpeg;base64,...`).
 
 
 ## Parámetros de Consulta
@@ -77,7 +77,7 @@ Como se ha descrito anteriormente, esto es útil para los SVGs para que puedas e
 -->
 ```
 
-La imagen seguirá siendo optimizada, incluso si se incluye directamente en tu contenido (pero por [defecto sólo en producción](./configuration/README.md#optimizeimagesindev)).
+La imagen seguirá siendo optimizada, incluso si se incluye directamente en tu contenido (pero por [defecto sólo en producción](/es/docs/nuxt-optimized-images/configuration#optimizeimagesindev)).
 
 ### ?webp
 
@@ -115,7 +115,7 @@ Para [los navegadores que aún no son compatibles con WebP][caniuse-webp], tambi
 
 ### ?inline
 
-Puede especificar un [límite para las imágenes en línea](./configuration/README.md#inlineimagelimit) que se incluirán como un `data-uri` directamente en tu contenido en lugar de hacer referencia a un archivo si el tamaño del archivo está por debajo de ese límite.
+Puede especificar un [límite para las imágenes en línea](/es/docs/nuxt-optimized-images/configuration#inlineimagelimit) que se incluirán como un `data-uri` directamente en tu contenido en lugar de hacer referencia a un archivo si el tamaño del archivo está por debajo de ese límite.
 
 Por lo general, no deseas especificar un límite demasiado alto, pero puede haber casos en los que aún desees incluir imágenes más grandes en línea.
 
@@ -137,11 +137,11 @@ El inline sólo se aplicará exactamente a esta importación, así que si import
 
 ### ?url
 
-Cuando tiene una imagen más pequeña que el [límite definido para el inlineado](./configuration/README.md#inlineimagelimit), normalmente se rellena automáticamente. Si no quieres que un archivo pequeño específico sea inlineado, puedes usar el parámetro de consulta `?url` para obtener siempre una URL de imagen, sin importar el límite de inlineado.
+Cuando tiene una imagen más pequeña que el [límite definido para el inlineado](/es/docs/nuxt-optimized-images/configuration#inlineimagelimit), normalmente se rellena automáticamente. Si no quieres que un archivo pequeño específico sea inlineado, puedes usar el parámetro de consulta `?url` para obtener siempre una URL de imagen, sin importar el límite de inlineado.
 
 <docs-alert variant="info">
 
-Si estás usando mucho esta opción, podría tener sentido [deshabilitar el inline](./configuration/README.md#inlineimagelimit) completamente y usar el parámetro [`?inline`](#inline) para archivos individuales.
+Si estás usando mucho esta opción, podría tener sentido [deshabilitar el inline](/es/docs/nuxt-optimized-images/configuration#inlineimagelimit) completamente y usar el parámetro [`?inline`](#inline) para archivos individuales.
 
 </docs-alert>
 

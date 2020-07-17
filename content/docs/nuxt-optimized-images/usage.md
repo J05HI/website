@@ -26,11 +26,11 @@ or
 
 <docs-alert>
 
-Please be aware that images only get optimized [in production by default](./configuration/README.md#optimizeimagesindev) to reduce the build time in your development environment.
+Please be aware that images only get optimized [in production by default](/docs/nuxt-optimized-images/configuration#optimizeimagesindev) to reduce the build time in your development environment.
 
 </docs-alert>
 
-If the file is below the [limit for inlining images](./configuration/README.md#inlineimagelimit), the `require(...)` will return a base64 `data-uri` (`data:image/jpeg;base64,...`).
+If the file is below the [limit for inlining images](/docs/nuxt-optimized-images/configuration#inlineimagelimit), the `require(...)` will return a base64 `data-uri` (`data:image/jpeg;base64,...`).
 
 
 ## Query params
@@ -76,7 +76,7 @@ As described above, this is useful for SVGs so you can style them with CSS.
 -->
 ```
 
-The image will still get optimized, even if it is directly included in your content (but by [default only in production](./configuration/README.md#optimizeimagesindev)).
+The image will still get optimized, even if it is directly included in your content (but by [default only in production](/docs/nuxt-optimized-images/configuration#optimizeimagesindev)).
 
 
 ### ?webp
@@ -115,7 +115,7 @@ For [browsers that don't yet support WebP][caniuse-webp], you can also provide a
 
 ### ?inline
 
-You can specify a [limit for inlining](./configuration/README.md#inlineimagelimit) images which will include it as a `data-uri` directly in your content instead of referencing a file if the file size is below that limit.
+You can specify a [limit for inlining](/docs/nuxt-optimized-images/configuration#inlineimagelimit) images which will include it as a `data-uri` directly in your content instead of referencing a file if the file size is below that limit.
 
 You usually don't want to specify a too high limit but there may be cases where you still want to inline larger images.
 
@@ -137,12 +137,12 @@ The inlining will only get applied to exactly this import, so if you import the 
 
 ### ?url
 
-When you have an image smaller than your defined [limit for inlining](./configuration/README.md#inlineimagelimit), it normally gets inlined automatically.
+When you have an image smaller than your defined [limit for inlining](/docs/nuxt-optimized-images/configuration#inlineimagelimit), it normally gets inlined automatically.
 If you don't want a specific small file to get inlined, you can use the `?url` query param to always get back an image URL, regardless of the inline limit.
 
 <docs-alert variant="info">
 
-If you are using this option a lot, it could also make sense to [disable the inlining](./configuration/README.md#inlineimagelimit) completely and use the [`?inline`](#inline) param for single files.
+If you are using this option a lot, it could also make sense to [disable the inlining](/docs/nuxt-optimized-images/configuration#inlineimagelimit) completely and use the [`?inline`](#inline) param for single files.
 
 </docs-alert>
 
@@ -301,7 +301,7 @@ If only the `size` or `sizes` param is used, the `?resize` param can also be omi
 
 </docs-alert>
 
-You can also set global configs in the [`responsive`](../configuration/#responsive) property (in the `nuxt.config.js` file) and define, for example, default sizes which will get generated when you don't specify one for an image (e.g. only `my-image.jpg?resize`).
+You can also set global configs in the [`responsive`](./docs/nuxt-optimized-images/configuration#responsive) property (in the `nuxt.config.js` file) and define, for example, default sizes which will get generated when you don't specify one for an image (e.g. only `my-image.jpg?resize`).
 
 
 

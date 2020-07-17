@@ -23,9 +23,9 @@ Image sizes can often get reduced up to 60%, but this is not the only thing `@ac
 * **Inlines small images** to save HTTP requests and additional roundtrips.
 * Adds a **content hash** to the file name so images can get cached on CDN level and in the browser for a long time (This is the default behavior of Nuxt.js).
 * Same image URLs over multiple builds for long time caching.
-* Provides **[query params](./usage/README.md#query-params)** for file-specific handling/settings.
-* JPEG/PNG images can be **converted to [`WebP` on the fly](./usage/README.md#webp)** for an even smaller size.
-* Can **[resize](./usage/README.md#resize)** images or generate **low-quality image placeholders** ([lqip](./usage/README.md#lqip)) and extract the dominant [colors](./usage/README.md#lqip-colors) of it.
+* Provides **[query params](/docs/nuxt-optimized-images/usage#query-params)** for file-specific handling/settings.
+* JPEG/PNG images can be **converted to [`WebP` on the fly](/docs/nuxt-optimized-images/usage#webp)** for an even smaller size.
+* Can **[resize](/docs/nuxt-optimized-images/usage#resize)** images or generate **low-quality image placeholders** ([lqip](/docs/nuxt-optimized-images/usage#lqip)) and extract the dominant [colors](/docs/nuxt-optimized-images/usage#lqip-colors) of it.
 
 ## Installation
 
@@ -73,7 +73,7 @@ If you are using Nuxt `< 2.9.0`, use `modules` instead.
 }
 ```
 
-See the [configuration](./configuration/README.md) section for all available options.
+See the [configuration](/docs/nuxt-optimized-images/configuration) section for all available options.
 
 
 <docs-alert variant="info">
@@ -100,8 +100,8 @@ The following optimization packages are available and supported:
 | `imagemin-optipng`   | Alternative for optimizing PNG images                                                                                                                                                                   | [Link][imagemin-optipng]  |
 | `imagemin-gifsicle`  | Optimizes GIF images                                                                                                                                                                                    | [Link][imagemin-gifsicle] |
 | `imagemin-svgo`      | Optimizes SVG images and icons                                                                                                                                                                          | [Link][imagemin-svgo]     |
-| `webp-loader`        | Optimizes WebP images and can convert JPEG/PNG images to WebP on the fly ([WebP resource query](./usage/README.md#webp))                                                                                       | [Link][webp-loader]       |
-| `lqip-loader`        | Generates low quality image placeholders and can extract the dominant colors of an image ([lqip resource query](./usage/README.md#lqip))                                                                       | [Link][lqip-loader]       |
+| `webp-loader`        | Optimizes WebP images and can convert JPEG/PNG images to WebP on the fly ([WebP resource query](/docs/nuxt-optimized-images/usage#webp))                                                                                       | [Link][webp-loader]       |
+| `lqip-loader`        | Generates low quality image placeholders and can extract the dominant colors of an image ([lqip resource query](/docs/nuxt-optimized-images/usage#lqip))                                                                       | [Link][lqip-loader]       |
 | `responsive-loader`  | Can resize images on the fly and create multiple versions of it for a `srcSet`. **Important**: You need to additionally install either `jimp` (node implementation, slower) or `sharp` (binary, faster) | [Link][responsive-loader] |
 | `sqip-loader`  | Loads images and exports tiny SQIP previews as `image/svg+xml` URL-encoded data | [Link][sqip-loader] |
 
@@ -127,7 +127,7 @@ yarn add --dev imagemin-mozjpeg imagemin-pngquant imagemin-gifsicle imagemin-svg
 
 <docs-alert>
 
-Please note that by default, images are only optimized for **production builds, not development builds**. However, this can get changed with the [`optimizeImagesInDev` config](./configuration/README.md#optimizeimagesindev).
+Please note that by default, images are only optimized for **production builds, not development builds**. However, this can get changed with the [`optimizeImagesInDev` config](/docs/nuxt-optimized-images/configuration#optimizeimagesindev).
 
 </docs-alert>
 
