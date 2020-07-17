@@ -97,7 +97,7 @@
         </div>
       </div>
 
-      <ul class="p-4 lg:ml-1 lg:pb-8 lg:pl-0 lg:pr-8">
+      <ul class="min-h-full p-4 lg:min-h-screen lg:ml-1 lg:pb-8 lg:pl-0 lg:pr-8">
         <li class="mb-4 lg:hidden">
           <DocsSearchInput />
         </li>
