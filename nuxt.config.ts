@@ -230,6 +230,10 @@ const config: NuxtConfiguration = {
    */
   export: {
     fallback: '404.html',
+    exclude: [
+      /^\/amp\/admin/,
+      /^\/amp\/es\/admin/,
+    ],
   },
 
   /*
