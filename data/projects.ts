@@ -121,7 +121,9 @@ export const projects: Project[] = [
 ]
 
 export const docsProjects: DocsProject[] = [
-  ...projects.filter((p) => p.category === 'open-source' && p.id !== 'statusfy'),
+  ...projects.filter(
+    (p) => p.category === 'open-source' && p.id !== 'statusfy'
+  ),
   {
     id: 'nuxt-netlify',
     version: '1.0.0',

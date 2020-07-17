@@ -21,11 +21,12 @@ const docsCategires: Middleware = async function ({
   const index = `${app.i18n.locale}-${project}`
 
   if (process.client && !store.state.categories[index]) {
-    app.router?.app.$nextTick(() => {
-      setTimeout(async () => {
-        await store.dispatch('fetchCategories')
-      }, 100)
-    })
+    app.router &&
+      app.router.app.$nextTick(() => {
+        setTimeout(async () => {
+          await store.dispatch('fetchCategories')
+        }, 100)
+      })
   }
 
   // Hot reload on development
