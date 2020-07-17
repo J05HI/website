@@ -19,8 +19,13 @@ const docsCategires: Middleware = async function ({
 
   // Spa Fallback
   const index = `${app.i18n.locale}-${project}`
+
   if (process.client && !store.state.categories[index]) {
-    await store.dispatch('fetchCategories')
+    app.router?.app.$nextTick(() => {
+      setTimeout(async () => {
+        await store.dispatch('fetchCategories')
+      }, 100)
+    })
   }
 
   // Hot reload on development
