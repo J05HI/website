@@ -53,7 +53,7 @@
           "
           class="flex px-4 py-2 items-center leading-5 transition ease-in-out duration-150"
           :class="{
-            'text-green-500 bg-gray-200 dark:bg-gray-800': focusIndex === index,
+            'text-gray-500 bg-gray-200 dark:bg-gray-800': focusIndex === index,
           }"
           @click="focus = false"
         >

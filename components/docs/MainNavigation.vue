@@ -137,7 +137,7 @@
                 rel="noopener noreferrer"
                 title="Github"
                 name="Github"
-                class="hover:text-green-500"
+                class="hover:text-gray-500"
               >
                 <SvgIcon name="github" width="24" height="24" class="w-6 h-6" />
               </a>
