@@ -9,7 +9,11 @@
             class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0"
           >
             <div class="flex items-center justify-between w-full md:w-auto">
-              <NuxtLink :to="localePath('index')" class="navbar-brand">
+              <NuxtLink
+                :to="localePath('index')"
+                aria-label="Julio Marquez Logo"
+                class="navbar-brand"
+              >
                 <Component
                   :is="$isAMP ? 'amp-img' : 'img'"
                   :layout="$isAMP ? 'fixed' : undefined"
@@ -39,7 +43,7 @@
           </div>
           <div class="hidden md:block">
             <NuxtLink
-              v-for="(item, index) in ['blog', 'projects', 'about']"
+              v-for="(item, index) in ['blog', 'projects', 'about', 'docs']"
               :key="index"
               :to="localePath(item)"
               :class="{ 'ml-10': index > 0 }"
@@ -54,15 +58,6 @@
               class="ml-10 font-medium text-gray-500 hover:text-gray-900 dark-hover:text-gray-100 dark-focus:text-gray-100 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
             >
               Email
-            </a>
-
-            <a
-              :href="`${github.url}/website`"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="ml-10 font-medium text-gray-500 hover:text-gray-900 dark-hover:text-gray-100 dark-focus:text-gray-100 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
-            >
-              {{ $t('links.source') }}
             </a>
           </div>
           <div
@@ -136,7 +131,7 @@
               </div>
               <div class="px-2 pt-2 pb-3">
                 <NuxtLink
-                  v-for="(item, index) in ['blog', 'projects', 'about']"
+                  v-for="(item, index) in ['blog', 'projects', 'about', 'docs']"
                   :key="index"
                   :to="localePath(item)"
                   :class="{ 'mt-1': index > 0 }"
@@ -144,15 +139,6 @@
                 >
                   {{ $t(`links.${item}`) }}
                 </NuxtLink>
-
-                <a
-                  :href="`${github.url}/website`"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-100 dark-hover:text-gray-100 dark-hover:bg-gray-900 dark-focus:text-gray-900 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
-                >
-                  {{ $t('links.source') }}
-                </a>
               </div>
               <div>
                 <a
@@ -174,8 +160,10 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import '~/components/icons/menu'
 import social from '~/helpers/social'
+
+import '~/components/icons/cross'
+import '~/components/icons/menu'
 
 const sidebarBaseClass =
   'absolute top-0 inset-x-0 p-2 origin-top-right z-10 md:hidden'
@@ -217,16 +205,6 @@ export default Vue.extend({
     $route() {
       this.isMenuOpen = false
     },
-  },
-
-  mounted() {
-    if ('amp-dark-mode' in this.$route.query) {
-      this.$colorMode.preference = 'dark'
-
-      this.$nextTick(() => {
-        this.$router.replace(this.$route.fullPath.replace('amp-dark-mode', ''))
-      })
-    }
   },
 })
 </script>

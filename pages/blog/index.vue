@@ -48,6 +48,7 @@ export default {
     return {
       posts,
       head: {
+        titleTemplate: '%s - Blog | Julio Marquez',
         title: app.i18n.t('blog.title'),
         description: app.i18n.t('blog.description'),
       },

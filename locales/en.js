@@ -11,7 +11,7 @@ export default {
     about: 'About',
     more: 'Know more about me',
     more2: 'Who am I?',
-    source: 'Source',
+    docs: 'Docs',
   },
   actions: {
     openMenu: 'Open Menu',
@@ -140,6 +140,19 @@ export default {
       title: 'An error occurred',
       title2: 'An error occurred',
       description: "We're sorry, but we cannot fulfill your request",
+    },
+  },
+  docs: {
+    title: 'Documentation',
+    description:
+      'Get familiar and explore the features of my Products and Open Source Projects.',
+    labels: {
+      github: 'Edit this page on GitHub',
+      more: 'More',
+      toc: 'On this Page',
+      searchPlaceholder: 'Search the docs (Press "/" to focus)',
+      moreInfo: 'More Info',
+      goToDocs: 'Go to Docs',
     },
   },
 }

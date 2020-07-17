@@ -1,24 +1,24 @@
 <template>
-  <footer class="text-center mt-5 py-4">
+  <footer class="text-center py-4">
     <div
       class="max-w-screen-xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8"
     >
       <nav class="-mx-5 -my-2 flex flex-wrap justify-center">
         <div
-          v-for="item in ['home', 'blog', 'projects', 'about']"
+          v-for="item in ['home', 'blog', 'projects', 'about', 'docs']"
           :key="item"
           class="px-5 py-2"
         >
           <NuxtLink
             :to="localePath(item.replace('home', 'index'))"
             :class="{
-              'dark:text-gray-100 font-medium':
+              'dark:text-gray-100 font-semibold':
                 routeName.startsWith('index') && item === 'home',
             }"
             :active-class="
               routeName.startsWith('index') || item === 'home'
-                ? null
-                : 'dark:text-gray-100 font-medium'
+                ? ''
+                : 'dark:text-gray-100 font-semibold'
             "
             class="text-base leading-6 text-gray-500 hover:text-gray-900 dark-hover:text-gray-100"
           >
@@ -31,14 +31,6 @@
             class="text-base leading-6 text-gray-500 hover:text-gray-900 dark-hover:text-gray-100"
             >Email</a
           >
-        </div>
-        <div class="px-5 py-2">
-          <a
-            :href="`${github.url}/website`"
-            class="text-base leading-6 text-gray-500 hover:text-gray-900 dark-hover:text-gray-100"
-          >
-            {{ $t('links.source') }}
-          </a>
         </div>
       </nav>
       <div class="mt-8 flex justify-center">
@@ -93,7 +85,11 @@
 /* eslint-disable */
 import Vue from 'vue'
 
-import '~/components/icons'
+import '~/components/icons/linkedin'
+import '~/components/icons/github'
+import '~/components/icons/twitter'
+import '~/components/icons/toptal'
+
 import social from '~/helpers/social'
 
 export default Vue.extend({

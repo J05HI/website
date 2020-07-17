@@ -7,22 +7,30 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('@tailwindcss/ui/colors')
 
+const inlineCodeStyles = {
+  backgroundColor: colors.gray['100'],
+  borderRadius: defaultTheme.borderRadius.lg,
+  paddingLeft: defaultTheme.spacing['1'],
+  paddingRight: defaultTheme.spacing['1'],
+  '&:before': {
+    content: 'none',
+  },
+  '&:after': {
+    content: 'none',
+  },
+}
+
+const inlineCodeDarkStyles = {
+  color: colors['cool-gray']['800'],
+  backgroundColor: colors.gray['300'],
+}
+
 module.exports = {
   theme: {
     darkSelector: '.dark-mode',
     filter: {
       none: 'none',
       blur: 'blur(8px)',
-    },
-    colors: {
-      transparent: 'transparent',
-      black: '#000',
-      white: '#fff',
-      gray: colors['cool-gray'],
-      blue: {
-        600: colors.blue['600'],
-        400: colors.blue['400'],
-      },
     },
     typography: {
       default: {
@@ -43,30 +51,11 @@ module.exports = {
             marginLeft: 'auto',
             marginRight: 'auto',
           },
-          'p > code': {
-            backgroundColor: colors.gray['100'],
-            borderRadius: defaultTheme.borderRadius.lg,
-            paddingLeft: defaultTheme.spacing['1'],
-            paddingRight: defaultTheme.spacing['1'],
-            '&:before': {
-              content: 'none',
-            },
-            '&:after': {
-              content: 'none',
-            },
-          },
-          'p > strong code': {
-            backgroundColor: colors.gray['100'],
-            borderRadius: defaultTheme.borderRadius.lg,
-            paddingLeft: defaultTheme.spacing['1'],
-            paddingRight: defaultTheme.spacing['1'],
-            '&:before': {
-              content: 'none',
-            },
-            '&:after': {
-              content: 'none',
-            },
-          },
+          'p > code': inlineCodeStyles,
+          'p > strong code': inlineCodeStyles,
+          'li > code': inlineCodeStyles,
+          'a > code': inlineCodeStyles,
+          'td > code': inlineCodeStyles,
           '.nuxt-content-highlight pre': {
             borderRadius: defaultTheme.borderRadius.lg,
             fontFamily: defaultTheme.fontFamily.mono,
@@ -113,14 +102,11 @@ module.exports = {
           p: {
             color: colors['cool-gray']['300'],
           },
-          'p > code': {
-            color: colors['cool-gray']['800'],
-            backgroundColor: colors.gray['300'],
-          },
-          'p > strong code': {
-            color: colors['cool-gray']['800'],
-            backgroundColor: colors.gray['300'],
-          },
+          'p > code': inlineCodeDarkStyles,
+          'p > strong code': inlineCodeDarkStyles,
+          'li > code': inlineCodeDarkStyles,
+          'a > code': inlineCodeDarkStyles,
+          'td > code': inlineCodeDarkStyles,
           '.math-inline': {
             backgroundColor: colors.gray['800'],
           },
@@ -145,11 +131,17 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        colors: {
+          black: '#000',
+          white: '#fff',
+          gray: colors['cool-gray'],
+        },
       },
     },
   },
   variants: {
     typography: ['responsive', 'dark'],
+    display: ['responsive'],
     maxWidth: ['responsive'],
     filter: ['responsive'],
     backgroundColor: [
@@ -191,7 +183,7 @@ module.exports = {
     }),
   ],
   purge: {
-    enabled: true,
+    enabled: process.env.NODE_ENV === 'production',
     content: [
       'components/**/*.vue',
       'layouts/**/*.vue',

@@ -6,12 +6,16 @@
       <Nuxt />
     </main>
 
-    <TheFooter />
+    <TheFooter class="mt-5" />
   </div>
 </template>
 
 <script>
+import DarkModeFromAMPMixin from '@/components/mixins/DarkModeFromAMP'
+
 export default {
+  mixins: [DarkModeFromAMPMixin],
+
   head() {
     return {
       __dangerouslyDisableSanitizers: ['script'],
@@ -50,11 +54,10 @@ export default {
               'https://github.com/juliomrqz',
               'https://twitter.com/juliomrqz',
               'https://www.instagram.com/juliomrqz/',
-              'https://angel.co/juliomrqz',
+              'https://themeforest.net/user/julio-marquez',
               'https://www.crunchbase.com/person/julio-marquez',
-              'https://www.upwork.com/freelancers/~018eef7959825dd2ed',
-              'https://www.codementor.io/juliomrqz',
               'https://dev.to/juliomrqz',
+              'https://www.toptal.com/resume/julio-marquez#trust-nothing-but-choice-it-professionals',
             ],
           }),
           type: 'application/ld+json',

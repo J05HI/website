@@ -14,9 +14,9 @@ export default [
     url: 'https://twitter.com/juliomrqz',
     icon: 'twitter',
   },
-  // {
-  //   name: 'Instagram',
-  //   url: 'https://www.instagram.com/juliomrqz/',
-  //   icon: 'instagram',
-  // },
+  {
+    name: 'Toptal',
+    url: 'https://go.marquez.co/Toptal',
+    icon: 'toptal',
+  },
 ]
