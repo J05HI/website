@@ -5,7 +5,7 @@
   "author": "Julio Marquez",
   "private": true,
   "scripts": {
-    "dev": "nuxt-ts",
+    "dev": "cross-env DISABLE_TAILWIND_PURGE=true nuxt-ts",
     "netlify-cms:dev": "netlify-cms-proxy-server",
     "start": "nuxt-ts start",
     "build": "cross-env NODE_ENV=production nuxt-ts build",
