@@ -5,11 +5,12 @@ description: Statusfy is a Status Page System, easy to use and completely Open
   Source. You can easily create a fast System either Static Generated or Server
   Rendered.
 cover: blog/statusfy-cover.jpg
-created: 2018-11-14T14:58:34.140Z
-published: 2018-11-14T14:58:34.000Z
-canonical: https://aceforth.com/blog/statusfy
+created: 2018-11-14T14:58:34Z
+published: 2018-11-14T14:58:34Z
+updatedAt: 2020-07-18T13:09:18Z
 ---
-[Statusfy](https://aceforth.com/products/statusfy) is a Status Page System, easy to use and completely Open Source. You can easily create a fast System either **Static Generated** or **Server Rendered** and easily deploy it to a variety of hosting services. The goal behind is to lower costs and complexity providing a simpler and versatile Open Source alternative.
+
+[Statusfy](/statusfy) is a Status Page System, easy to use and completely Open Source. You can easily create a fast System either **Static Generated** or **Server Rendered** and easily deploy it to a variety of hosting services. The goal behind is to lower costs and complexity providing a simpler and versatile Open Source alternative.
 
 But, you may be thinking: Why do I need a Status Page System?. These systems are pretty simple and have one main task: communicate the status of an application or service. Nowadays, every single SaaS product should have a Status Page System, they allow us to increase customer confidence and reduce customer frustration about any service disruptions by giving retrospectives (also called Root Cause Analysis). With these systems, you can notify about service disruptions, planned maintenance or possible outages through multiple channels: email, SMS, Push, Webhooks, etc.
 
@@ -33,12 +34,12 @@ For these two ways of delivering your Statusfy Application, you can use great Ho
 |                                                                                       | Example Project                                                                       | Example Project                                                              |
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
 | **Service**                                                                           | **Static Generated**                                                                  | **Server Rendered**                                                          |
-| [GitHub Pages](https://docs.statusfy.co/guide/deploy.html#github-pages)               | [Yes](https://github.com/aceforth/statusfy/tree/develop/examples/github-pages-static) | No                                                                           |
-| [GitLab Pages](https://docs.statusfy.co/guide/deploy.html#gitlab-pages-and-gitlab-ci) | [Yes](https://github.com/aceforth/statusfy/tree/develop/examples/gitlab-pages-static) | No                                                                           |
-| [Netlify](https://docs.statusfy.co/guide/deploy.html#netlify)                         | [Yes](https://github.com/aceforth/statusfy/tree/develop/examples/netlify-static)      | No                                                                           |
-| [Surge](https://docs.statusfy.co/guide/deploy.html#surge)                             | [Yes](https://github.com/aceforth/statusfy/tree/develop/examples/surge-static)        | No                                                                           |
-| [Heroku](https://docs.statusfy.co/guide/deploy.html#heroku)                           | [Yes](https://github.com/aceforth/statusfy/tree/develop/examples/heroku-static)       | [Yes](https://github.com/aceforth/statusfy/tree/develop/examples/heroku-ssr) |
-| [Now](https://docs.statusfy.co/guide/deploy.html#now)                                 | [Yes](https://github.com/aceforth/statusfy/tree/develop/examples/now-v2-static)       | No                                                                           |
+| [GitHub Pages](https://docs.statusfy.co/guide/deploy.html#github-pages)               | [Yes](https://github.com/juliomrqz/statusfy/tree/develop/examples/github-pages-static) | No                                                                           |
+| [GitLab Pages](https://docs.statusfy.co/guide/deploy.html#gitlab-pages-and-gitlab-ci) | [Yes](https://github.com/juliomrqz/statusfy/tree/develop/examples/gitlab-pages-static) | No                                                                           |
+| [Netlify](https://docs.statusfy.co/guide/deploy.html#netlify)                         | [Yes](https://github.com/juliomrqz/statusfy/tree/develop/examples/netlify-static)      | No                                                                           |
+| [Surge](https://docs.statusfy.co/guide/deploy.html#surge)                             | [Yes](https://github.com/juliomrqz/statusfy/tree/develop/examples/surge-static)        | No                                                                           |
+| [Heroku](https://docs.statusfy.co/guide/deploy.html#heroku)                           | [Yes](https://github.com/juliomrqz/statusfy/tree/develop/examples/heroku-static)       | [Yes](https://github.com/juliomrqz/statusfy/tree/develop/examples/heroku-ssr) |
+| [Now](https://docs.statusfy.co/guide/deploy.html#now)                                 | [Yes](https://github.com/juliomrqz/statusfy/tree/develop/examples/now-v2-static)       | No                                                                           |
 
 ## Creating a Status Page System
 
@@ -87,10 +88,10 @@ npm run start # OR yarn start
 
 ## What's next
 
-In the next couple of months, we're going to continue to improve the [documentation](https://docs.statusfy.co), [create tutorials](https://aceforth.com/blog), [fix bugs](https://github.com/aceforth/statusfy), create a Project Editor, and add [extra features](https://docs.statusfy.co/guide/#todo).
+In the next couple of months, I'm going to continue to improve the [documentation](https://docs.statusfy.co), [create tutorials](/blog), [fix bugs](https://github.com/juliomrqz/statusfy), create a Project Editor, and add [extra features](https://docs.statusfy.co/guide/#todo).
 
 ## Contribute to Statusfy
 
-Statusfy is a completely open source project, sponsored by [Aceforth](https://aceforth.com). It's still a work in progress, so any contribution is very welcome. We're passionate about building a versatile and a lower cost solution.
+Statusfy is a completely open source project, sponsored by me, a Full Stack Developer. It's still a work in progress, so any contribution is very welcome. We're passionate about building a versatile and a lower cost solution.
 
-You can also support us by giving a [GitHub star ★](https://github.com/aceforth/statusfy) and spread the word 🤓.
+You can also support us by giving a [GitHub star ★](https://github.com/juliomrqz/statusfy) and spread the word 🤓.

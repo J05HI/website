@@ -5,10 +5,11 @@ description: Hoy, tenemos el agrado de presentarles Mapset. Una herramienta
   nueva, innovadora y dinámica diseñada para administrar pantallas en diferentes
   lenguajes de codificación de mainframe.
 cover: blog/mapset-cover.jpg
-created: 2018-06-05T15:53:07.000Z
-published: 2018-06-05T15:53:07.000Z
-canonical: https://aceforth.com/es/blog/mapset-new-innovative-dynamic-tool
+created: 2018-06-05T15:53:07Z
+published: 2018-06-05T15:53:07Z
+updatedAt: 2020-07-18T13:09:18Z
 ---
+
 Hoy, tenemos el agrado de presentarles Mapset. Una herramienta nueva, innovadora y dinámica diseñada para administrar pantallas en diferentes lenguajes de codificación de mainframe. Esta herramienta significa ahorro de tiempo debido a su bajo tiempo de ejecución. Mapset permite diseñar archivos BMS sin la necesidad de preocuparse por los errores gracias al sistema de validación, esto identifica errores de forma rápida y fácil.
 
 Puedes dibujar a través de nuestra interfaz 'Drag & Drop', generar un nuevo BMS desde cero o cualquier otro archivo BMS existente y generar código HTML a partir de archivos BMS en segundos.

@@ -5,10 +5,11 @@ description: Today, we're happy to Introduce Mapset. A new, innovative and
   dynamic tool designed for managing screens in different mainframe coding
   languages. This tool means time savings due to its low execution time.
 cover: blog/mapset-cover.jpg
-created: 2018-06-05T15:53:07.000Z
-published: 2018-06-05T15:53:07.000Z
-canonical: https://aceforth.com/blog/mapset-new-innovative-dynamic-tool
+created: 2018-06-05T15:53:07Z
+published: 2018-06-05T15:53:07Z
+updatedAt: 2020-07-18T13:09:18Z
 ---
+
 Today, we're happy to Introduce Mapset. A new, innovative and dynamic tool designed for managing screens in different mainframe coding languages. This tool means time savings due to its low execution time. Mapset allows designing BMS files without the need to worry about errors thanks to the validation system, this easily identifies errors quickly and easily.
 
 You can draw through a Drag & Drop interface, generate a new BMS from scratch or any other existing BMS and generate HTML code from BMS files in seconds.

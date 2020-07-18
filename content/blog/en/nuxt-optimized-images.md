@@ -4,10 +4,11 @@ slug: nuxt-optimized-images
 description: We created a new module to automatically optimize images used in
   Nuxt.js projects (JPEG, PNG, SVG, WebP and GIF).
 cover: blog/nuxt-optimized-images-cover.jpg
-created: 2019-03-15T18:00:50.000Z
-published: 2019-03-15T18:00:50.000Z
-canonical: https://aceforth.com/blog/nuxt-optimized-images
+created: 2019-03-15T18:00:50Z
+published: 2019-03-15T18:00:50Z
+updatedAt: 2020-07-18T13:09:18Z
 ---
+
 We are very thrilled to introduce you another module we created for the Nuxt.js ecosystem: **Nuxt Optimized Images**, a new way to automatically optimize images used in your projects (JPEG, PNG, SVG, WebP and GIF).
 
 You can now easily reduce the size of your images up to 60%, but this is not the only thing that can be done:
@@ -61,20 +62,20 @@ You can now import or require your images directly in your Vue components:
 -->
 ```
 
-There are several additional options you can specify as **query params** when you import the images, just follow [the documentation](https://aceforth.com/docs/nuxt-optimized-images/usage/) for more information.
+There are several additional options you can specify as **query params** when you import the images, just follow [the documentation](/docs/nuxt-optimized-images/usage/) for more information.
 
 ## Contribute to Nuxt Optimized Images
 
-**Nuxt Optimized Images** is an open source project, any contribution is welcome, even giving us a [star on GitHub ★](https://github.com/aceforth/nuxt-optimized-images) or spreading the word 🤓.
+**Nuxt Optimized Images** is an open source project, any contribution is welcome, even giving us a [star on GitHub ★](https://github.com/juliomrqz/nuxt-optimized-images) or spreading the word 🤓.
 
 ## Documentation & Support
 
-If you want extra details of how to configure and use this module, the **full documentation** is available at <https://aceforth.com/docs/nuxt-optimized-images/>.
+If you want extra details of how to configure and use this module, the **full documentation** is available at [https://marquez.co/docs/nuxt-optimized-images](/docs/nuxt-optimized-images).
 
-For **Bug reports** or **Feature requests**, use the [Issues section](https://github.com/aceforth/nuxt-optimized-images/issues). But, if you have **questions**, please go to our [Community Chat](https://spectrum.chat/bazzite/login?r=https://spectrum.chat/bazzite/open-source).
+For **Bug reports** or **Feature requests**, use the [Issues section](https://github.com/juliomrqz/nuxt-optimized-images/issues). But, if you have **questions**, you can also use the [Issues section](https://github.com/juliomrqz/nuxt-netlify/issues).
 
-You may also want to **follow us** [on Twitter](https://twitter.com/AceforthHQ) for future updates and valuable topics.
+You may also want to **follow me** [on Twitter](https://twitter.com/juliomrqz) for future updates and valuable topics.
 
 ## Professional Support
 
-If you require Professional Assistance on your project(s), please contact us at <https://aceforth.com/contact>.
+If you require Professional Assistance on your project(s), please contact me.
