@@ -26,6 +26,13 @@ const inlineCodeDarkStyles = {
 }
 
 module.exports = {
+  corePlugins: {
+    textOpacity: false,
+    backgroundOpacity: false,
+    borderOpacity: false,
+    divideOpacity: false,
+    placeholderOpacity: false,
+  },
   theme: {
     darkSelector: '.dark-mode',
     filter: {
