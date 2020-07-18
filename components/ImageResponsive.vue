@@ -97,7 +97,6 @@ export default Vue.extend<{}, {}, Computed, Props>({
       return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(image)}`
     },
     imageProperties() {
-      const placeholderColor = this.placeholderColor || this.$config.mainColor
       let properties: { [key: string]: any } = {
         width: `${this.width}`,
         height: `${this.height}`,
@@ -117,10 +116,8 @@ export default Vue.extend<{}, {}, Computed, Props>({
         properties = {
           ...properties,
           // @ts-ignore
-          src: placeholderColor,
+          src: this.placeholder,
           'data-src': this.source,
-          // @ts-ignore
-          'data-loading': placeholderColor,
           // @ts-ignore
           'data-srcset': this.srcset,
           class: {
