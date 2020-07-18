@@ -231,7 +231,31 @@ const config: NuxtConfiguration = {
    */
   export: {
     fallback: '404.html',
-    exclude: [/^\/amp\/admin/, /^\/amp\/es\/admin/],
+    async routes() {
+      const routes: string[] = ['/', '/about', '/projects', '/blog']
+
+      // other routes
+      routes.forEach((route) => {
+        const postFix = route === '/' ? '' : route
+
+        routes.push(`/amp${postFix}`)
+
+        routes.push(`/es${postFix}`)
+        routes.push(`/amp/es${postFix}`)
+      })
+
+      // blog routes
+      const blogIndex: { slug: string }[] = await $content('blog', 'en')
+        .only(['slug'])
+        .fetch()
+
+      blogIndex.forEach((route) => {
+        routes.push(`/amp/blog/${route.slug}`)
+        routes.push(`/amp/es/blog/${route.slug}`)
+      })
+
+      return routes
+    },
   },
 
   /*

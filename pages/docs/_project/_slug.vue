@@ -41,6 +41,7 @@ interface Data {
 export default Vue.extend<Data, {}, {}>({
   name: 'DocsPageSlug',
   layout: 'docs',
+  amp: false,
   mixins: [SeoHead],
   // middleware: 'docs-categories',
   async asyncData({ $content, app, params, error, store }) {

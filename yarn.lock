@@ -1964,14 +1964,14 @@
     webpack-node-externals "^1.7.2"
     webpackbar "^4.0.0"
 
-"@nuxtjs/amp@0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/amp/-/amp-0.3.0.tgz#610861f4301efe1e6224182c435ca748d44254ec"
-  integrity sha512-BvG9HybyvTNSvjpUhc9MAWVP81CwjzI2ahqGHdKDYJ4X0RUPPYqVttgTSwJtcNmzFr5kDmwMtARNTJxfYgptjw==
+"@nuxtjs/amp@0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/amp/-/amp-0.2.4.tgz#e6e7b3dc672cf603bac5ff9472fdea25f334da03"
+  integrity sha512-Dnv0Gr74ZAv2B84tMBE46AHOGyLsV9z/BQD3s4BYZ8aG7i4A1bYSg6Iz6rQKNinNxsma+l8y2rC5YxnmeX4bdQ==
   dependencies:
-    amphtml-validator "^1.0.31"
-    chalk "^4.1.0"
-    consola "^2.14.0"
+    amphtml-validator "^1.0.30"
+    chalk "^3.0.0"
+    consola "^2.11.3"
 
 "@nuxtjs/color-mode@1.0.0":
   version "1.0.0"
@@ -3154,7 +3154,7 @@ amp-custom@1.3.0:
     clean-css "^4.2.1"
     commander "^3.0.2"
 
-amphtml-validator@^1.0.31:
+amphtml-validator@^1.0.30:
   version "1.0.31"
   resolved "https://registry.yarnpkg.com/amphtml-validator/-/amphtml-validator-1.0.31.tgz#cf926ad4bbefd720b4cbeef6221f794f35849ac6"
   integrity sha512-GEVZeUJqm2ssLLrERi3Zeyk6TEQlvMGRxKqkgQMt2IvyYiGEWLbwp5K6UfX6cD9aCc1xqbk9n+rDBi4HZv3uOQ==

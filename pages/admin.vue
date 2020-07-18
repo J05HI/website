@@ -17,7 +17,7 @@ interface Data {
 
 export default Vue.extend<Data, {}, {}, {}>({
   layout: 'simple',
-  // amp: false,
+  amp: false,
 
   asyncData({ isDev }) {
     return { isDev }
