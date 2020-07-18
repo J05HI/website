@@ -4,8 +4,8 @@ import esLocale from 'date-fns/locale/es'
 export default {
   methods: {
     formatDate(date) {
-      const enDate = format(new Date(date), 'MMMM Q, yyyy')
-      const esDate = format(new Date(date), "q' de 'LLLL' de 'yyyy", {
+      const enDate = format(new Date(date), 'MMMM dd, yyyy')
+      const esDate = format(new Date(date), "dd' de 'LLLL' de 'yyyy", {
         locale: esLocale,
       })
 
