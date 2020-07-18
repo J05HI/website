@@ -7,92 +7,124 @@
       class="overflow-y-scroll lg:sticky lg:top-0 lg:pt-16 lg:-mt-16 h-full lg:h-auto"
     >
       <div class="p-4 pb-0 lg:ml-1 lg:pt-8 lg:pl-0 lg:pr-8">
-        <select
-          :value="currentProject.id"
-          class="block mt-1 form-select w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 lg:hidden sm:text-sm sm:leading-5"
-          @input="changeProject"
-        >
-          <option
-            v-for="project in projects"
-            :key="`simple-select-${project.id}`"
-            :value="project.id"
-            >{{ project.title[$i18n.locale] }}</option
+        <div v-if="!$isAMP">
+          <select
+            :value="currentProject.id"
+            class="block mt-1 form-select w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 lg:hidden sm:text-sm sm:leading-5"
+            @input="changeProject"
           >
-        </select>
-
-        <div
-          v-click-outside="() => (isProjectSelectOpen = false)"
-          class="hidden lg:relative lg:block"
-        >
-          <span class="inline-block w-full rounded-md shadow-sm">
-            <button
-              type="button"
-              aria-haspopup="listbox"
-              aria-expanded="true"
-              aria-labelledby="listbox-label"
-              class="cursor-default relative w-full rounded-md border border-gray-300 bg-white pl-3 pr-10 py-2 text-left focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition ease-in-out duration-150 sm:text-sm sm:leading-5"
-              @click="isProjectSelectOpen = !isProjectSelectOpen"
+            <option
+              v-for="project in projects"
+              :key="`simple-select-${project.id}`"
+              :value="project.id"
+              >{{ project.title[$i18n.locale] }}</option
             >
-              <span class="block truncate">
-                {{ currentProject.title[$i18n.locale] }}
-              </span>
-              <span
-                class="text-gray-400 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
-              >
-                <SvgIcon
-                  name="menu-open"
-                  width="20"
-                  height="20"
-                  class="h-5 w-5"
-                />
-              </span>
-            </button>
-          </span>
+          </select>
 
-          <!-- Select popover, show/hide based on select state. -->
           <div
-            v-show="isProjectSelectOpen"
-            class="z-10 absolute mt-1 w-full rounded-md bg-white shadow-lg"
+            v-click-outside="() => (isProjectSelectOpen = false)"
+            class="hidden lg:relative lg:block"
           >
-            <ul
-              tabindex="-1"
-              role="listbox"
-              aria-labelledby="listbox-label"
-              aria-activedescendant="listbox-item-3"
-              class="max-h-60 rounded-md py-1 text-base leading-6 shadow-xs overflow-auto focus:outline-none sm:text-sm sm:leading-5"
-            >
-              <li
-                v-for="project in projects"
-                :id="`advanced-select-${project.id}`"
-                :key="`advanced-select-${project.id}`"
-                :class="{
-                  'text-white bg-gray-600': currentProject.id === project.id,
-                  'text-gray-900 hover:text-white hover:bg-gray-500':
-                    currentProject.id !== project.id,
-                }"
-                role="option"
-                class="cursor-default select-none relative py-2 pl-3 pr-9"
-                @click="gotToProject(project.id)"
+            <span class="inline-block w-full rounded-md shadow-sm">
+              <button
+                type="button"
+                aria-haspopup="listbox"
+                aria-expanded="true"
+                aria-labelledby="listbox-label"
+                class="cursor-default relative w-full rounded-md border border-gray-300 bg-white pl-3 pr-10 py-2 text-left focus:outline-none focus:shadow-outline-blue focus:border-blue-300 dark:bg-gray-900 transition ease-in-out duration-150 sm:text-sm sm:leading-5"
+                @click="isProjectSelectOpen = !isProjectSelectOpen"
               >
-                <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
-                <span
-                  :class="{
-                    'font-semibold': currentProject.id === project.id,
-                    'font-normal': currentProject.id !== project.id,
-                  }"
-                  class="block truncate"
-                >
-                  {{ project.title[$i18n.locale] }}
+                <span class="block truncate">
+                  {{ currentProject.title[$i18n.locale] }}
                 </span>
+                <span
+                  class="text-gray-400 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
+                >
+                  <SvgIcon
+                    name="menu-open"
+                    width="20"
+                    height="20"
+                    class="h-5 w-5"
+                  />
+                </span>
+              </button>
+            </span>
 
-                <span
-                  v-if="currentProject.id === project.id"
-                  class="text-white absolute inset-y-0 right-0 flex items-center pr-4"
+            <!-- Select popover, show/hide based on select state. -->
+            <div
+              v-show="isProjectSelectOpen"
+              class="z-10 absolute mt-1 w-full rounded-md bg-white shadow-lg"
+            >
+              <ul
+                tabindex="-1"
+                role="listbox"
+                aria-labelledby="listbox-label"
+                aria-activedescendant="listbox-item-3"
+                class="max-h-60 rounded-md py-1 text-base leading-6 shadow-xs overflow-auto focus:outline-none sm:text-sm sm:leading-5"
+              >
+                <li
+                  v-for="project in projects"
+                  :id="`advanced-select-${project.id}`"
+                  :key="`advanced-select-${project.id}`"
+                  :class="{
+                    'text-white bg-gray-600': currentProject.id === project.id,
+                    'text-gray-900 hover:text-white hover:bg-gray-500':
+                      currentProject.id !== project.id,
+                  }"
+                  role="option"
+                  class="cursor-default select-none relative py-2 pl-3 pr-9"
+                  @click="gotToProject(project.id)"
                 >
-                  <SvgIcon name="checkmark" width="14" height="14" />
+                  <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
+                  <span
+                    :class="{
+                      'font-semibold': currentProject.id === project.id,
+                      'font-normal': currentProject.id !== project.id,
+                    }"
+                    class="block truncate"
+                  >
+                    {{ project.title[$i18n.locale] }}
+                  </span>
+
+                  <span
+                    v-if="currentProject.id === project.id"
+                    class="text-white absolute inset-y-0 right-0 flex items-center pr-4"
+                  >
+                    <SvgIcon name="checkmark" width="14" height="14" />
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div v-else>
+          <div class="lg:relative">
+            <span class="inline-block w-full rounded-md shadow-sm">
+              <NuxtLink
+                :to="
+                  localePath({
+                    name: 'docs',
+                    params: { project: currentProject.id },
+                  })
+                "
+                class="block cursor-default relative w-full rounded-md border border-gray-300 bg-white pl-3 pr-10 py-2 text-left focus:outline-none focus:shadow-outline-blue focus:border-blue-300 dark:bg-gray-900 transition ease-in-out duration-150 sm:text-sm sm:leading-5"
+              >
+                <span class="block truncate">
+                  {{ currentProject.title[$i18n.locale] }}
                 </span>
-              </li>
-            </ul>
+                <span
+                  class="text-gray-400 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
+                >
+                  <SvgIcon
+                    name="menu-open"
+                    width="20"
+                    height="20"
+                    class="h-5 w-5"
+                  />
+                </span>
+              </NuxtLink>
+            </span>
           </div>
         </div>
       </div>
