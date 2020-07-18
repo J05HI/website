@@ -121,9 +121,5 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "resolutions": {
-    "@nuxt/typescript-build/@nuxt/types": "2.13.2",
-    "@nuxt/typescript-runtime/@nuxt/types": "2.13.2"
   }
 }
