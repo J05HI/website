@@ -58,6 +58,7 @@ export default {
               'https://www.crunchbase.com/person/julio-marquez',
               'https://dev.to/juliomrqz',
               'https://www.toptal.com/resume/julio-marquez#trust-nothing-but-choice-it-professionals',
+              'https://dribbble.com/juliomrqz',
             ],
           }),
           type: 'application/ld+json',
