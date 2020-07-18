@@ -51,10 +51,7 @@ export interface DocArticleContent extends NuxtContentBase {
 
 export interface Project {
   id: string
-  title: {
-    en: string
-    es: string
-  }
+  title: { [key: string]: string }
   description: {
     en: string
     es: string

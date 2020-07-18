@@ -28,7 +28,8 @@ import Vue from 'vue'
 import Clipboard from 'clipboard'
 
 import SeoHead from '~/components/mixins/SeoHead'
-import { DocArticleContent } from '~/interfaces'
+import { docsProjects } from '~/data/projects'
+import { DocArticleContent, DocsProject } from '~/interfaces'
 
 // TODO: improve this
 type Doc = { [key: string]: string | boolean | number }
@@ -45,11 +46,10 @@ export default Vue.extend<Data, {}, {}>({
   async asyncData({ $content, app, params, error }) {
     const slug = params.slug || 'README'
     const { project } = params
-    const contentArgs = [
-      'docs',
-      project,
-      app.i18n.locale !== 'en' ? app.i18n.locale : '',
-    ].filter(Boolean)
+    const locale = app.i18n.locale as string
+    const contentArgs = ['docs', project, locale !== 'en' ? locale : ''].filter(
+      Boolean
+    )
     let doc
 
     try {
@@ -64,12 +64,16 @@ export default Vue.extend<Data, {}, {}>({
       .surround(slug, { before: 1, after: 1 })
       .fetch()
 
+    const currentProject = docsProjects.find((p) => p.id === project)
+    const projectName = currentProject?.title[locale]
+
     return {
       doc,
       prev,
       next,
+      currentProject,
       head: {
-        titleTemplate: '%s - Docs | Julio Marquez',
+        titleTemplate: `%s - ${projectName} | Docs | Julio Marquez`,
         title: doc.title,
         description: doc.description,
       },
