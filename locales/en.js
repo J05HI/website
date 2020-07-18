@@ -35,6 +35,8 @@ export default {
     readMore: 'Read More',
     explore: 'Explore',
     viewAll: 'View all Stories',
+    aboutMe:
+      'I\'m <strong>Julio Marquez</strong>, a Geophysical and Software Engineer. A digital nomad at <a href="https://go.marquez.co/Toptal" target="_blank" rel="noopener noreferrer" class="font-medium text-gray-900 underline hover:text-gray-800 dark:text-gray-200 dark-hover:text-gray-100">Toptal</a> and Consultant at <a href="https://aceforth.com?ref=marquez" target="_blank" rel="noopener noreferrer" class="font-medium text-gray-900 underline hover:text-gray-800 dark:text-gray-200 dark-hover:text-gray-100">Aceforth</a>. Previously Co-Founded and Full-Stack Developer at <a href="https://www.bazzite.com?ref=marquez" target="_blank" rel="noopener noreferrer" class="font-medium text-gray-900 underline hover:text-gray-800 dark:text-gray-200 dark-hover:text-gray-100">Bazzite</a>. I\'m in love with <a href="https://github.com/juliomrqz" target="_blank" rel="noopener noreferrer" class="font-medium text-gray-900 underline hover:text-gray-800 dark:text-gray-200 dark-hover:text-gray-100">Open Source</a>, a good Cup of Coffee and <a href="https://dribbble.com/juliomrqz" target="_blank" rel="noopener noreferrer" class="font-medium text-gray-900 underline hover:text-gray-800 dark:text-gray-200 dark-hover:text-gray-100">design</a>.',
   },
   projects: {
     title: 'Latest Projects',

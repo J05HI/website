@@ -35,6 +35,8 @@ export default {
     readMore: 'Leer Más',
     explore: 'Explorar',
     viewAll: 'Ver todas las Historias',
+    aboutMe:
+      'Soy <strong>Julio Márquez</strong>, un Ingeniero Geofísico y de Software. Un nómada digital en <a href="https://go.marquez.co/Toptal" target="_blank" rel="noopener noreferrer" class="font-medium text-gray-900 underline hover:text-gray-800 dark:text-gray-200 dark-hover:text-gray-100">Toptal</a> y consultor en <a href="https://aceforth.com?ref=marquez" target="_blank" rel="noopener noreferrer" class="font-medium text-gray-900 underline hover:text-gray-800 dark:text-gray-200 dark-hover:text-gray-100">Aceforth</a>. Anteriormente co-fundador y Desarrollador Full-Stack en <a href="https://www.bazzite.com?ref=marquez" target="_blank" rel="noopener noreferrer" class="font-medium text-gray-900 underline hover:text-gray-800 dark:text-gray-200 dark-hover:text-gray-100">Bazzite</a>. Estoy apasionado por el <a href="https://github.com/juliomrqz" target="_blank" rel="noopener noreferrer" class="font-medium text-gray-900 underline hover:text-gray-800 dark:text-gray-200 dark-hover:text-gray-100">Código Abierto</a>, una buena Taza de Café y <a href="https://dribbble.com/juliomrqz" target="_blank" rel="noopener noreferrer" class="font-medium text-gray-900 underline hover:text-gray-800 dark:text-gray-200 dark-hover:text-gray-100">el Diseño</a>.',
   },
   projects: {
     title: 'Último Proyectos',

@@ -65,9 +65,15 @@
     <LazyHydrate v-if="post" when-idle>
       <div>
         <div class="pb-4">
+          <time
+            :datetime="post.published"
+            class="block mb-2 text-base leading-6 font-medium text-gray-600 dark:text-gray-300"
+          >
+            {{ formatDate(post.published) }}
+          </time>
           <h1
             itemprop="name headline"
-            class="font-open-sans text-2xl leading-7 font-bold dark:text-gray-100 mb-8 md:text-3xl"
+            class="text-3xl leading-9 font-extrabold text-gray-900 mb-8 tracking-tight sm:leading-10 md:text-4xl md:leading-14 dark:text-gray-100"
           >
             {{ post.title }}
           </h1>
@@ -89,12 +95,14 @@
                 <span class="font-medium dark:text-gray-100"
                   >Julio Márquez</span
                 >
-                <time
-                  :datetime="post.published"
-                  class="text-sm text-gray-600 dark:text-gray-300"
+                <a
+                  href="https://github.com/juliomrqz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-gray-600 hover:text-gray-700 dark:text-gray-300 dark-hover:text-gray-200"
                 >
-                  {{ formatDate(post.published) }}
-                </time>
+                  @juliomrqz
+                </a>
               </div>
             </div>
           </div>
@@ -145,6 +153,40 @@
         </aside>
       </div>
     </LazyHydrate>
+
+    <div
+      class="mt-12 border-t border-dashed border-gray-400 rounded-lg dark:border-gray-200"
+    />
+
+    <div
+      class="my-12 text-center md:text-left md:flex md:items-start md:justify-between"
+    >
+      <div>
+        <ImageResponsive
+          :width="96"
+          :height="96"
+          :rounded="true"
+          :source="require('~/assets/images/profile.jpg?resize&sizes=192')"
+          amp-layout="fixed"
+          alt="Julio Márquez"
+          class="w-24 h-24 mx-auto"
+          classes="w-24 h-24 border border-gray-300"
+        />
+      </div>
+      <div class="mt-4 flex flex-col md:mt-0 md:ml-4">
+        <div class="md:pl-4">
+          <!-- eslint-disable vue/no-v-html -->
+          <div class="text-lg" v-html="$t('blog.aboutMe')" />
+
+          <NuxtLink
+            :to="localePath('about')"
+            class="mt-4 block font-medium text-gray-700 hover:underline hover:text-gray-800 dark:text-gray-200 dark-hover:text-gray-100"
+          >
+            {{ $t('links.more') }}
+          </NuxtLink>
+        </div>
+      </div>
+    </div>
   </article>
 </template>
 
