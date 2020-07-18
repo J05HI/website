@@ -72,7 +72,7 @@
                 }"
                 role="option"
                 class="cursor-default select-none relative py-2 pl-3 pr-9"
-                @click="changeProject(project.id)"
+                @click="gotToProject(project.id)"
               >
                 <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
                 <span
@@ -116,7 +116,7 @@
               class="text-gray-600 dark:text-gray-500"
             >
               <NuxtLink
-                :to="toLink(doc.slug)"
+                :to="getToTarget(doc.slug)"
                 class="px-2 rounded font-medium py-1 block hover:text-gray-800 dark-hover:text-gray-100"
                 exact-active-class="text-gray-800 bg-gray-200 font-semibold hover:text-gray-700 dark:text-white dark:bg-gray-800 dark-hover:text-white"
                 active-class
@@ -175,9 +175,17 @@ interface Computed {
   menu: boolean
   categories: { [key: string]: any }[]
   githubLink: string
+  projectId: string
 }
 
-export default Vue.extend<Data, {}, Computed, {}>({
+interface Methods {
+  getToTarget: (slug: string) => string
+  changeProject: (e: Event) => Promise<void>
+  gotToProject: (project: string) => Promise<void>
+  fetchCategories: () => Promise<void>
+}
+
+export default Vue.extend<Data, Methods, Computed, {}>({
   directives: {
     clickOutside: vClickOutside.directive,
   },
@@ -204,18 +212,27 @@ export default Vue.extend<Data, {}, Computed, {}>({
     githubLink() {
       return `https://github.com/juliomrqz/${this.currentProject?.id}`
     },
-  },
-
-  watch: {
-    $route() {
-      this.isProjectSelectOpen = false
-      this.$store.commit('menu/toggle', false)
+    projectId() {
+      return this.$route.params.project
     },
   },
 
+  watch: {
+    async $route() {
+      this.isProjectSelectOpen = false
+      this.$store.commit('menu/toggle', false)
+
+      await this.fetchCategories()
+    },
+  },
+
+  async mounted() {
+    await this.fetchCategories()
+  },
+
   methods: {
-    toLink(slug: string) {
-      const { project } = this.$route.params
+    getToTarget(slug: string): string {
+      const project = this.projectId
 
       if (slug === 'index' || slug.toLowerCase() === 'readme') {
         return this.localePath({
@@ -230,16 +247,8 @@ export default Vue.extend<Data, {}, Computed, {}>({
       })
     },
 
-    changeProject(e: Event | string) {
-      let project = ''
-
-      if (typeof project === 'string') {
-        project = `${e}`
-      } else {
-        project = ((e as Event).target as any).value
-      }
-
-      this.$router.push(
+    async gotToProject(project: string): Promise<void> {
+      await this.$router.push(
         this.localePath({
           name: 'docs-project-slug',
           params: {
@@ -247,6 +256,40 @@ export default Vue.extend<Data, {}, Computed, {}>({
           },
         })
       )
+    },
+
+    async changeProject(e: Event): Promise<void> {
+      await this.gotToProject((e.target as any).value)
+    },
+
+    async fetchCategories() {
+      const project = this.projectId
+
+      // fetch categories
+      if (process.server) {
+        await this.$store.dispatch('fetchCategories', { project })
+      }
+
+      // Spa Fallback
+      const index = `${this.$i18n.locale}-${project}`
+
+      if (process.client && !this.$store.state.categories[index]) {
+        this.$router &&
+          this.$nextTick(async () => {
+            await this.$store.dispatch('fetchCategories', { project })
+          })
+      }
+
+      // Hot reload on development
+      // @ts-ignore
+      if (process.client && process.dev) {
+        // @ts-ignore
+        window.onNuxtReady(() => {
+          window.$nuxt.$on('content:update', () =>
+            this.$store.dispatch('fetchCategories', { project })
+          )
+        })
+      }
     },
   },
 })

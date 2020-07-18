@@ -44,7 +44,7 @@ export default Vue.extend<Data, {}, {}>({
   amp: false,
   mixins: [SeoHead],
   // middleware: 'docs-categories',
-  async asyncData({ $content, app, params, error, store }) {
+  async asyncData({ $content, app, params, error }) {
     const slug = params.slug || 'README'
     const { project } = params
     const locale = app.i18n.locale as string
@@ -67,32 +67,6 @@ export default Vue.extend<Data, {}, {}>({
 
     const currentProject = docsProjects.find((p) => p.id === project)
     const projectName = currentProject?.title[locale]
-
-    // fetch categories
-    if (process.server) {
-      await store.dispatch('fetchCategories', { project })
-    }
-
-    // Spa Fallback
-    const index = `${app.i18n.locale}-${project}`
-
-    if (process.client && !store.state.categories[index]) {
-      app.router &&
-        app.router.app.$nextTick(async () => {
-          await store.dispatch('fetchCategories', { project })
-        })
-    }
-
-    // Hot reload on development
-    // @ts-ignore
-    if (process.client && process.dev) {
-      // @ts-ignore
-      window.onNuxtReady(() => {
-        window.$nuxt.$on('content:update', () =>
-          store.dispatch('fetchCategories', { project })
-        )
-      })
-    }
 
     return {
       doc,
