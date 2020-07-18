@@ -5,6 +5,9 @@ import AmpOptimizer from '@ampproject/toolbox-optimizer'
 import AmpCustom from 'amp-custom'
 import cheerio from 'cheerio'
 import consola from 'consola'
+import postcss from 'postcss'
+// @ts-ignore
+import postcssRemove from 'postcss-remove-classes'
 
 /**
  *
@@ -44,14 +47,16 @@ export const ampify = async (debug: boolean, html: string) => {
   $('style').remove()
 
   try {
-    styleConcat = ampCustom.optimize(styleConcat)
+    const cleanCSS = await postcss([postcssRemove(['dark-mode'])]).process(
+      styleConcat
+    )
+    styleConcat = ampCustom.optimize(cleanCSS)
 
     if (debug && ampCustom.isOverMaxByte(styleConcat)) {
       consola.warn("The CSS string size doesn't meets the AMP rules (50KB)")
     }
   } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error(error)
+    consola.error(error)
   }
 
   html = $.html().replace(
