@@ -1,0 +1,355 @@
+**********************************************************************
+*       SYSTEM         : CREATED WITH MAPSET(R)
+*       ORGANIZATION   : BAZZITE
+*       COLLECTION     : BMS DESIGN
+*       FILE NAME      : SMART
+*       CREATED BY     : JULIO MARQUEZ
+*       DATE           : FRI MAY 11, 2018 - 15:12:12
+**********************  DB2 TABLES USAGE INFO  ************************
+*
+*                        NOTHING TO DISPLAY
+*
+************************  ORIGINAL COMMENT  ***************************
+*
+*                       MODIFICATIONS LOGS
+*                --------------------------------
+*  MODIF.   AUTOR     DATE               DESCRIPCION
+* -------- ------- ---------- ------------------------------------
+* US050318  JULIO  02-01-2018         INITIAL CREATION
+*
+*
+**********************************************************************
+          PRINT NOGEN
+SMART    DFHMSD TYPE=DSECT,                                            X
+               TERM=3270-2,                                            X
+               CTRL=(FREEKB),                                          X
+               MODE=INOUT,                                             X
+               COLOR=DEFAULT,                                          X
+               TIOAPFX=YES,                                            X
+               STORAGE=AUTO,                                           X
+               LANG=COBOL
+**********************************************************************
+SMWRT    DFHMDI LINE=01,                                               X
+               COLUMN=01,                                              X
+               SIZE=(24,80)
+**********************************************************************
+TRANID   DFHMDF POS=(01,01),                                           X
+               LENGTH=4,                                               X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='FR10'
+TC-COMPANY DFHMDF POS=(01,20),                                         X
+               LENGTH=40,                                              X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT)
+BA-DATE  DFHMDF POS=(01,70),                                           X
+               LENGTH=10,                                              X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT)
+**********************************************************************
+TT-MSG-ERROR DFHMDF POS=(02,15),                                       X
+               LENGTH=50,                                              X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT)
+BA-PRGM  DFHMDF POS=(02,70),                                           X
+               LENGTH=10,                                              X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT)
+**********************************************************************
+         DFHMDF POS=(03,01),                                           X
+               LENGTH=15,                                              X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='DATE OF THE DAY'
+DAY      DFHMDF POS=(03,17),                                           X
+               LENGTH=2,                                               X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               PICOUT='99',                                            X
+               JUSTIFY=(LEFT)
+         DFHMDF POS=(03,20),                                           X
+               LENGTH=1,                                               X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='/'
+MONTH    DFHMDF POS=(03,22),                                           X
+               LENGTH=2,                                               X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               PICOUT='99',                                            X
+               JUSTIFY=(LEFT)
+         DFHMDF POS=(03,25),                                           X
+               LENGTH=1,                                               X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='/'
+AZO      DFHMDF POS=(03,27),                                           X
+               LENGTH=4,                                               X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT)
+BA-USER  DFHMDF POS=(03,70),                                           X
+               LENGTH=10,                                              X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT)
+**********************************************************************
+         DFHMDF POS=(04,33),                                           X
+               LENGTH=13,                                              X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='  MAIN MENU  '
+BA-HORAE DFHMDF POS=(04,70),                                           X
+               LENGTH=10,                                              X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT)
+**********************************************************************
+W-MESSAGE2 DFHMDF POS=(05,31),                                         X
+               LENGTH=18,                                              X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT)
+BA-TERM  DFHMDF POS=(05,70),                                           X
+               LENGTH=10,                                              X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT)
+**********************************************************************
+W-MESSAGE1 DFHMDF POS=(06,05),                                         X
+               LENGTH=18,                                              X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT)
+W-MESSAGE3 DFHMDF POS=(06,31),                                         X
+               LENGTH=18,                                              X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT)
+W-MESSAGE4 DFHMDF POS=(06,58),                                         X
+               LENGTH=18,                                              X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT)
+**********************************************************************
+         DFHMDF POS=(07,22),                                           X
+               LENGTH=4,                                               X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='COD.'
+         DFHMDF POS=(07,27),                                           X
+               LENGTH=9,                                               X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='  MODULES'
+**********************************************************************
+         DFHMDF POS=(08,22),                                           X
+               LENGTH=4,                                               X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='----'
+         DFHMDF POS=(08,27),                                           X
+               LENGTH=31,                                              X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='  -----------------------------'
+**********************************************************************
+         DFHMDF POS=(09,23),                                           X
+               LENGTH=1,                                               X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='1'
+         DFHMDF POS=(09,29),                                           X
+               LENGTH=20,                                              X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='CUSTOMER MAINTENANCE'
+**********************************************************************
+         DFHMDF POS=(10,23),                                           X
+               LENGTH=1,                                               X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='2'
+         DFHMDF POS=(10,29),                                           X
+               LENGTH=13,                                              X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='SYSTEM TABLES'
+**********************************************************************
+         DFHMDF POS=(11,23),                                           X
+               LENGTH=1,                                               X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='3'
+         DFHMDF POS=(11,29),                                           X
+               LENGTH=23,                                              X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='CONTRACT ADMINISTRATION'
+**********************************************************************
+         DFHMDF POS=(12,23),                                           X
+               LENGTH=1,                                               X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='4'
+         DFHMDF POS=(12,29),                                           X
+               LENGTH=23,                                              X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='ADMINISTRATION OF FUNDS'
+**********************************************************************
+         DFHMDF POS=(13,23),                                           X
+               LENGTH=1,                                               X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='5'
+         DFHMDF POS=(13,29),                                           X
+               LENGTH=28,                                              X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='ADMINISTRATION OF COMMISSION'
+**********************************************************************
+         DFHMDF POS=(14,23),                                           X
+               LENGTH=1,                                               X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='6'
+         DFHMDF POS=(14,29),                                           X
+               LENGTH=25,                                              X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='INVESTMENT ADMINISTRATION'
+**********************************************************************
+         DFHMDF POS=(15,23),                                           X
+               LENGTH=1,                                               X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='7'
+         DFHMDF POS=(15,29),                                           X
+               LENGTH=10,                                              X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='ACCOUNTING'
+**********************************************************************
+         DFHMDF POS=(16,23),                                           X
+               LENGTH=1,                                               X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='8'
+         DFHMDF POS=(16,29),                                           X
+               LENGTH=13,                                              X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='CONSULTATIONS'
+**********************************************************************
+         DFHMDF POS=(17,23),                                           X
+               LENGTH=1,                                               X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='9'
+         DFHMDF POS=(17,29),                                           X
+               LENGTH=33,                                              X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='GENERATION OF REPORTS / PROCESSES'
+**********************************************************************
+         DFHMDF POS=(18,22),                                           X
+               LENGTH=2,                                               X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='10'
+         DFHMDF POS=(18,29),                                           X
+               LENGTH=25,                                              X
+               ATTRB=(NORM,PROT),                                      X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='MULTI-COUNTRY LEGISLATION'
+**********************************************************************
+         DFHMDF POS=(19,22),                                           X
+               LENGTH=4,                                               X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='----'
+         DFHMDF POS=(19,27),                                           X
+               LENGTH=31,                                              X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='  -----------------------------'
+**********************************************************************
+         DFHMDF POS=(20,17),                                           X
+               LENGTH=4,                                               X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='CODE'
+TC-CHOICE DFHMDF POS=(20,23),                                          X
+               LENGTH=2,                                               X
+               ATTRB=(BRT,FSET,IC,UNPROT),                             X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT)
+         DFHMDF POS=(20,26),                                           X
+               LENGTH=54,                                              X
+               ATTRB=(ASKIP,NORM,PROT),                                X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='                                               X
+                      '
+**********************************************************************
+         DFHMDF POS=(22,01),                                           X
+               LENGTH=79,                                              X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='Enter-PF1---PF2---PF3---PF4---PF5---PF6---PF7--X
+               -PF8---PF9---PF10--PF11--PF12---'
+**********************************************************************
+PF-FRM0000 DFHMDF POS=(23,01),                                         X
+               LENGTH=79,                                              X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT)
+**********************************************************************
+ME-FRM0000 DFHMDF POS=(24,01),                                         X
+               LENGTH=64,                                              X
+               ATTRB=(BRT,PROT),                                       X
+               COLOR=DEFAULT,                                          X
+               JUSTIFY=(LEFT),                                         X
+               INITIAL='                                               X
+                                '
+**********************************************************************
+         DFHMSD TYPE=FINAL
+         END
