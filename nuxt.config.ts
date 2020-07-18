@@ -266,8 +266,8 @@ const config: NuxtConfiguration = {
       filteredDocsIndex.forEach((route) => {
         const path = route.path.replace('/README', '')
 
-        routes.push(`/amp/${path}`)
-        routes.push(`/amp/es/${path}`)
+        routes.push(`/amp${path}`)
+        routes.push(`/amp/es${path}`)
       })
 
       return routes
