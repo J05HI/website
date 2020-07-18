@@ -3,11 +3,11 @@
     <section class="pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-18 lg:px-8">
       <div class="relative max-w-7xl mx-auto">
         <div class="text-center">
-          <h2
+          <h1
             class="text-3xl leading-9 tracking-tight font-extrabold sm:text-4xl sm:leading-10 dark:text-gray-100"
           >
             {{ $t('blog.title2') }}
-          </h2>
+          </h1>
           <p
             class="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500 dark:text-gray-300 sm:mt-4"
           >

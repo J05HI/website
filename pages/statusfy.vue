@@ -9,11 +9,11 @@
         <div
           class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left"
         >
-          <h2
+          <h1
             class="mt-1 text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:leading-none sm:text-6xl lg:text-5xl"
           >
             {{ $t('statusfy.title') }}
-          </h2>
+          </h1>
           <p
             class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl"
           >
