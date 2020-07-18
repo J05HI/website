@@ -506,6 +506,10 @@ const config: NuxtConfiguration = {
     { path: '/api/cms/auth', handler: '~/api/_dev/cms/auth.js' },
     { path: '/api/cms/complete', handler: '~/api/_dev/cms/complete.js' },
   ],
+
+  tailwindcss: {
+    configPath: isProd ? '~/tailwind.config.js' : '~/tailwind.config.dev.js',
+  },
 }
 
 export default config

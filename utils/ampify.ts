@@ -23,6 +23,8 @@ export const ampify = async (debug: boolean, html: string) => {
   // Remove the pid attribute
   $('path').removeAttr('pid').removeAttr('_fill')
 
+  $('g').removeAttr('_stroke').removeAttr('_fill')
+
   /* remove math element */
   $('math').remove()
 
@@ -46,17 +48,36 @@ export const ampify = async (debug: boolean, html: string) => {
 
   $('style').remove()
 
-  try {
-    const cleanCSS = await postcss([postcssRemove(['dark-mode'])]).process(
-      styleConcat
-    )
-    styleConcat = ampCustom.optimize(cleanCSS)
+  const cleanCSS = await postcss([
+    postcssRemove([
+      'dark-mode',
+      'prose-dark',
+      'prose-lg',
+      'prose-xl',
+      'sm\\:prose-dark',
+      `sm:prose-dark`,
+      'md\\:prose-dark',
+      'md:prose-dark',
+      'lg\\:prose-dark',
+      'lg:prose-dark',
+      'xl\\:prose-dark',
+      'xl:prose-dark',
+      'sm\\:prose',
+      'sm\\:prose-lg',
+      'sm\\:prose-xl',
+      'md\\:prose',
+      'md\\:prose-lg',
+      'md\\:prose-xl',
+      'lg\\:prose',
+      'lg\\:prose-xl',
+      'xl\\:prose',
+      'xl\\:prose-lg',
+    ]),
+  ]).process(styleConcat)
+  styleConcat = ampCustom.optimize(cleanCSS.css)
 
-    if (debug && ampCustom.isOverMaxByte(styleConcat)) {
-      consola.warn("The CSS string size doesn't meets the AMP rules (50KB)")
-    }
-  } catch (error) {
-    consola.error(error)
+  if (debug && ampCustom.isOverMaxByte(styleConcat)) {
+    consola.warn("The CSS string size doesn't meets the AMP rules (50KB)")
   }
 
   html = $.html().replace(

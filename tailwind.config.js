@@ -183,7 +183,7 @@ module.exports = {
     }),
   ],
   purge: {
-    enabled: !process.env.DISABLE_TAILWIND_PURGE,
+    enabled: true,
     content: [
       'content/**/*.md',
       'components/**/*.vue',

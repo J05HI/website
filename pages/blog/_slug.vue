@@ -130,7 +130,7 @@
           :class="{
             'prose-dark': $colorMode.preference === 'dark',
           }"
-          class="max-w-none prose prose lg:prose-lg xl:prose-xl"
+          class="max-w-none prose lg:prose-lg xl:prose-xl"
         >
           <NuxtContent :document="post" itemprop="articleBody" />
         </div>

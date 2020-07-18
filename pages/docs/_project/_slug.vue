@@ -8,7 +8,7 @@
         :class="{
           'prose-dark': $colorMode.preference === 'dark',
         }"
-        class="prose prose lg:prose-lg lg:px-8"
+        class="prose lg:prose-lg lg:px-8"
       >
         <h1 v-if="Boolean($route.params.slug)">{{ doc.title }}</h1>
         <NuxtContent :document="doc" />
