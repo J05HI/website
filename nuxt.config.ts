@@ -232,7 +232,14 @@ const config: NuxtConfiguration = {
   export: {
     fallback: '404.html',
     async routes() {
-      const routes: string[] = ['/', '/about', '/projects', '/blog']
+      const routes: string[] = [
+        '/',
+        '/about',
+        '/projects',
+        '/blog',
+        '/docs',
+        '/statusfy',
+      ]
 
       // other routes
       routes.forEach((route) => {
@@ -337,7 +344,7 @@ const config: NuxtConfiguration = {
       lastmod: new Date(),
     },
     async routes() {
-      const websitePages = ['', 'about', 'projects', 'blog']
+      const websitePages = ['', 'about', 'projects', 'blog', 'docs', 'statusfy']
       const routesEn: ISitemapItemOptionsLoose[] = []
       const routesEs: ISitemapItemOptionsLoose[] = []
 
