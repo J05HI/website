@@ -189,6 +189,10 @@ export default Vue.extend<Data, Methods, Computed, {}>({
   directives: {
     clickOutside: vClickOutside.directive,
   },
+
+  async fetch() {
+    await this.fetchCategories()
+  },
   data: () => ({ projects: docsProjects, isProjectSelectOpen: false }),
   computed: {
     currentProject() {
