@@ -52,6 +52,7 @@
     "@ampproject/toolbox-optimizer": "2.5.12",
     "@commitlint/cli": "9.1.1",
     "@commitlint/config-conventional": "9.1.1",
+    "@intlify/vue-i18n-loader": "1.0.0",
     "@nuxt/types": "2.13.3",
     "@nuxt/typescript-build": "2.0.0",
     "@nuxt/typescript-runtime": "1.0.0",

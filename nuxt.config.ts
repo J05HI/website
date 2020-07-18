@@ -153,6 +153,7 @@ const config: NuxtConfiguration = {
         vueI18n: {
           fallbackLocale: 'en',
         },
+        vueI18nLoader: true,
       },
     ],
     // Doc: https://github.com/nuxt-community/sitemap-module
@@ -230,10 +231,7 @@ const config: NuxtConfiguration = {
    */
   export: {
     fallback: '404.html',
-    exclude: [
-      /^\/amp\/admin/,
-      /^\/amp\/es\/admin/,
-    ],
+    exclude: [/^\/amp\/admin/, /^\/amp\/es\/admin/],
   },
 
   /*
