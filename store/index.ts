@@ -31,20 +31,21 @@ export const mutations: MutationTree<RootState> = {
 }
 
 export const actions: ActionTree<RootState, RootState> = {
-  async fetchCategories({ commit, state }) {
-    const { project } = this.$router.app.$route.params
+  async fetchCategories({ commit }, options) {
+    const project = options?.project || this.$router.app.$route.params.project
 
     if (!project) {
       return
     }
 
-    const index = `${this.$i18n.locale}-${project}`
+    // const index = `${this.$i18n.locale}-${project}`
 
+    // TODO: enable this?
     // Avoid re-fetching in production
     // @ts-ignore
-    if (process.dev === false && state.categories[index]) {
-      return
-    }
+    // if (process.dev === false && state.categories[index]) {
+    //   return
+    // }
 
     const contentArgs = [
       'docs',

@@ -29,7 +29,7 @@ import Clipboard from 'clipboard'
 
 import SeoHead from '~/components/mixins/SeoHead'
 import { docsProjects } from '~/data/projects'
-import { DocArticleContent, DocsProject } from '~/interfaces'
+import { DocArticleContent } from '~/interfaces'
 
 // TODO: improve this
 type Doc = { [key: string]: string | boolean | number }
@@ -42,8 +42,8 @@ export default Vue.extend<Data, {}, {}>({
   name: 'DocsPageSlug',
   layout: 'docs',
   mixins: [SeoHead],
-  middleware: 'docs-categories',
-  async asyncData({ $content, app, params, error }) {
+  // middleware: 'docs-categories',
+  async asyncData({ $content, app, params, error, store }) {
     const slug = params.slug || 'README'
     const { project } = params
     const locale = app.i18n.locale as string
@@ -66,6 +66,32 @@ export default Vue.extend<Data, {}, {}>({
 
     const currentProject = docsProjects.find((p) => p.id === project)
     const projectName = currentProject?.title[locale]
+
+    // fetch categories
+    if (process.server) {
+      await store.dispatch('fetchCategories', { project })
+    }
+
+    // Spa Fallback
+    const index = `${app.i18n.locale}-${project}`
+
+    if (process.client && !store.state.categories[index]) {
+      app.router &&
+        app.router.app.$nextTick(async () => {
+          await store.dispatch('fetchCategories', { project })
+        })
+    }
+
+    // Hot reload on development
+    // @ts-ignore
+    if (process.client && process.dev) {
+      // @ts-ignore
+      window.onNuxtReady(() => {
+        window.$nuxt.$on('content:update', () =>
+          store.dispatch('fetchCategories', { project })
+        )
+      })
+    }
 
     return {
       doc,
@@ -108,6 +134,19 @@ export default Vue.extend<Data, {}, {}>({
         event.trigger.textContent = 'Copy'
       }, 2000)
     })
+  },
+  middleware({ redirect, route, app, params }) {
+    const slug = `${route.params.slug}`.toLowerCase()
+    const { project } = params
+
+    if (slug === 'index' || slug === 'readme') {
+      redirect(
+        app.localePath({
+          name: 'docs-project-slug',
+          params: { project },
+        })
+      )
+    }
   },
 })
 </script>
