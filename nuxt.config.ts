@@ -254,6 +254,22 @@ const config: NuxtConfiguration = {
         routes.push(`/amp/es/blog/${route.slug}`)
       })
 
+      // docs routes
+      const docsIndex: { path: string; dir: string }[] = await $content(
+        'docs',
+        { deep: true }
+      )
+        .only(['path', 'dir'])
+        .fetch()
+      const filteredDocsIndex = docsIndex.filter((d) => !d.dir.endsWith('/es'))
+
+      filteredDocsIndex.forEach((route) => {
+        const path = route.path.replace('/README', '')
+
+        routes.push(`/amp/${path}`)
+        routes.push(`/amp/es/${path}`)
+      })
+
       return routes
     },
   },
@@ -356,6 +372,34 @@ const config: NuxtConfiguration = {
             lastmodISO: new Date(slug.updatedAt).toISOString(),
             ampLink: `${baseURL}/amp/blog/${slug.slug}`,
             links: getI18nLinks(`/blog/${slug.slug}`),
+          })
+        })
+      } catch (error) {
+        throw new Error(error)
+      }
+
+      try {
+        const docsIndex: {
+          path: string
+          dir: string
+          updatedAt: string
+        }[] = await $content('docs', { deep: true })
+          .only(['path', 'dir', 'updatedAt'])
+          .fetch()
+        const filteredDocsIndex = docsIndex.filter(
+          (d) => !d.dir.endsWith('/es')
+        )
+
+        filteredDocsIndex.map((route) => {
+          const path = route.path.replace('/README', '')
+
+          routesEn.push({
+            url: path,
+            changefreq: EnumChangefreq.WEEKLY,
+            priority: 0.6,
+            lastmodISO: new Date(route.updatedAt).toISOString(),
+            ampLink: `${baseURL}/amp${path}`,
+            links: getI18nLinks(path),
           })
         })
       } catch (error) {
