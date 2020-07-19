@@ -73,8 +73,8 @@
     >
       <a
         :href="project.url"
-        target="'_blank'"
-        rel="'noopener noreferrer'"
+        target="_blank"
+        rel="noopener noreferrer"
         class="flex-1 text-gray-600 font-medium hover:text-gray-900 hover:underline dark:text-gray-200 dark-hover:text-gray-300"
       >
         {{ $t('docs.labels.moreInfo') }}
