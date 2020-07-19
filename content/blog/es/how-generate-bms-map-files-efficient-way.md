@@ -5,7 +5,7 @@ description: "La Edición de archivos de Mainframe es generalmente una tarea abr
 cover: blog/how-generate-bms-map-files-efficient-way-cover.png
 created: 2018-06-25T03:00:00Z
 published: 2018-06-25T03:00:00Z
-updatedAt: 2020-07-18T15:24:02Z
+updatedAt: 2020-07-19T01:02:12Z
 ---
 
 
@@ -37,8 +37,8 @@ En el área superior del Editor, existe una barra con todas las opciones que pue
   - **Rehacer:** permite volver a tener un cambio realizado en el área de trabajo, que pudo ser borrado o modificado sin intención.
   - **Guardar:** permite salvar todo lo creado y/o modificado en el Área de Trabajo.
   - **Guardar como:** permite salvar todo lo creado y/o modificado en el Archivo BMS activo, con un nombre diferente en el Proyecto deseado.
-  - **Descargar:** permite descargar en texto plano los últimos cambios salvados en formato de BMS válido. Esta opción sólo está activa si el BMS en edición no tiene ningún error. Puedes ver un archivo de ejemplo generado por el editor [acá](https://media.bazzite.com/blog/2018/06/how-generate-bms-map-files-efficient-way-bms-example.txt).
-  - **Generar PDF:** permite generar un BMS en formato PDF, para ser evaluado o comentado por otra persona. Puedes ver un archivo de ejemplo generado por el editor [acá](https://media.bazzite.com/blog/2018/06/how-generate-bms-map-files-efficient-way-pdf-report-example.pdf).
+  - **Descargar:** permite descargar en texto plano los últimos cambios salvados en formato de BMS válido. Esta opción sólo está activa si el BMS en edición no tiene ningún error. Puedes ver un archivo de ejemplo generado por el editor [acá](https://marquez.co/files/blog/how-generate-bms-map-files-efficient-way/bms-example.txt).
+  - **Generar PDF:** permite generar un BMS en formato PDF, para ser evaluado o comentado por otra persona. Puedes ver un archivo de ejemplo generado por el editor [acá](https://marquez.co/files/blog/how-generate-bms-map-files-efficient-way/pdf-report-example.pdf).
   - **Añadir Nuevos Campos:** permite crear de forma rápida nuevos campos en el Área de Trabajo.
   - **Eliminar Campos:** permite eliminar uno o más campos que hayan sido definidos en el Área de trabajo.
   - **Seleccionar Múltiples Campos:** mientras esta opción esté activa, se pueden seleccionar uno o varios campos para ser cambiados de posición o ser eliminado de forma más rápida y conveniente.
