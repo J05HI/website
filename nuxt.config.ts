@@ -1,3 +1,4 @@
+import { join } from 'path'
 import { NuxtOptions } from '@nuxt/types'
 import { ISitemapItemOptionsLoose, EnumChangefreq, ILinkItem } from 'sitemap'
 import readingTime from 'reading-time'
@@ -191,10 +192,18 @@ const config: NuxtConfiguration = {
    ** Build configuration
    */
   build: {
+    // @ts-ignore
     postcss: {
       plugins: {
+        tailwindcss: join(
+          __dirname,
+          isProd ? 'tailwind.config.js' : 'tailwind.config.dev.js'
+        ),
+        'postcss-extend-rule': {},
         'postcss-nested': {},
-        'postcss-combine-duplicated-selectors': {},
+        'postcss-combine-duplicated-selectors': {
+          removeDuplicatedProperties: true,
+        },
       },
       preset: {
         features: {
@@ -507,10 +516,6 @@ const config: NuxtConfiguration = {
     { path: '/api/cms/auth', handler: '~/api/_dev/cms/auth.js' },
     { path: '/api/cms/complete', handler: '~/api/_dev/cms/complete.js' },
   ],
-
-  tailwindcss: {
-    configPath: isProd ? '~/tailwind.config.js' : '~/tailwind.config.dev.js',
-  },
 }
 
 export default config

@@ -55,6 +55,7 @@ export const ampify = async (debug: boolean, html: string) => {
       'prose-sm',
       'prose-lg',
       'prose-xl',
+      'prose-2xl',
     ]),
   ]).process(styleConcat)
   styleConcat = ampCustom.optimize(cleanCSS.css)

@@ -32,7 +32,7 @@
                 aria-haspopup="listbox"
                 aria-expanded="true"
                 aria-labelledby="listbox-label"
-                class="cursor-default relative w-full rounded-md border border-gray-300 bg-white pl-3 pr-10 py-2 text-left focus:outline-none focus:shadow-outline-blue focus:border-blue-300 dark:bg-gray-900 transition ease-in-out duration-150 sm:text-sm sm:leading-5"
+                class="cursor-default relative w-full rounded-md border border-gray-300 bg-white pl-3 pr-10 py-2 text-left focus:outline-none focus:shadow-outline-blue focus:border-blue-300 dark:bg-gray-900 transition ease-linear duration-300 sm:text-sm sm:leading-5"
                 @click="isProjectSelectOpen = !isProjectSelectOpen"
               >
                 <span class="block truncate">
@@ -109,7 +109,7 @@
                     params: { project: currentProject.id },
                   })
                 "
-                class="block cursor-default relative w-full rounded-md border border-gray-300 bg-white pl-3 pr-10 py-2 text-left focus:outline-none focus:shadow-outline-blue focus:border-blue-300 dark:bg-gray-900 transition ease-in-out duration-150 sm:text-sm sm:leading-5"
+                class="block cursor-default relative w-full rounded-md border border-gray-300 bg-white pl-3 pr-10 py-2 text-left focus:outline-none focus:shadow-outline-blue focus:border-blue-300 dark:bg-gray-900 transition ease-linear duration-300 sm:text-sm sm:leading-5"
               >
                 <span class="block truncate">
                   {{ currentProject.title[$i18n.locale] }}

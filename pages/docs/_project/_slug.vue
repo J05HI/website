@@ -6,10 +6,9 @@
     >
       <LazyHydrate v-if="head && doc" when-idle>
         <article
-          :class="{ 'prose-dark': isDarkMode }"
           itemscope
           itemtype="http://schema.org/TechArticle"
-          class="prose prose-lg lg:px-8"
+          class="prose prose-lg lg:px-8 dark:prose-dark-mode"
         >
           <meta itemprop="dateCreated" :content="head.created" />
           <meta itemprop="datePublished" :content="head.published" />
@@ -223,12 +222,6 @@ export default Vue.extend<Data, {}, {}>({
         ],
       } as Head,
     }
-  },
-
-  computed: {
-    isDarkMode() {
-      return this.$colorMode.preference === 'dark'
-    },
   },
 
   mounted() {
