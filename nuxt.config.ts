@@ -143,7 +143,7 @@ const config: NuxtConfiguration = {
         baseUrl: baseURL,
         locales: [
           { code: 'en', iso: 'en-US', name: 'English', file: 'en.js' },
-          { code: 'es', iso: 'es-ES', name: 'Español', file: 'es.js' },
+          { code: 'es', iso: 'es-419', name: 'Español', file: 'es.js' },
         ],
         seo: false,
         defaultLocale: 'en',
