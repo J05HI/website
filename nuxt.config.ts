@@ -201,6 +201,15 @@ const config: NuxtConfiguration = {
         ),
         'postcss-extend-rule': {},
         'postcss-nested': {},
+        'postcss-remove-classes': [
+          'prose-sm',
+          'prose-lg',
+          'prose-xl',
+          'prose-2xl',
+          'prose-dark',
+          // TODO
+          // 'dark-mode .dark\\:prose'
+        ],
         'postcss-combine-duplicated-selectors': {
           removeDuplicatedProperties: true,
         },

@@ -49,14 +49,7 @@ export const ampify = async (debug: boolean, html: string) => {
   $('style').remove()
 
   const cleanCSS = await postcss([
-    postcssRemove([
-      'dark-mode',
-      'prose-dark',
-      'prose-sm',
-      'prose-lg',
-      'prose-xl',
-      'prose-2xl',
-    ]),
+    postcssRemove(['dark-mode', 'prose-dark']),
   ]).process(styleConcat)
   styleConcat = ampCustom.optimize(cleanCSS.css)
 
