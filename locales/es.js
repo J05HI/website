@@ -146,7 +146,7 @@ export default {
     },
   },
   docs: {
-    title: 'Documentación',
+    title: 'Documentación de mis Proyectos',
     description:
       'Familiarízate y explora las características de mi productos y proyectos de Código Abierto.',
     labels: {
