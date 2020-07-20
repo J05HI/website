@@ -146,6 +146,7 @@
         </a>
 
         <a
+          v-if="!$isAMP"
           :href="`https://github.com/juliomrqz/${currentProject.id}`"
           target="_blank"
           rel="noopener noreferrer"

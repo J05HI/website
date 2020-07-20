@@ -28,7 +28,7 @@
         <div
           class="hidden flex-1 lg:flex justify-center ml-4 mr-2 lg:mx-8 w-4/6"
         >
-          <DocsSearchInput />
+          <DocsSearchInput v-if="!$isAMP" />
         </div>
         <div class="flex items-center justify-end w-1/6">
           <a
