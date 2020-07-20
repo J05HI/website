@@ -28,13 +28,21 @@
   </div>
 </template>
 
-<script>
-import SeoHead from '~/components/mixins/SeoHead'
+<script lang="ts">
+import Vue from 'vue'
 
-export default {
+import SeoHead from '~/components/mixins/SeoHead'
+import { Head, BlogPostContent } from '~/interfaces'
+
+type Posts = Pick<
+  BlogPostContent,
+  'slug' | 'title' | 'description' | 'published' | 'cover'
+>[]
+
+export default Vue.extend({
   mixins: [SeoHead],
   async asyncData({ app, $sentry, $content }) {
-    let posts = []
+    let posts: Posts = []
 
     try {
       posts = await $content('blog', app.i18n.locale)
@@ -51,10 +59,10 @@ export default {
         titleTemplate: '%s - Blog | Julio Marquez',
         title: app.i18n.t('blog.title'),
         description: app.i18n.t('blog.description'),
-      },
+      } as Head,
     }
   },
-}
+})
 </script>
 
 <style scoped>

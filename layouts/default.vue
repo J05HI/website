@@ -15,56 +15,5 @@ import DarkModeFromAMPMixin from '@/components/mixins/DarkModeFromAMP'
 
 export default {
   mixins: [DarkModeFromAMPMixin],
-
-  head() {
-    return {
-      __dangerouslyDisableSanitizers: ['script'],
-      script: [
-        {
-          innerHTML: JSON.stringify({
-            '@context': 'http://www.schema.org',
-            '@type': 'ProfilePage',
-            inLanguage: this.$i18n.locale,
-            mainContentOfPage: 'https://marquez.co' + this.localePath('index'),
-            about: this.$i18n.t('slogan'),
-            logo: 'https://marquez.co' + require('~/assets/images/logo.png'),
-            author: {
-              '@type': 'person',
-              familyName: 'Marquez',
-              givenName: 'Julio',
-              url: 'https://marquez.co' + this.localePath('index'),
-              email: this.$config.email,
-              gender: 'http://schema.org/Male',
-              logo: 'https://marquez.co' + require('~/assets/images/logo.png'),
-              memberOf: [
-                {
-                  '@type': 'Corporation',
-                  name: 'Aceforth',
-                  url: 'https://aceforth.com',
-                },
-                {
-                  '@type': 'Corporation',
-                  name: 'CosmosAPI',
-                  url: 'https://cosmosapi.com',
-                },
-              ],
-            },
-            sameAs: [
-              'https://linkedin.com/in/juliomrqz/en',
-              'https://github.com/juliomrqz',
-              'https://twitter.com/juliomrqz',
-              'https://www.instagram.com/juliomrqz/',
-              'https://themeforest.net/user/julio-marquez',
-              'https://www.crunchbase.com/person/julio-marquez',
-              'https://dev.to/juliomrqz',
-              'https://www.toptal.com/resume/julio-marquez#trust-nothing-but-choice-it-professionals',
-              'https://dribbble.com/juliomrqz',
-            ],
-          }),
-          type: 'application/ld+json',
-        },
-      ],
-    }
-  },
 }
 </script>

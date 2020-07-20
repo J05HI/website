@@ -32,8 +32,6 @@ export default Vue.extend({
     },
   },
   head() {
-    // const i18nSeo = this.$nuxtI18nSeo()
-
     return {
       bodyAttrs: {
         class: [
@@ -42,7 +40,6 @@ export default Vue.extend({
           'antialiased font-sans text-gray-900 transition-colors duration-300 ease-linear dark:bg-gray-900 dark:text-gray-300',
         ],
       },
-      // ...i18nSeo,
     }
   },
 })

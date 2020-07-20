@@ -367,7 +367,7 @@ import '@/components/icons/statusfy'
 
 // import Subscribe from '../../../common/components/Subscribe.vue'
 import SeoHead from '~/components/mixins/SeoHead'
-// import { Head } from '~/types/interfaces'
+import { Head } from '~/interfaces'
 
 export default Vue.extend({
   // components: {
@@ -376,7 +376,7 @@ export default Vue.extend({
   name: 'StatusfyPage',
   mixins: [SeoHead],
   data() {
-    const head = {
+    const head: Head = {
       title: `Statusfy: ${this.$t('statusfy.title')}`,
       description: `${this.$t('statusfy.description')}`,
       image: require(`~/assets/images/projects/statusfy/og-${this.$i18n.locale}.png`),

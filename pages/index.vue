@@ -174,7 +174,7 @@ import Vue from 'vue'
 import SeoHead from '~/components/mixins/SeoHead'
 import { projects } from '~/data/projects'
 
-import { BlogPostContent } from '~/interfaces'
+import { BlogPostContent, Head } from '~/interfaces'
 
 type Posts = Pick<
   BlogPostContent,
@@ -203,7 +203,7 @@ export default Vue.extend({
         titleTemplate: '%s',
         title: `${title} - ${app.i18n.t('slogan')}`,
         description: app.i18n.t('description'),
-      },
+      } as Head,
     }
   },
   data: () => ({

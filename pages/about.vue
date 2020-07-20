@@ -219,11 +219,14 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
+
 import '~/components/icons'
 import SeoHead from '~/components/mixins/SeoHead'
+import { Head } from '~/interfaces'
 
-export default {
+export default Vue.extend({
   mixins: [SeoHead],
   data() {
     const $t = this.$t.bind(this)
@@ -238,10 +241,10 @@ export default {
       head: {
         title: $t('about.title'),
         description: $t('about.description'),
-      },
+      } as Head,
     }
   },
-}
+})
 </script>
 
 <style scoped>

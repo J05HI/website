@@ -33,6 +33,8 @@ import Vue from 'vue'
 import SeoHead from '~/components/mixins/SeoHead'
 import { projects } from '~/data/projects'
 
+import { Head } from '~/interfaces'
+
 export default Vue.extend({
   mixins: [SeoHead],
   data() {
@@ -43,7 +45,7 @@ export default Vue.extend({
       head: {
         title: $t('projects.title'),
         description: $t('projects.description'),
-      },
+      } as Head,
     }
   },
 })

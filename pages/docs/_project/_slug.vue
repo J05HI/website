@@ -4,19 +4,90 @@
       class="w-full py-4 lg:pt-8 lg:pb-4 dark:border-gray-800 lg:border-l lg:border-r"
       :class="{ '': doc.toc && doc.toc.length, 'lg:w-3/4': !doc.fullscreen }"
     >
-      <article
-        :class="{
-          'prose-dark': $colorMode.preference === 'dark',
-        }"
-        class="prose lg:prose-lg lg:px-8"
-      >
-        <h1 v-if="Boolean($route.params.slug)">{{ doc.title }}</h1>
-        <NuxtContent :document="doc" />
-      </article>
+      <LazyHydrate v-if="head && doc" when-idle>
+        <article
+          :class="{
+            'prose-dark': $colorMode.preference === 'dark',
+          }"
+          itemscope
+          itemtype="http://schema.org/TechArticle"
+          class="prose lg:prose-lg lg:px-8"
+        >
+          <meta itemprop="dateCreated" :content="head.created" />
+          <meta itemprop="datePublished" :content="head.published" />
+          <meta itemprop="dateModified" :content="head.modified" />
+          <meta
+            itemprop="headline"
+            :content="`${doc.title} - ${currentProject.title[$i18n.locale]}`"
+          />
+          <meta itemprop="description" :content="doc.description" />
+          <meta itemprop="inLanguage" :content="$i18n.locale" />
+          <meta
+            itemprop="mainEntityOfPage"
+            :content="'https://marquez.co' + $route.path"
+          />
+          <meta itemprop="mainEntityOfPage" :content="head.canonical" />
 
-      <DocsEditOnGithub :document="doc" />
+          <div
+            itemscope
+            itemprop="image"
+            itemtype="http://schema.org/ImageObject"
+          >
+            <meta
+              itemprop="url"
+              :content="
+                'https://marquez.co' +
+                require(`~/assets/images/projects/${currentProject.id}.png`)
+              "
+            />
+            <meta itemprop="width" content="1200px" />
+            <meta itemprop="height" content="630px" />
+          </div>
+          <meta itemprop="timeRequired" :content="`PT${doc.readingTime}M`" />
 
-      <DocsArticlePrevNext :prev="prev" :next="next" class="lg:px-8 mt-4" />
+          <meta itemprop="version" :content="currentProject.version" />
+
+          <div
+            itemscope
+            itemprop="author"
+            itemtype="http://schema.org/Organization"
+          >
+            <meta itemprop="name" content="Julio Marquez" />
+            <meta itemprop="url" content="https://marquez.co" />
+          </div>
+          <div
+            itemscope
+            itemprop="publisher"
+            itemtype="http://schema.org/Organization"
+          >
+            <meta itemprop="name" content="Julio Márquez" />
+            <meta itemprop="url" content="https://marquez.co" />
+            <div
+              itemscope
+              itemprop="logo"
+              itemtype="http://schema.org/ImageObject"
+            >
+              <meta
+                itemprop="url"
+                :content="
+                  'https://marquez.co' + require('~/assets/images/logotype.jpg')
+                "
+              />
+              <meta itemprop="width" content="1200px" />
+              <meta itemprop="height" content="630px" />
+            </div>
+          </div>
+
+          <h1 v-if="Boolean($route.params.slug)">{{ doc.title }}</h1>
+          <NuxtContent :document="doc" />
+        </article>
+      </LazyHydrate>
+
+      <aside>
+        <DocsEditOnGithub :document="doc" />
+
+        <DocsArticlePrevNext :prev="prev" :next="next" class="lg:px-8 mt-4" />
+      </aside>
     </div>
 
     <DocsArticleToc v-if="doc.toc && doc.toc.length" :toc="doc.toc" />
@@ -26,16 +97,32 @@
 <script lang="ts">
 import Vue from 'vue'
 import Clipboard from 'clipboard'
+import { RawLocation } from 'vue-router'
 
 import SeoHead from '~/components/mixins/SeoHead'
 import { docsProjects } from '~/data/projects'
-import { DocArticleContent } from '~/interfaces'
-
-// TODO: improve this
-type Doc = { [key: string]: string | boolean | number }
+import { DocArticleContent, Head } from '~/interfaces'
 
 interface Data {
   doc: DocArticleContent
+}
+
+function toLink(
+  project: string,
+  localePath: (route: RawLocation, locale?: string) => string,
+  slug?: string
+): string {
+  if (!slug || slug === 'index' || slug.toLowerCase() === 'readme') {
+    return localePath({
+      name: 'docs-project-slug',
+      params: { project },
+    })
+  }
+
+  return localePath({
+    name: 'docs-project-slug',
+    params: { slug, project },
+  })
 }
 
 export default Vue.extend<Data, {}, {}>({
@@ -44,6 +131,8 @@ export default Vue.extend<Data, {}, {}>({
   mixins: [SeoHead],
   // middleware: 'docs-categories',
   async asyncData({ $content, app, params, error }) {
+    const getToLink = (slug?: string) => toLink(project, app.localePath, slug)
+
     const slug = params.slug || 'README'
     const { project } = params
     const locale = app.i18n.locale as string
@@ -53,7 +142,7 @@ export default Vue.extend<Data, {}, {}>({
     let doc
 
     try {
-      doc = await $content(...contentArgs, slug).fetch<Doc>()
+      doc = await $content(...contentArgs, slug).fetch<DocArticleContent>()
     } catch (e) {
       return error({ statusCode: 404, message: 'Page not found' })
     }
@@ -67,16 +156,74 @@ export default Vue.extend<Data, {}, {}>({
     const currentProject = docsProjects.find((p) => p.id === project)
     const projectName = currentProject?.title[locale]
 
+    const title = `${doc.title} - ${projectName} - Docs`
+    const { description, created, updatedAt, published } = doc
+    const projectCanonical = `https://marquez.co${getToLink()}`
+    const canonical = `https://marquez.co${getToLink(doc.slug)}`
+
+    const breadcrumb = {
+      '@context': 'http://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          item: {
+            '@id': 'https://marquez.co',
+            name: app.i18n.t('links.home'),
+          },
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          item: {
+            '@id': `https://marquez.co${app.localePath('docs')}`,
+            name: app.i18n.t('docs.title'),
+          },
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          item: {
+            '@id': projectCanonical,
+            name: `${currentProject?.title[app.i18n.locale]} - Docs`,
+          },
+        },
+      ],
+    }
+
+    if (slug !== 'README') {
+      breadcrumb.itemListElement.push({
+        '@type': 'ListItem',
+        position: 4,
+        item: {
+          '@id': canonical,
+          name: doc.title,
+        },
+      })
+    }
+
     return {
       doc,
       prev,
       next,
       currentProject,
       head: {
-        titleTemplate: `%s - ${projectName} | Docs | Julio Marquez`,
-        title: doc.title,
-        description: doc.description,
-      },
+        title,
+        description,
+        created: new Date(created).toISOString(),
+        modified: new Date(updatedAt).toISOString(),
+        published: new Date(published).toISOString(),
+        canonical,
+        prev: prev ? `https://marquez.co${getToLink(prev.slug)}` : undefined,
+        next: next ? `https://marquez.co${getToLink(next.slug)}` : undefined,
+        extraScripts: [
+          {
+            innerHTML: JSON.stringify(breadcrumb),
+            type: 'application/ld+json',
+          },
+        ],
+      } as Head,
     }
   },
   mounted() {
@@ -109,6 +256,7 @@ export default Vue.extend<Data, {}, {}>({
       }, 2000)
     })
   },
+
   middleware({ redirect, route, app, params }) {
     const slug = `${route.params.slug}`.toLowerCase()
     const { project } = params

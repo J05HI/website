@@ -1,12 +1,23 @@
 /* eslint-disable import/no-webpack-loader-syntax */
 // @ts-ignore
+import Vue from 'vue'
 import firstInputDelay from '!!raw-loader!first-input-delay/dist/first-input-delay.min.js'
 /* eslint-enable */
 
-export default {
+import { getSchemaProfilePage } from '~/data/seo'
+import { Head } from '~/interfaces'
+
+export default Vue.extend({
   head() {
+    const schemaProfilePage = getSchemaProfilePage(
+      this.$i18n,
+      this.localePath,
+      this.$config
+    )
+
     const i18nSeo = this.$nuxtI18nSeo()
-    const head = { ...this.head }
+    // @ts-ignore
+    const head: Head = { ...this.head }
     const extraScripts = head.extraScripts || []
 
     const baseImage = require(`~/assets/images/logotype.jpg`)
@@ -42,7 +53,7 @@ export default {
       },
     ]
 
-    const link = i18nSeo.link
+    const link = i18nSeo.link || []
     const meta = [
       {
         hid: 'description',
@@ -80,6 +91,7 @@ export default {
         content: currentAbsoluteUrl,
       },
       ...ogImage,
+      // @ts-ignore
       ...i18nSeo.meta,
     ]
 
@@ -130,6 +142,22 @@ export default {
       href: head.canonical ? head.canonical : currentAbsoluteUrl,
     })
 
+    if (head.prev) {
+      link.push({
+        hid: 'prev',
+        rel: 'prev',
+        href: head.prev,
+      })
+    }
+
+    if (head.next) {
+      link.push({
+        hid: 'next',
+        rel: 'next',
+        href: head.next,
+      })
+    }
+
     return {
       title: head.title,
       titleTemplate: head.titleTemplate || '%s | Julio Marquez',
@@ -142,9 +170,13 @@ export default {
           innerHTML: firstInputDelay,
           type: 'text/javascript',
         },
+        {
+          innerHTML: JSON.stringify(schemaProfilePage),
+          type: 'application/ld+json',
+        },
         ...extraScripts,
       ],
       __dangerouslyDisableSanitizers: ['script'],
     }
   },
-}
+})

@@ -1,4 +1,6 @@
+import { VueI18n } from 'vue-i18n'
 import { Node } from 'unist'
+import { MetaInfo } from 'vue-meta'
 
 interface NuxtContentBase {
   toc: { id: string; depth: number; text: string }[]
@@ -62,3 +64,23 @@ export interface Project {
 }
 
 export interface DocsProject extends Project {}
+
+export interface Head {
+  extraScripts?: MetaInfo['script']
+
+  image?: string
+
+  title: string | VueI18n.TranslateResult
+  description: string | VueI18n.TranslateResult
+
+  modified?: string
+  published?: string
+
+  noIndex?: boolean
+
+  canonical?: string
+  titleTemplate?: string
+
+  prev?: string
+  next?: string
+}

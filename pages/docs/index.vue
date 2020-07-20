@@ -31,8 +31,10 @@
 
 <script lang="ts">
 import Vue from 'vue'
+
 import SeoHead from '~/components/mixins/SeoHead'
 import { docsProjects } from '~/data/projects'
+import { Head } from '~/interfaces'
 
 export default Vue.extend({
   mixins: [SeoHead],
@@ -44,7 +46,7 @@ export default Vue.extend({
       head: {
         title: $t('docs.title'),
         description: $t('docs.description'),
-      },
+      } as Head,
     }
   },
 })

@@ -4,7 +4,7 @@
     itemscope
     itemtype="http://schema.org/BlogPosting"
   >
-    <LazyHydrate v-if="head && post" ssr-only>
+    <LazyHydrate v-if="head && post" when-idle>
       <div>
         <meta itemprop="dateCreated" :content="head.created" />
         <meta itemprop="datePublished" :content="head.published" />
@@ -199,7 +199,7 @@ import isAlphanumeric from 'validator/lib/isAlphanumeric'
 import SeoHead from '~/components/mixins/SeoHead'
 import FormatDate from '~/components/mixins/FormatDate'
 
-import { BlogPostContent } from '~/interfaces'
+import { BlogPostContent, Head } from '~/interfaces'
 
 interface Data {
   html: string
@@ -278,7 +278,7 @@ export default Vue.extend({
               type: 'application/ld+json',
             },
           ],
-        },
+        } as Head,
       }
     } catch (error) {
       $sentry.captureException(error)

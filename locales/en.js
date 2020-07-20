@@ -145,7 +145,7 @@ export default {
     },
   },
   docs: {
-    title: 'My Projects\' Documentation',
+    title: "My Projects' Documentation",
     description:
       'Get familiar and explore the features of my Products and Open Source Projects.',
     labels: {
