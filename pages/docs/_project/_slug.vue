@@ -6,9 +6,7 @@
     >
       <LazyHydrate v-if="head && doc" when-idle>
         <article
-          :class="{
-            'prose-dark': $colorMode.preference === 'dark',
-          }"
+          :class="{ 'prose-dark': isDarkMode }"
           itemscope
           itemtype="http://schema.org/TechArticle"
           class="prose lg:prose-lg lg:px-8"
@@ -226,6 +224,13 @@ export default Vue.extend<Data, {}, {}>({
       } as Head,
     }
   },
+
+  computed: {
+    isDarkMode() {
+      return this.$colorMode.preference === 'dark'
+    },
+  },
+
   mounted() {
     const blocks = document.getElementsByClassName('nuxt-content-highlight')
 

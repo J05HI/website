@@ -127,9 +127,7 @@
 
         <!-- TODO: it seems that dark mode doesn't work on dark mode -->
         <div
-          :class="{
-            'prose-dark': $colorMode.preference === 'dark',
-          }"
+          :class="{ 'prose-dark': isDarkMode }"
           class="max-w-none prose lg:prose-lg xl:prose-xl"
         >
           <NuxtContent :document="post" itemprop="articleBody" />
@@ -288,6 +286,11 @@ export default Vue.extend({
   data: () => ({
     attributes: null,
   }),
+  computed: {
+    isDarkMode() {
+      return this.$colorMode.preference === 'dark'
+    },
+  },
   methods: {
     getDomain(url: string) {
       const result = Url(url)
