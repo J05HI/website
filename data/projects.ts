@@ -15,12 +15,12 @@ export const projects: Project[] = [
       es:
         'Statusfy es un Sistema de Páginas de Estado, fácil de usar e implementar en una variedad de servicios de hosting. El objetivo es reducir los costos y la complejidad proporcionando una alternativa de código abierto más simple y versátil.',
     },
-    url: 'https://github.com/aceforth/statusfy',
+    url: 'https://github.com/juliomrqz/statusfy',
     category: 'open-source',
   },
   {
     id: 'nuxt-optimized-images',
-    version: '1.0.1',
+    version: '1.1.0',
     title: {
       en: 'Nuxt Optimized Images',
       es: 'Nuxt Optimized Images',
@@ -31,7 +31,7 @@ export const projects: Project[] = [
       es:
         'Optimiza automáticamente las imágenes utilizadas en los proyectos en Nuxt.js (JPEG, PNG, SVG, WebP y GIF).',
     },
-    url: 'https://github.com/aceforth/nuxt-optimized-images',
+    url: 'https://github.com/juliomrqz/nuxt-optimized-images',
     category: 'open-source',
   },
   {
@@ -53,7 +53,7 @@ export const projects: Project[] = [
   },
   {
     id: 'vue-warehouse',
-    version: '2.1.0',
+    version: '2.2.0',
     title: {
       en: 'Vue.js Warehouse',
       es: 'Vue.js Warehouse',
@@ -64,7 +64,7 @@ export const projects: Project[] = [
       es:
         'Almacenamiento entre navegadores para Vue.js and Nuxt.js, con soporte de complementos y fácil extensibilidad basado en Store.js.',
     },
-    url: 'https://github.com/aceforth/vue-warehouse',
+    url: 'https://github.com/juliomrqz/vue-warehouse',
     category: 'open-source',
   },
   {
@@ -126,7 +126,7 @@ export const docsProjects: DocsProject[] = [
   ),
   {
     id: 'nuxt-netlify',
-    version: '1.0.0',
+    version: '1.1.0',
     title: {
       en: 'Nuxt Netlify',
       es: 'Nuxt Netlify',
@@ -142,7 +142,7 @@ export const docsProjects: DocsProject[] = [
   },
   {
     id: 'nativescript-vibrate',
-    version: '3.0.0',
+    version: '3.1.0',
     title: {
       en: 'NativeScript Vibrate',
       es: 'NativeScript Vibrate',
