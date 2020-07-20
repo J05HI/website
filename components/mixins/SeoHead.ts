@@ -1,6 +1,6 @@
+import Vue from 'vue'
 /* eslint-disable import/no-webpack-loader-syntax */
 // @ts-ignore
-import Vue from 'vue'
 import firstInputDelay from '!!raw-loader!first-input-delay/dist/first-input-delay.min.js'
 /* eslint-enable */
 
