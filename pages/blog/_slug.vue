@@ -128,7 +128,7 @@
         <!-- TODO: it seems that dark mode doesn't work on dark mode -->
         <div
           :class="{ 'prose-dark': isDarkMode }"
-          class="max-w-none prose lg:prose-lg xl:prose-xl"
+          class="max-w-none prose prose-lg"
         >
           <NuxtContent :document="post" itemprop="articleBody" />
         </div>

@@ -9,7 +9,7 @@
           :class="{ 'prose-dark': isDarkMode }"
           itemscope
           itemtype="http://schema.org/TechArticle"
-          class="prose lg:prose-lg lg:px-8"
+          class="prose prose-lg lg:px-8"
         >
           <meta itemprop="dateCreated" :content="head.created" />
           <meta itemprop="datePublished" :content="head.published" />

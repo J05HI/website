@@ -79,26 +79,6 @@ module.exports = {
           },
         },
       },
-      lg: {
-        css: {
-          '.nuxt-content-highlight pre': {
-            fontSize: defaultTheme.fontSize.xl,
-          },
-          '.nuxt-content-highlight pre code': {
-            fontSize: defaultTheme.fontSize.xl,
-          },
-        },
-      },
-      xl: {
-        css: {
-          '.nuxt-content-highlight pre': {
-            fontSize: defaultTheme.fontSize['2xl'],
-          },
-          '.nuxt-content-highlight pre code': {
-            fontSize: defaultTheme.fontSize['2xl'],
-          },
-        },
-      },
       dark: {
         css: {
           color: colors['cool-gray']['300'],
@@ -147,7 +127,7 @@ module.exports = {
     },
   },
   variants: {
-    typography: ['responsive', 'dark'],
+    typography: ['dark'],
     display: ['responsive'],
     maxWidth: ['responsive'],
     filter: ['responsive'],
@@ -186,7 +166,7 @@ module.exports = {
     require('tailwindcss-filters'),
     require('tailwindcss-dark-mode')(),
     require('@tailwindcss/typography')({
-      modifiers: ['lg', 'xl'],
+      modifiers: ['lg'],
     }),
   ],
   purge: {
