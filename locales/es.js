@@ -12,6 +12,7 @@ export default {
     more: 'Conoce más acerca de mí',
     more2: '¿Quíen soy?',
     docs: 'Docs',
+    githubStars: 'Estrellas en Github',
   },
   actions: {
     openMenu: 'Abrir Menú',

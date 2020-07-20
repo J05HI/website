@@ -310,6 +310,7 @@ const config: NuxtConfiguration = {
       offlineAnalytics: true,
       runtimeCaching: [
         { urlPattern: 'https://cdn.jsdelivr.net/.*', handler: 'cacheFirst' },
+        { urlPattern: 'https://img.shields.io/.*', handler: 'networkFirst' },
         {
           urlPattern: 'https://render.githubusercontent.com/render/math.*',
           handler: 'cacheFirst',

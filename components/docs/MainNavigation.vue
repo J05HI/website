@@ -6,6 +6,7 @@
     <div
       class="overflow-y-scroll lg:sticky lg:top-0 lg:pt-16 lg:-mt-16 h-full lg:h-auto"
     >
+      <!-- selects -->
       <div class="p-4 pb-0 lg:ml-1 lg:pt-8 lg:pl-0 lg:pr-8">
         <div v-if="!$isAMP">
           <select
@@ -129,6 +130,35 @@
         </div>
       </div>
 
+      <div
+        class="flex justify-between p-4 pb-0 lg:ml-1 lg:pt-4 lg:pl-0 lg:pr-8"
+      >
+        <a
+          :href="`https://github.com/juliomrqz/${currentProject.id}/releases`"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span
+            class="rounded text-xs font-bold leading-none flex items-center justify-center py-1 px-2 text-gray-700 dark:text-white bg-gray-200 dark:bg-gray-700 border border-gray-200 dark:border-transparent"
+          >
+            v{{ currentProject.version }}
+          </span>
+        </a>
+
+        <a
+          :href="`https://github.com/juliomrqz/${currentProject.id}`"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            :alt="$t('links.githubStars')"
+            :src="githubBadgeUrl"
+            height="22"
+            class="rounded"
+          />
+        </a>
+      </div>
+
       <ul
         class="min-h-full p-4 lg:min-h-screen lg:ml-1 lg:pb-8 lg:pl-0 lg:pr-8"
       >
@@ -208,6 +238,7 @@ interface Computed {
   categories: { [key: string]: any }[]
   githubLink: string
   projectId: string
+  githubBadgeUrl: string
 }
 
 interface Methods {
@@ -250,6 +281,14 @@ export default Vue.extend<Data, Methods, Computed, {}>({
     },
     projectId() {
       return this.$route.params.project
+    },
+    githubBadgeUrl() {
+      const $t = this.$t.bind(this)
+      const label = encodeURI(`${$t('links.githubStars')}`)
+      const color =
+        this.$colorMode.preference === 'dark' ? '%23374151' : '%231a202c'
+
+      return `https://img.shields.io/github/stars/juliomrqz/${this.currentProject?.id}?color=${color}&label=${label}&style=flat-square`
     },
   },
 
