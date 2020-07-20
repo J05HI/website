@@ -35,8 +35,5 @@
 
     { "handle": "filesystem" },
     { "src": "^/(.*)", "dest": "/404.html", "status": 404 }
-  ],
-  "github": {
-    "silent": true
-  }
+  ]
 }
