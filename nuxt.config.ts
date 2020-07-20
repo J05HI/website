@@ -203,7 +203,6 @@ const config: NuxtConfiguration = {
         'postcss-nested': {},
         'postcss-remove-classes': [
           'prose-sm',
-          'prose-lg',
           'prose-xl',
           'prose-2xl',
           'prose-dark',
