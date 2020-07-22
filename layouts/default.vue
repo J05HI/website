@@ -1,12 +1,16 @@
 <template>
   <div>
-    <TheNavbar />
+    <LazyHydrate when-idle>
+      <TheNavbar />
+    </LazyHydrate>
 
     <main class="main-container">
       <Nuxt />
     </main>
 
-    <TheFooter class="mt-5" />
+    <LazyHydrate when-visible>
+      <TheFooter class="mt-5" />
+    </LazyHydrate>
   </div>
 </template>
 
