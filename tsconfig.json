@@ -29,6 +29,7 @@
     "types": [
       "@types/node",
       "@nuxt/types",
+      "@types/requestidlecallback",
       "@nuxt/content",
       "@nuxt/components",
       "@nuxtjs/sentry",

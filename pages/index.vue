@@ -183,7 +183,7 @@ type Posts = Pick<
 
 export default Vue.extend({
   mixins: [SeoHead],
-  async asyncData({ app, $sentry, $content }) {
+  async asyncData({ app, $sentryReady, $content }) {
     const title = `${app.i18n.t('subTitle')} ${app.i18n.t('title')}`
     let posts: Posts = []
 
@@ -194,7 +194,7 @@ export default Vue.extend({
         .limit(3)
         .fetch<Posts>()
     } catch (error) {
-      $sentry.captureException(error)
+      ;(await $sentryReady()).captureException(error)
     }
 
     return {

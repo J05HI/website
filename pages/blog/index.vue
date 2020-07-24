@@ -41,7 +41,7 @@ type Posts = Pick<
 
 export default Vue.extend({
   mixins: [SeoHead],
-  async asyncData({ app, $sentry, $content }) {
+  async asyncData({ app, $sentryReady, $content }) {
     let posts: Posts = []
 
     try {
@@ -50,7 +50,7 @@ export default Vue.extend({
         .sortBy('created', 'desc')
         .fetch()
     } catch (error) {
-      $sentry.captureException(error)
+      ;(await $sentryReady()).captureException(error)
     }
 
     return {

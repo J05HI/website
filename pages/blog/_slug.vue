@@ -203,7 +203,7 @@ interface Data {
 
 export default Vue.extend({
   mixins: [SeoHead, FormatDate],
-  async asyncData({ app, params, $sentry, $content, $config }) {
+  async asyncData({ app, params, $sentryReady, $content, $config }) {
     try {
       const { slug } = params
       const post = await $content('blog', app.i18n.locale, slug).fetch<
@@ -275,7 +275,8 @@ export default Vue.extend({
         } as Head,
       }
     } catch (error) {
-      $sentry.captureException(error)
+      ;(await $sentryReady()).captureException(error)
+
       return false
     }
   },

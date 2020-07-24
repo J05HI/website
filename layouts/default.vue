@@ -17,7 +17,9 @@
 <script>
 import DarkModeFromAMPMixin from '@/components/mixins/DarkModeFromAMP'
 
+import { LoadSentry } from '@/components/mixins/LoadSentry'
+
 export default {
-  mixins: [DarkModeFromAMPMixin],
+  mixins: [DarkModeFromAMPMixin, LoadSentry],
 }
 </script>

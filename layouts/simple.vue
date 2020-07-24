@@ -5,5 +5,10 @@
 </template>
 
 <script>
-export default {}
+import Vue from 'vue'
+import { LoadSentry } from '@/components/mixins/LoadSentry'
+
+export default Vue.extend({
+  mixins: [LoadSentry],
+})
 </script>

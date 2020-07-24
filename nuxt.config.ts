@@ -485,6 +485,9 @@ const config: NuxtConfiguration = {
   },
 
   sentry: {
+    lazy: {
+      injectLoadHook: true,
+    },
     config: {
       environment,
       release: buildCode,

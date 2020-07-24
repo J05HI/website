@@ -1,4 +1,6 @@
+import * as SentryTypes from '@sentry/minimal'
 import { Context } from '@nuxt/types'
+
 import { NuxtRuntimeConfig } from './interfaces'
 
 interface ColorMode {
@@ -12,6 +14,7 @@ declare module 'vue/types/vue' {
     $config: NuxtRuntimeConfig
     $isAMP?: boolean
     $colorMode: ColorMode
+    $sentryLoad: () => Promise<void>
   }
 }
 
@@ -30,5 +33,7 @@ declare module '@nuxt/types' {
 
   interface Context {
     $config: NuxtRuntimeConfig
+    $sentryReady: () => Promise<typeof SentryTypes>
+    $sentryLoad: () => Promise<void>
   }
 }

@@ -18,12 +18,13 @@
 import Vue from 'vue'
 
 import DarkModeFromAMPMixin from '@/components/mixins/DarkModeFromAMP'
+import { LoadSentry } from '@/components/mixins/LoadSentry'
 
 import '~/components/icons/github'
 import '~/components/icons/twitter'
 
 export default Vue.extend({
-  mixins: [DarkModeFromAMPMixin],
+  mixins: [DarkModeFromAMPMixin, LoadSentry],
   computed: {
     bodyClass() {
       return this.$store.state.menu.open
