@@ -501,15 +501,16 @@ const config: NuxtConfiguration = {
         ),
       ],
     },
-    disableServerRelease: true,
-    webpackConfig: {
-      debug: !isProd,
-      release: buildCode,
-      setCommits: {
-        repo: process.env.VERCEL_GITHUB_REPO,
-        commit: commitSha,
-      },
-    },
+    publishRelease: false,
+    // disableServerRelease: true,
+    // webpackConfig: {
+    //   debug: !isProd,
+    //   release: buildCode,
+    //   setCommits: {
+    //     repo: process.env.VERCEL_GITHUB_REPO,
+    //     commit: commitSha,
+    //   },
+    // },
   },
 
   content: {
