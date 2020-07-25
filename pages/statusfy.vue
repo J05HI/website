@@ -363,17 +363,20 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import '@/components/icons/statusfy'
 
+import '@/components/icons/statusfy'
+import { loadVueScrollTo } from '~/utils/vue-scrollto'
 // import Subscribe from '../../../common/components/Subscribe.vue'
 import SeoHead from '~/components/mixins/SeoHead'
 import { Head } from '~/interfaces'
 
+loadVueScrollTo()
+
 export default Vue.extend({
+  name: 'StatusfyPage',
   // components: {
   //   Subscribe,
   // },
-  name: 'StatusfyPage',
   mixins: [SeoHead],
   data() {
     const head: Head = {

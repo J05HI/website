@@ -171,10 +171,14 @@
 
 <script lang="ts">
 import Vue from 'vue'
+
+import { loadVueScrollTo } from '~/utils/vue-scrollto'
 import SeoHead from '~/components/mixins/SeoHead'
 import { projects } from '~/data/projects'
 
 import { BlogPostContent, Head } from '~/interfaces'
+
+loadVueScrollTo()
 
 type Posts = Pick<
   BlogPostContent,

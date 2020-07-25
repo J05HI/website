@@ -223,8 +223,11 @@
 import Vue from 'vue'
 
 import '~/components/icons'
+import { loadVueScrollTo } from '~/utils/vue-scrollto'
 import SeoHead from '~/components/mixins/SeoHead'
 import { Head } from '~/interfaces'
+
+loadVueScrollTo()
 
 export default Vue.extend({
   mixins: [SeoHead],

@@ -118,7 +118,6 @@ const config: NuxtConfiguration = {
    ** Global CSS
    */
   css: [
-    'katex/dist/katex.css',
     '~/assets/css/svg-icon.css',
     '~/assets/inter/inter.css',
     '~/assets/css/main.css',
@@ -192,6 +191,7 @@ const config: NuxtConfiguration = {
    ** Build configuration
    */
   build: {
+    transpile: ['vue-scrollto'],
     // @ts-ignore
     postcss: {
       plugins: {

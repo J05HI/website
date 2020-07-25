@@ -294,3 +294,7 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style>
+@import 'katex/dist/katex.css';
+</style>
