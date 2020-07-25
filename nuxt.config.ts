@@ -192,6 +192,9 @@ const config: NuxtConfiguration = {
    */
   build: {
     transpile: ['vue-scrollto'],
+
+    extractCSS: true,
+
     // @ts-ignore
     postcss: {
       plugins: {
