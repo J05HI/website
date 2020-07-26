@@ -155,22 +155,22 @@ export const docsProjects: DocsProject[] = [
     url: 'https://github.com/juliomrqz/nativescript-vibrate',
     category: 'open-source',
   },
-  // {
-  //   id: 'social',
-  //   version: '2.1.3',
-  //   title: {
-  //     en: 'Social Template',
-  //     es: 'Social Template',
-  //   },
+  {
+    id: 'social',
+    version: '2.1.3',
+    title: {
+      en: 'Social Template',
+      es: 'Social Template',
+    },
 
-  //   description: {
-  //     en:
-  //       'A responsive admin & frontend template compatible with Bootstrap and the latest versions of jQuery. This template comes with easy to use components and a huge collection of plugins.',
-  //     es:
-  //       'Un Template de administración y para el frontend compatible compatible con Bootstrap y las últimas versiones de jQuery. Este Template viene con componentes fáciles de usar y una gran colección de complementos.',
-  //   },
-  //   category: 'closed-source',
-  //   url:
-  //     'https://themeforest.net/item/social-premium-responsive-admin-template/4611337?ref=julio-marquez',
-  // },
+    description: {
+      en:
+        'A responsive admin & frontend template compatible with Bootstrap and the latest versions of jQuery. This template comes with easy to use components and a huge collection of plugins.',
+      es:
+        'Un Template de administración y para el frontend compatible compatible con Bootstrap y las últimas versiones de jQuery. Este Template viene con componentes fáciles de usar y una gran colección de complementos.',
+    },
+    category: 'closed-source',
+    url:
+      'https://themeforest.net/item/social-premium-responsive-admin-template/4611337?ref=julio-marquez',
+  },
 ]

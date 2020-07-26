@@ -81,9 +81,20 @@
       </LazyHydrate>
 
       <aside>
-        <DocsEditOnGithub :document="doc" />
+        <DocsEditOnGithub
+          v-if="currentProject.category === 'open-source'"
+          :document="doc"
+        />
 
-        <DocsArticlePrevNext :prev="prev" :next="next" class="lg:px-8 mt-4" />
+        <DocsArticlePrevNext
+          :prev="prev"
+          :next="next"
+          :class="{
+            'pt-4 border-t dark:border-gray-800':
+              currentProject.category !== 'open-source',
+          }"
+          class="lg:px-8 mt-4"
+        />
       </aside>
     </div>
 

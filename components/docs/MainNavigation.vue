@@ -133,20 +133,27 @@
       <div
         class="flex justify-between p-4 pb-0 lg:ml-1 lg:pt-4 lg:pl-0 lg:pr-8"
       >
-        <a
-          :href="`https://github.com/juliomrqz/${currentProject.id}/releases`"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Component
+          :is="isOpenSource(currentProject) ? 'a' : 'div'"
+          :href="
+            isOpenSource(currentProject)
+              ? `https://github.com/juliomrqz/${currentProject.id}/releases`
+              : undefined
+          "
+          :target="isOpenSource(currentProject) ? '_blank' : undefined"
+          :rel="
+            isOpenSource(currentProject) ? 'noopener noreferrer' : undefined
+          "
         >
           <span
             class="rounded text-xs font-bold leading-none flex items-center justify-center py-1 px-2 text-gray-700 dark:text-white bg-gray-200 dark:bg-gray-700 border border-gray-200 dark:border-transparent"
           >
             v{{ currentProject.version }}
           </span>
-        </a>
+        </Component>
 
         <a
-          v-if="!$isAMP"
+          v-if="!$isAMP && isOpenSource(currentProject)"
           :href="`https://github.com/juliomrqz/${currentProject.id}`"
           target="_blank"
           rel="noopener noreferrer"
@@ -247,6 +254,7 @@ interface Methods {
   changeProject: (e: Event) => Promise<void>
   gotToProject: (project: string) => Promise<void>
   fetchCategories: () => Promise<void>
+  isOpenSource: (currentProject: DocsProject) => boolean
 }
 
 export default Vue.extend<Data, Methods, Computed, {}>({
@@ -366,6 +374,10 @@ export default Vue.extend<Data, Methods, Computed, {}>({
           )
         })
       }
+    },
+
+    isOpenSource(currentProject: DocsProject) {
+      return currentProject.category === 'open-source'
     },
   },
 })
