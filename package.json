@@ -54,7 +54,7 @@
     "@commitlint/config-conventional": "9.1.1",
     "@intlify/vue-i18n-loader": "1.0.0",
     "@nuxt/types": "2.13.3",
-    "@nuxt/typescript-build": "2.0.0",
+    "@nuxt/typescript-build": "2.0.2",
     "@nuxt/typescript-runtime": "1.0.0",
     "@nuxtjs/color-mode": "1.0.0",
     "@nuxtjs/eslint-config-typescript": "2.0.0",
