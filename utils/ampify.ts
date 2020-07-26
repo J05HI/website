@@ -39,6 +39,12 @@ export const ampify = async (debug: boolean, html: string) => {
     $(this).removeAttr('tab-index')
   })
 
+  /* fix colspan attribute */
+  $('td[col-span]').each(function (this: any) {
+    $(this).attr('colspan', `${$(this).attr('col-span')}`)
+    $(this).removeAttr('col-span')
+  })
+
   /* improve style definitions */
   let styleConcat = ''
 
