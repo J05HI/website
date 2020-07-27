@@ -1,8 +1,8 @@
 ---
 title: "Registro de cambios"
 description: "Un registro de todos los cambios notables realizados en NativeScript Vibrate."
-created: "2017-09-02T08:33:00Z"
-published: "2018-02-27T22:12:36Z"
+createdAt: "2017-09-02T08:33:00Z"
+publishedAt: "2018-02-27T22:12:36Z"
 position: 3
 category: "Primeros Pasos"
 ---

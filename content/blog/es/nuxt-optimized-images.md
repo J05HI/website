@@ -4,8 +4,8 @@ slug: nuxt-optimized-images
 description: Creamos un nuevo módulo que permite optimizar automáticamente las
   imágenes utilizadas en los proyectos Nuxt.js (JPEG, PNG, SVG, WebP y GIF).
 cover: blog/nuxt-optimized-images-cover.jpg
-created: 2019-03-15T18:00:50Z
-published: 2019-03-15T18:00:50Z
+createdAt: 2019-03-15T18:00:50Z
+publishedAt: 2019-03-15T18:00:50Z
 updatedAt: 2020-07-18T13:09:18Z
 ---
 

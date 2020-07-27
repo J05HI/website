@@ -1,9 +1,9 @@
 ---
 title: "Interfaz de Usuario"
 description: "Componentes reutilizables creados para proporcionar alertas, modales, botones, breadcrumbs y mucho más."
-created: "2015-03-09T00:00:00Z"
-published: "2018-02-27T22:45:35Z"
-modified: "2020-07-25T23:27:50Z"
+createdAt: "2015-03-09T00:00:00Z"
+publishedAt: "2018-02-27T22:45:35Z"
+updatedAt: "2020-07-25T23:27:50Z"
 position: 3
 category: "Primeros Pasos"
 ---

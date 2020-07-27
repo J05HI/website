@@ -3,8 +3,8 @@ title: "Statusfy: Actualización v0.4.0"
 slug: statusfy-release-0-4-0
 description: "Una nueva versión de Statusfy acaba de ser lanzada, con soporte para Notificaciones Web Push, mejoras en el rendimiento y una nueva traducción de la interfaz: italiano."
 cover: blog/statusfy-release-0-4-0.png
-created: 2019-06-15T16:58:00Z
-published: 2019-06-15T16:58:00Z
+createdAt: 2019-06-15T16:58:00Z
+publishedAt: 2019-06-15T16:58:00Z
 updatedAt: 2020-07-18T14:13:58Z
 ---
 

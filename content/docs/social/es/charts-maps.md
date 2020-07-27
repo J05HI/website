@@ -1,9 +1,9 @@
 ---
 title: "Gráficos y Mapas"
 description: "Los Gráficos y mapas permiten visualizar cualquier tipo de datos con o sin información de posicionamiento."
-created: "2015-03-09T00:00:00Z"
-published: "2018-02-27T22:48:28.522153Z"
-modified: "2020-07-25T23:27:50Z"
+createdAt: "2015-03-09T00:00:00Z"
+publishedAt: "2018-02-27T22:48:28.522153Z"
+updatedAt: "2020-07-25T23:27:50Z"
 position: 5
 category: "Primeros Pasos"
 ---

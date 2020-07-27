@@ -1,9 +1,9 @@
 ---
 title: "License"
 description: "Terms and conditions intended to guarantee how NativeScript Vibrate must be used, modified and/or shared."
-created: "2015-04-11T12:25:00Z"
-published: "2018-02-27T22:14:22Z"
-modified: "2020-07-17T21:52:22Z"
+createdAt: "2015-04-11T12:25:00Z"
+publishedAt: "2018-02-27T22:14:22Z"
+updatedAt: "2020-07-17T21:52:22Z"
 position: 4
 category: "Getting started"
 ---

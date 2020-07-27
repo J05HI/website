@@ -1,9 +1,9 @@
 ---
 title: "Barra Lateral y de Navegación"
 description: "Las barras laterales y las barras de navegación son componentes que sirven como navegación para su aplicación o sitio."
-created: "2015-03-09T00:00:00Z"
-published: "2018-02-27T22:43:39Z"
-modified: "2020-07-25T23:27:50Z"
+createdAt: "2015-03-09T00:00:00Z"
+publishedAt: "2018-02-27T22:43:39Z"
+updatedAt: "2020-07-25T23:27:50Z"
 position: 2
 category: "Primeros Pasos"
 ---

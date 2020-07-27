@@ -5,8 +5,8 @@ description: El problema de los mínimos cuadrados es muy interesante y recursiv
   en geofísica, especialmente en las técnicas de interpolación, inversión y
   filtrado.
 cover: blog/least-squares-first-approach-cover.jpg
-created: 2017-09-18T00:00:00.000Z
-published: 2013-07-16T00:00:00.000Z
+createdAt: 2017-09-18T00:00:00.000Z
+publishedAt: 2013-07-16T00:00:00.000Z
 canonical: https://latraza.wordpress.com/2013/07/16/least-squares-first-approach/
 headline: Los mínimos cuadrados son muy interesantes especialmente en las
   técnicas de interpolación, inversión y filtrado.

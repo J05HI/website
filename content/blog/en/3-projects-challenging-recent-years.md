@@ -5,8 +5,8 @@ description: In the latest years, I've worked on great projects, three of them
   have challenged my ability to solve problems, also, to remind me of my love
   for creating new things.
 cover: blog/3-projects-challenging-recent-years-cover.jpg
-created: 2019-08-30T16:41:28.000Z
-published: 2019-08-30T21:20:28.000Z
+createdAt: 2019-08-30T16:41:28.000Z
+publishedAt: 2019-08-30T21:20:28.000Z
 ---
 I'm a dynamic and motivated Full Stack Developer with more than 10 years of experience. I started as a Freelance in Web projects focused on the Frontend but over the years my knowledge was diversified by getting involved in scientific projects that required complex resources (statistics, pattern identification, data analysis, interpretation of third-party research, etc.), as well as web projects, focused on the Backend.
 

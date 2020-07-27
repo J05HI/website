@@ -6,8 +6,8 @@ description: Statusfy es un Sistema de Página de Estado, fácil de usar y
   sea Estático o Renderizado por Servidor, e implementarlo fácilmente en una
   variedad de servicios de alojamiento.
 cover: blog/statusfy-cover.jpg
-created: 2018-11-14T14:58:34.140Z
-published: 2018-11-14T14:58:34.000Z
+createdAt: 2018-11-14T14:58:34.140Z
+publishedAt: 2018-11-14T14:58:34.000Z
 updatedAt: 2020-07-18T13:09:18Z
 ---
 

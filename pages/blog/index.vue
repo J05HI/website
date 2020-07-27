@@ -36,7 +36,7 @@ import { Head, BlogPostContent } from '~/interfaces'
 
 type Posts = Pick<
   BlogPostContent,
-  'slug' | 'title' | 'description' | 'published' | 'cover'
+  'slug' | 'title' | 'description' | 'publishedAt' | 'cover'
 >[]
 
 export default Vue.extend({
@@ -46,8 +46,8 @@ export default Vue.extend({
 
     try {
       posts = await $content('blog', app.i18n.locale)
-        .only(['slug', 'title', 'description', 'published', 'cover'])
-        .sortBy('created', 'desc')
+        .only(['slug', 'title', 'description', 'publishedAt', 'cover'])
+        .sortBy('createdAt', 'desc')
         .fetch()
     } catch (error) {
       ;(await $sentryReady()).captureException(error)

@@ -1,9 +1,9 @@
 ---
 title: "Tables"
 description: "Tables styles, layout options, and custom components for creating a wide variety of tables."
-created: "2015-03-09T00:00:00Z"
-published: "2018-02-27T22:49:54Z"
-modified: "2020-07-25T23:27:50Z"
+createdAt: "2015-03-09T00:00:00Z"
+publishedAt: "2018-02-27T22:49:54Z"
+updatedAt: "2020-07-25T23:27:50Z"
 position: 6
 category: "Getting started"
 ---

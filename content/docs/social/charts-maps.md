@@ -1,9 +1,9 @@
 ---
 title: "Charts & Maps"
 description: "Charts & Maps allow to visualize any kind of data with or without Positioning information."
-created: "2015-03-09T00:00:00Z"
-published: "2018-02-27T22:48:28Z"
-modified: "2020-07-25T23:27:50Z"
+createdAt: "2015-03-09T00:00:00Z"
+publishedAt: "2018-02-27T22:48:28Z"
+updatedAt: "2020-07-25T23:27:50Z"
 position: 5
 category: "Getting started"
 ---

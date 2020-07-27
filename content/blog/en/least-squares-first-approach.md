@@ -5,8 +5,8 @@ description: The problem of Least Squares is a very interesting and recursive
   one in Geophysics, especially in interpolation, inversion and filtering
   techniques.
 cover: blog/least-squares-first-approach-cover.jpg
-created: 2017-09-18T00:00:00.000Z
-published: 2013-07-16T00:00:00.000Z
+createdAt: 2017-09-18T00:00:00.000Z
+publishedAt: 2013-07-16T00:00:00.000Z
 canonical: https://latraza.wordpress.com/2013/07/16/least-squares-first-approach/
 ---
 The problem of Least Squares is a very interesting and recursive one in Geophysics, especially in interpolation, inversion and filtering techniques. My first approach to students into the subject is through the simple fitting of a three-point curve in $R^2$.

@@ -6,9 +6,9 @@
   >
     <LazyHydrate v-if="head && post" when-idle>
       <div>
-        <meta itemprop="dateCreated" :content="head.created" />
-        <meta itemprop="datePublished" :content="head.published" />
-        <meta itemprop="dateModified" :content="head.modified" />
+        <meta itemprop="dateCreated" :content="head.createdAt" />
+        <meta itemprop="datePublished" :content="head.publishedAt" />
+        <meta itemprop="dateModified" :content="head.updatedAt" />
         <meta itemprop="description" :content="post.description" />
         <meta itemprop="timeRequired" :content="`PT${post.readingTime}M`" />
         <meta itemprop="inLanguage" :content="$i18n.locale" />
@@ -66,10 +66,10 @@
       <div>
         <div class="pb-4">
           <time
-            :datetime="post.published"
+            :datetime="post.publishedAt"
             class="block mb-2 text-base leading-6 font-medium text-gray-600 dark:text-gray-300"
           >
-            {{ formatDate(post.published) }}
+            {{ formatDate(post.publishedAt) }}
           </time>
           <h1
             itemprop="name headline"
@@ -143,7 +143,7 @@
             >{{ getDomain(post.canonical) }}</a
           >
 
-          {{ $t('blog.on') }} {{ formatDate(post.created) }}.
+          {{ $t('blog.on') }} {{ formatDate(post.createdAt) }}.
         </aside>
       </div>
     </LazyHydrate>
@@ -214,9 +214,9 @@ export default Vue.extend({
       const {
         description,
         canonical,
-        created,
+        createdAt,
         updatedAt,
-        published,
+        publishedAt,
         // wordCount,
         noindex,
       } = post
@@ -233,9 +233,9 @@ export default Vue.extend({
           title,
           description,
           canonical,
-          created: new Date(created).toISOString(),
-          modified: new Date(updatedAt).toISOString(),
-          published: new Date(published).toISOString(),
+          createdAt: new Date(createdAt).toISOString(),
+          updatedAt: new Date(updatedAt).toISOString(),
+          publishedAt: new Date(publishedAt).toISOString(),
           noindex,
           extraScripts: [
             {

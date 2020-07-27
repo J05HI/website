@@ -17,7 +17,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@nuxt/content": "1.4.1",
+    "@nuxt/content": "1.5.0",
     "@nuxtjs/amp": "0.2.4",
     "@nuxtjs/pwa": "3.0.0-beta.20",
     "@nuxtjs/sentry": "https://github.com/nuxt-community/sentry-module#5288ff399e245bcdd2a4a49dcad5f81dda98eae8",

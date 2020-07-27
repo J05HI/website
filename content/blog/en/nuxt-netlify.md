@@ -4,8 +4,8 @@ slug: nuxt-netlify
 description: We created a new module for Nuxt.js that supports the dynamic
   creation of redirects and header rules for your site in Netlify.
 cover: blog/nuxt-netlify-cover.jpg
-created: 2019-03-14T17:52:20Z
-published: 2019-03-14T17:52:20Z
+createdAt: 2019-03-14T17:52:20Z
+publishedAt: 2019-03-14T17:52:20Z
 updatedAt: 2020-07-18T13:09:18Z
 ---
 

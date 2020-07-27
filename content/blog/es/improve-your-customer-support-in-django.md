@@ -3,8 +3,8 @@ title: "Mejora tu Soporte al Cliente en Django"
 slug: improve-your-customer-support-in-django
 description: "Actualmente, existen muy buenas herramientas que le permiten integrar un KnowledgeBase en tu sitio, pero a veces no se necesita tantas funcionalidades y una solución simple y poderosa es más que suficiente."
 cover: blog/improve-your-customer-support-in-django-cover.png
-created: 2018-03-20T18:53:00Z
-published: 2018-03-20T18:53:00Z
+createdAt: 2018-03-20T18:53:00Z
+publishedAt: 2018-03-20T18:53:00Z
 updatedAt: 2020-07-18T15:04:10Z
 ---
 

@@ -53,7 +53,7 @@ export const blogPostsCollectionEn: CmsCollection = {
   public_folder: 'blog/',
   preview_path: 'blog/{{fields.slug}}',
   slug: '{{fields.slug}}',
-  sortableFields: ['title', 'created', 'published'],
+  sortableFields: ['title', 'createdAt', 'publishedAt'],
   fields: [
     {
       label: 'Title',
@@ -77,12 +77,12 @@ export const blogPostsCollectionEn: CmsCollection = {
     },
     {
       label: 'Create at',
-      name: 'created',
+      name: 'createdAt',
       widget: 'datetime',
     },
     {
       label: 'Published at',
-      name: 'published',
+      name: 'publishedAt',
       widget: 'datetime',
     },
     {

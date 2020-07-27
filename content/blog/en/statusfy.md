@@ -5,8 +5,8 @@ description: Statusfy is a Status Page System, easy to use and completely Open
   Source. You can easily create a fast System either Static Generated or Server
   Rendered.
 cover: blog/statusfy-cover.jpg
-created: 2018-11-14T14:58:34Z
-published: 2018-11-14T14:58:34Z
+createdAt: 2018-11-14T14:58:34Z
+publishedAt: 2018-11-14T14:58:34Z
 updatedAt: 2020-07-18T13:09:18Z
 ---
 

@@ -4,8 +4,8 @@ slug: nuxt-netlify
 description: Creamos un nuevo módulo para Nuxt.js que soporta la creación
   dinámica de reglas de redirecciones y cabecera para tu sitio en Netlify.
 cover: blog/nuxt-netlify-cover.jpg
-created: 2019-03-14T17:52:20Z
-published: 2019-03-14T17:52:20Z
+createdAt: 2019-03-14T17:52:20Z
+publishedAt: 2019-03-14T17:52:20Z
 updatedAt: 2020-07-18T13:09:18Z
 ---
 

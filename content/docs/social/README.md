@@ -1,9 +1,9 @@
 ---
 title: "Overview"
 description: "Social is a responsive admin/frontend template compatible with Bootstrap v3 and latest jQuery versions, developed for your admin and frontend applications."
-created: "2015-03-09T00:00:00Z"
-published: "2018-02-27T22:30:14Z"
-modified: "2020-07-25T23:27:50Z"
+createdAt: "2015-03-09T00:00:00Z"
+publishedAt: "2018-02-27T22:30:14Z"
+updatedAt: "2020-07-25T23:27:50Z"
 position: 1
 category: "Getting started"
 ---

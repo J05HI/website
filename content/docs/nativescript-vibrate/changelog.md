@@ -1,9 +1,9 @@
 ---
 title: "Changelog"
 description: "A record of all notable changes made to NativeScript Vibrate."
-created: "2017-09-02T08:33:00Z"
-published: "2018-02-27T22:12:36Z"
-modified: "2020-07-17T21:52:22Z"
+createdAt: "2017-09-02T08:33:00Z"
+publishedAt: "2018-02-27T22:12:36Z"
+updatedAt: "2020-07-17T21:52:22Z"
 position: 3
 category: "Getting started"
 ---

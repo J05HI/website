@@ -3,8 +3,8 @@ title: "Statusfy: Release v0.3.0"
 slug: statusfy-release-0-3-0
 description: "We just released a new version of Statusfy with new features and performance improvements: Docker support, new commands, three new languages translate the Interface and more."
 cover: blog/statusfy-release-0-3-0-cover.png
-created: 2019-03-21T17:45:00Z
-published: 2019-03-21T17:45:00Z
+createdAt: 2019-03-21T17:45:00Z
+publishedAt: 2019-03-21T17:45:00Z
 updatedAt: 2020-04-19T14:23:46Z
 ---
 

@@ -1,9 +1,9 @@
 ---
 title: "Contributing"
 description: "For easier development and debugging purposes continue with the following steps."
-created: "2015-04-11T12:25:00Z"
-published: "2018-02-27T22:09:31Z"
-modified: "2020-07-17T21:52:22Z"
+createdAt: "2015-04-11T12:25:00Z"
+publishedAt: "2018-02-27T22:09:31Z"
+updatedAt: "2020-07-17T21:52:22Z"
 position: 2
 category: "Getting started"
 ---

@@ -9,6 +9,7 @@ interface NuxtContentBase {
   path: string
   extension: string
   updatedAt: Date
+  createdAt: Date
   text: string
   slug: string
 
@@ -20,11 +21,10 @@ export interface BlogPostIndex {
   slug: string
   title: string
   description: string
-  published: Date
+  publishedAt: Date
 }
 
 export interface BlogPostContent extends BlogPostIndex, NuxtContentBase {
-  created: Date
   canonical?: string
   slug: string
   cover: string
@@ -44,9 +44,7 @@ export interface NuxtRuntimeConfig {
 export interface DocArticleContent extends NuxtContentBase {
   title: string
   description: string
-  created: string
-  published: string
-  modified: string
+  publishedAt: string
   position: number
   category: string
 }
@@ -73,8 +71,7 @@ export interface Head {
   title: string | VueI18n.TranslateResult
   description: string | VueI18n.TranslateResult
 
-  modified?: string
-  published?: string
+  publishedAt?: string
 
   noIndex?: boolean
 

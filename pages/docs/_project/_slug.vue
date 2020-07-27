@@ -10,9 +10,9 @@
           itemtype="http://schema.org/TechArticle"
           class="prose prose-lg lg:px-8 dark:prose-dark-mode"
         >
-          <meta itemprop="dateCreated" :content="head.created" />
-          <meta itemprop="datePublished" :content="head.published" />
-          <meta itemprop="dateModified" :content="head.modified" />
+          <meta itemprop="dateCreated" :content="head.createdAt" />
+          <meta itemprop="datePublished" :content="head.publishedAt" />
+          <meta itemprop="dateModified" :content="head.updatedAt" />
           <meta
             itemprop="headline"
             :content="`${doc.title} - ${currentProject.title[$i18n.locale]}`"
@@ -165,7 +165,7 @@ export default Vue.extend<Data, {}, {}>({
     const projectName = currentProject?.title[locale]
 
     const title = `${doc.title} - ${projectName} - Docs`
-    const { description, created, updatedAt, published } = doc
+    const { description, createdAt, updatedAt, publishedAt } = doc
     const projectCanonical = `https://marquez.co${getToLink()}`
     const canonical = `https://marquez.co${getToLink(doc.slug)}`
 
@@ -219,9 +219,9 @@ export default Vue.extend<Data, {}, {}>({
       head: {
         title,
         description,
-        created: new Date(created).toISOString(),
-        modified: new Date(updatedAt).toISOString(),
-        published: new Date(published).toISOString(),
+        createdAt: new Date(createdAt).toISOString(),
+        updatedAt: new Date(updatedAt).toISOString(),
+        publishedAt: new Date(publishedAt).toISOString(),
         canonical,
         prev: prev ? `https://marquez.co${getToLink(prev.slug)}` : undefined,
         next: next ? `https://marquez.co${getToLink(next.slug)}` : undefined,

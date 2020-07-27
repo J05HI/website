@@ -1,9 +1,9 @@
 ---
 title: "Sidebar & Navbar"
 description: "Sidebars & Navbars are responsive meta components that serve as navigation for your application or site."
-created: "2015-03-09T00:00:00Z"
-published: "2018-02-27T22:43:39Z"
-modified: "2020-07-25T23:27:50Z"
+createdAt: "2015-03-09T00:00:00Z"
+publishedAt: "2018-02-27T22:43:39Z"
+updatedAt: "2020-07-25T23:27:50Z"
 position: 2
 category: "Getting started"
 ---

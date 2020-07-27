@@ -3,8 +3,8 @@ title: "Cómo generar archivos de mapas BMS de una manera eficiente"
 slug: how-generate-bms-map-files-efficient-way
 description: "La Edición de archivos de Mainframe es generalmente una tarea abrumadora. Por lo general, toma tiempo valioso detectar errores y realizar cambios importantes."
 cover: blog/how-generate-bms-map-files-efficient-way-cover.png
-created: 2018-06-25T03:00:00Z
-published: 2018-06-25T03:00:00Z
+createdAt: 2018-06-25T03:00:00Z
+publishedAt: 2018-06-25T03:00:00Z
 updatedAt: 2020-07-19T01:02:12Z
 ---
 

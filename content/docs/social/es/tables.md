@@ -1,9 +1,9 @@
 ---
 title: "Tablas"
 description: "Estilos de tablas, opciones de diseño y componentes personalizados para crear una amplia variedad de tablas."
-created: "2015-03-09T00:00:00Z"
-published: "2018-02-27T22:49:54Z"
-modified: "2020-07-25T23:27:50Z"
+createdAt: "2015-03-09T00:00:00Z"
+publishedAt: "2018-02-27T22:49:54Z"
+updatedAt: "2020-07-25T23:27:50Z"
 position: 6
 category: "Primeros Pasos"
 ---

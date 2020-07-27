@@ -3,8 +3,8 @@ title: "Statusfy: Actualización v0.2.0"
 slug: statusfy-release-0-2-0
 description: "Una nueva versión de Statusfy acaba de ser lanzada con nuevas funciones que pueden mejorar la experiencia de los usuarios/clientes de tu Sistema de Páginas de estado: Mantenimiento Programado, Notificaciones y Mapa de Sitio."
 cover: blog/statusfy-release-0-2-0-cover.png
-created: 2018-06-25T03:00:00Z
-published: 2018-06-25T03:00:00Z
+createdAt: 2018-06-25T03:00:00Z
+publishedAt: 2018-06-25T03:00:00Z
 updatedAt: 2020-07-18T15:41:57Z
 ---
 

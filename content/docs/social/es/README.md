@@ -1,9 +1,9 @@
 ---
 title: "Visión General"
 description: "Social es una plantilla de administración/frontend compatible con Bootstrap v3 y las versiones más recientes de jQuery, desarrollada para sus aplicaciones administrativas y frontend."
-created: "2015-03-09T00:00:00Z"
-published: "2018-02-27T22:30:14Z"
-modified: "2020-07-25T23:27:50Z"
+createdAt: "2015-03-09T00:00:00Z"
+publishedAt: "2018-02-27T22:30:14Z"
+updatedAt: "2020-07-25T23:27:50Z"
 position: 1
 category: "Primeros Pasos"
 ---

@@ -3,8 +3,8 @@ title: "Statusfy: Release v0.2.0"
 slug: statusfy-release-0-2-0
 description: "I was just released a new version of Statusfy with new big features that can improve the users/customer experience of your Status Page System: Scheduled Maintenance, Notifications and Sitemap."
 cover: blog/statusfy-release-0-2-0-cover.png
-created: 2018-06-25T03:00:00Z
-published: 2018-06-25T03:00:00Z
+createdAt: 2018-06-25T03:00:00Z
+publishedAt: 2018-06-25T03:00:00Z
 updatedAt: 2020-07-18T15:41:57Z
 ---
 

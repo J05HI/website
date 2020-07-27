@@ -1,9 +1,9 @@
 ---
 title: "Formularios"
 description: "Estilos de control de formularios, opciones de diseño y componentes personalizados para crear una amplia variedad de formularios."
-created: "2015-03-09T00:00:00Z"
-published: "2018-02-27T22:47:01.082046Z"
-modified: "2020-07-25T23:27:50Z"
+createdAt: "2015-03-09T00:00:00Z"
+publishedAt: "2018-02-27T22:47:01.082046Z"
+updatedAt: "2020-07-25T23:27:50Z"
 position: 4
 category: "Primeros Pasos"
 ---

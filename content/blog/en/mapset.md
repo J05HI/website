@@ -5,8 +5,8 @@ description: Today, we're happy to Introduce Mapset. A new, innovative and
   dynamic tool designed for managing screens in different mainframe coding
   languages. This tool means time savings due to its low execution time.
 cover: blog/mapset-cover.jpg
-created: 2018-06-05T15:53:07Z
-published: 2018-06-05T15:53:07Z
+createdAt: 2018-06-05T15:53:07Z
+publishedAt: 2018-06-05T15:53:07Z
 updatedAt: 2020-07-18T13:09:18Z
 ---
 

@@ -4,8 +4,8 @@ slug: probabilities-and-uncertainty
 description: Probability, risk and uncertainty are concepts that must be
   understood not only in the geosciences, but in life.
 cover: blog/probabilities-and-uncertainty-cover.jpg
-created: 2017-09-18T00:00:00.000Z
-published: 2013-09-12T00:00:00.000Z
+createdAt: 2017-09-18T00:00:00.000Z
+publishedAt: 2013-09-12T00:00:00.000Z
 canonical: https://latraza.wordpress.com/2013/09/12/probabilities-and-uncertainty-bayes-theorem-and-natural-frequencies/
 ---
 Probability, risk, and uncertainty are concepts that must be understood not only in the geosciences but in life. The way we process information to make decisions relies on many times in the reduction of quantitative uncertainty. The more information we gather, the better the improvement of our prediction capabilities. This information is expressed as discrete probabilities or as probability density functions. In this post I intend to clarify through an example the concepts of joint and conditional probability and their relationship with Bayes Theorem. Two approaches will be presented to help you get the ideas: a probabilistic one and a frequentist one.

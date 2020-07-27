@@ -29,14 +29,14 @@ collections:
       preview: false
     preview_path: "blog/{{fields.slug}}"
     slug: "{{fields.slug}}"
-    sortableFields: ['title', 'created', 'published']
+    sortableFields: ['title', 'createdAt', 'publishedAt']
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Slug', name: 'slug', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: "Cover", name: "cover", widget: "image"}
-      - { label: 'Create at', name: 'created', widget: 'datetime' }
-      - { label: 'Published at', name: 'published', widget: 'datetime' }
+      - { label: 'Create at', name: 'createdAt', widget: 'datetime' }
+      - { label: 'Published at', name: 'publishedAt', widget: 'datetime' }
       - { label: 'Canonical', name: 'canonical', widget: 'string', required: false }
       - { label: 'Body', name: 'body', widget: 'markdown' }
 
@@ -52,13 +52,13 @@ collections:
       preview: false
     preview_path: "es/blog/{{fields.slug}}"
     slug: "{{fields.slug}}"
-    sortableFields: ['title', 'created', 'published']
+    sortableFields: ['title', 'createdAt', 'publishedAt']
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Slug', name: 'slug', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: "Cover", name: "cover", widget: "image"}
-      - { label: 'Create at', name: 'created', widget: 'datetime' }
-      - { label: 'Published at', name: 'published', widget: 'datetime' }
+      - { label: 'Create at', name: 'createdAt', widget: 'datetime' }
+      - { label: 'Published at', name: 'publishedAt', widget: 'datetime' }
       - { label: 'Canonical', name: 'canonical', widget: 'string', required: false }
       - { label: 'Body', name: 'body', widget: 'markdown' }

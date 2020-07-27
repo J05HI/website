@@ -4,8 +4,8 @@ slug: probabilities-and-uncertainty
 description: Probabilidad, riesgo e incertidumbre son conceptos que deben
   entenderse no sólo en las geociencias, sino en la vida.
 cover: blog/probabilities-and-uncertainty-cover.jpg
-created: 2017-09-18T00:00:00.000Z
-published: 2013-09-12T00:00:00.000Z
+createdAt: 2017-09-18T00:00:00.000Z
+publishedAt: 2013-09-12T00:00:00.000Z
 canonical: https://latraza.wordpress.com/2013/09/12/probabilities-and-uncertainty-bayes-theorem-and-natural-frequencies/
 headline: Probabilidad, riesgo e incertidumbre son conceptos que deben ser
   entendidos en la vida.

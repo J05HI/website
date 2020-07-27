@@ -5,8 +5,8 @@ description: Hoy, tenemos el agrado de presentarles Mapset. Una herramienta
   nueva, innovadora y dinámica diseñada para administrar pantallas en diferentes
   lenguajes de codificación de mainframe.
 cover: blog/mapset-cover.jpg
-created: 2018-06-05T15:53:07Z
-published: 2018-06-05T15:53:07Z
+createdAt: 2018-06-05T15:53:07Z
+publishedAt: 2018-06-05T15:53:07Z
 updatedAt: 2020-07-18T13:09:18Z
 ---
 

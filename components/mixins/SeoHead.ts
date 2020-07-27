@@ -95,7 +95,7 @@ export default Vue.extend({
       ...i18nSeo.meta,
     ]
 
-    if (head.modified && head.published) {
+    if (head.updatedAt && head.publishedAt) {
       meta.push(
         {
           hid: 'og:type',
@@ -107,17 +107,17 @@ export default Vue.extend({
           hid: 'og:updated_time',
           name: 'og:updated_time',
           property: 'og:updated_time',
-          content: head.modified,
+          content: head.updatedAt,
         },
         {
           hid: 'article:modified_time',
           property: 'article:modified_time',
-          content: head.modified,
+          content: head.updatedAt,
         },
         {
           hid: 'article:published_time',
           property: 'article:published_time',
-          content: head.published,
+          content: head.publishedAt,
         },
         {
           hid: 'twitter:creator',

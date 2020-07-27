@@ -5,8 +5,8 @@ description: Through time, deterministic methods have been used for prediction
   of reservoir properties that are used to convert seismic data to the desired
   reservoir property.
 cover: blog/non-linearity-in-multi-attribute-analysis-cover.jpg
-created: 2017-09-18T00:00:00.000Z
-published: 2013-09-08T00:00:00.000Z
+createdAt: 2017-09-18T00:00:00.000Z
+publishedAt: 2013-09-08T00:00:00.000Z
 canonical: https://latraza.wordpress.com/2013/08/09/non-linearity-in-multi-attribute-analysis/
 ---
 Through time, deterministic methods have been used for the prediction of reservoir properties. A relationship that involves the observed seismic data and the reservoir parameter of interest is determined. This transformation is used to convert seismic data to the desired reservoir property.
