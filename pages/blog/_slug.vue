@@ -84,6 +84,7 @@
                 :width="48"
                 :height="48"
                 :rounded="true"
+                :fluid="false"
                 :source="
                   require('~/assets/images/profile.jpg?resize&sizes=144')
                 "
