@@ -101,7 +101,7 @@ export default Vue.extend<{}, {}, Computed, Props>({
         width: `${this.width}`,
         height: `${this.height}`,
         class: {
-          'max-w-full h-auto': this.fluid,
+          'w-full h-auto': this.fluid,
           'rounded-full': this.rounded,
           // @ts-ignore
           [this.classes]: true,
