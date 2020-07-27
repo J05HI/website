@@ -324,6 +324,7 @@ const config: NuxtConfiguration = {
       version: buildCode,
     },
     workbox: {
+      clientsClaim: false,
       offlineAnalytics: true,
       runtimeCaching: [
         { urlPattern: 'https://cdn.jsdelivr.net/.*', handler: 'cacheFirst' },
