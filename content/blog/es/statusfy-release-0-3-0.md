@@ -5,7 +5,7 @@ description: "Una nueva versión de Statusfy acaba de ser lanzada, con nuevas ca
 cover: blog/statusfy-release-0-3-0-cover.png
 createdAt: 2019-03-21T17:45:00Z
 publishedAt: 2019-03-21T17:45:00Z
-updatedAt: 2020-04-19T14:23:46Z
+updatedAt: 2020-07-27T19:50:07Z
 ---
 
 
@@ -21,6 +21,12 @@ Hay dos nuevos comandos disponibles: [delete-incident](https://docs.statusfy.co/
 Aplicamos pequeñas mejoras en el diseño de los Incidentes Programados: ahora se muestra la fecha de finalización, así como el contenido del incidente. También puedes personalizar la [posición de esta sección](https://docs.statusfy.co/es/config/#scheduled), eligiendo una de estas opciones: belowSystems, aboveSystems y aboveGlobalStatus.
 
 ## Docker
+
+<docs-alert>
+
+El soporte para Docker está descontinuado y será eliminado en la versión 1.0.0
+
+</docs-alert>
 
 Soportamos oficialmente a [Docker](https://hub.docker.com/r/bazzite/statusfy). Todavía no lo recomendamos su uso en producción, primero necesitamos tus comentarios para asegurarnos de que la imagen funciona correctamente.
 

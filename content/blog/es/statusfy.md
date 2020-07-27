@@ -2,22 +2,28 @@
 title: Statusfy, Un Estupendo Sistema de Página de Estado de Código Abierto
 slug: statusfy
 description: Statusfy es un Sistema de Página de Estado, fácil de usar y
-  completamente de código abierto. Puedes crear fácilmente un Sistema rápido, ya
-  sea Estático o Renderizado por Servidor, e implementarlo fácilmente en una
+  completamente de código abierto. Puedes crear fácilmente un Sistema Estático rápido e implementarlo fácilmente en una
   variedad de servicios de alojamiento.
 cover: blog/statusfy-cover.jpg
 createdAt: 2018-11-14T14:58:34.140Z
 publishedAt: 2018-11-14T14:58:34.000Z
-updatedAt: 2020-07-18T13:09:18Z
+updatedAt: 2020-07-27T19:51:04Z
 ---
 
-[Statusfy](/es/statusfy) es un Sistema de Página de Estado, fácil de usar y completamente de código abierto. Puedes crear fácilmente un Sistema rápido, ya sea **Estático** o **Renderizado por Servidor**, e implementarlo fácilmente en una **variedad de servicios de alojamiento**. El objetivo detrás es reducir los costos y la complejidad, proporcionando una alternativa de código abierto más simple y versátil.
+<docs-alert>
+
+Se avecinan importantes cambios (en su mayoría internos) que definirán el futuro de Statusfy, en consonancia con la misión y la reducción de los costos de desarrollo y mantenimiento. Puedes encontrar más información [aquí](https://github.com/juliomrqz/statusfy/issues/551).
+
+</docs-alert>
+
+
+[Statusfy](/es/statusfy) es un Sistema de Página de Estado, fácil de usar y completamente de código abierto. Puedes crear fácilmente un Sistema rápido, de forma **Estático** e implementarlo fácilmente en una **variedad de servicios de alojamiento**. El objetivo detrás es reducir los costos y la complejidad, proporcionando una alternativa de código abierto más simple y versátil.
 
 Sin embargo, puedes estar preguntándote: ¿Por qué necesito un sistema de página de estado?. Estos sistemas son bastante simples y tienen una tarea principal: comunicar el estado de una aplicación o servicio. Hoy en día, cada producto SaaS debe tener un sistema de página de estado, ellos nos permiten aumentar la confianza del cliente y reducir su frustración por cualquier interrupción del servicio mediante retrospectivas (también llamadas Análisis de Causa Raíz). Con estos sistemas, puedes notificar las interrupciones del servicio, mantenimientos planificados o posibles interrupciones a través de múltiples canales: correo electrónico, SMS, Push, Webhooks, etc.
 
 ## Otro sistema de página de estado. ¿Por qué?
 
-Actualmente, puedes encontrar varios sistemas de página de estado de fuente abierta y de pago, pero Statusfy es diferente, se diseñó para generar unos de estos Sistemas que actúe como una Aplicación Web con las arquitecturas [JAMstack](https://jamstack.org/) y  [Serverless](https://serverless.com/learn/overview/) en mente. También se puede crear una aplicación [Isomorfa](https://www.netlify.com/blog/2017/06/06/jamstack-vs-isomorphic-server-side-rendering/) con Renderizado por lado del Servidor si los contenidos estáticos no son una opción adecuada. Con estos enfoques, queríamos disfrutar de un Sistema de Página de Estado que nos brinde un mejor rendimiento, mayor seguridad, alojamiento más económico y una mejor experiencia de usuario.
+Actualmente, puedes encontrar varios sistemas de página de estado de fuente abierta y de pago, pero Statusfy es diferente, se diseñó para generar unos de estos Sistemas que actúe como una Aplicación Web con la arquitectura [JAMstack](https://jamstack.org/) y en mente. Con este enfoque, quería disfrutar de un Sistema de Página de Estado que brinde un mejor rendimiento, mayor seguridad, alojamiento más económico y una mejor experiencia de usuario.
 
 ## Tecnología Detrás
 
@@ -25,22 +31,20 @@ Un sitio Statusfy es una aplicación web, creada con [Vue](http://vuejs.org/), [
 
 Además, los incidentes del Sistema se crean utilizando **Markdown** y Statusfy genera toda la lógica necesaria de tu página de estado. La aplicación web final se puede generar desde un único CLI, se puede configurar fácilmente o personalizar con tus requisitos de Estilo.
 
-Por otro lado, puedes servir tu Sistema de Página de Estado creado con Statusfy de dos maneras diferentes:
+Por otro lado, puedes servir tu Sistema de Página de Estado creado con Statusfy de una maravillosa manera:
 
-1. **Generación Estática:** puedes generar el HTML para cada una de las rutas y almacenarlo en un archivo. Con esto, puedes alojar la aplicación web generada en ¡cualquier hosting estático!.
-2. **Renderizado por Servidor:** si deseas reducir el tiempo de despliegue o simplemente no desesas utilizar un Alojamiento Estático, puedes considerar la posibilidad de renderizar las páginas en el lado del servidor y del cliente.
+1. **Generación Estática:** puedes generar el HTML para cada una de las rutas y almacenarlo en archivos. Con esto, puedes alojar la aplicación web generada en ¡cualquier hosting estático!.
 
-Para estas dos formas de entrega de tu aplicación Statusfy, puedes usar excelentes servicios de hosting. Creamos proyectos de ejemplos para que puedas comenzar a jugar de inmediato con diferentes servicios de hospedaje populares que podrías considerar usar:
+Para estas dos formas de entrega de tu aplicación Statusfy, puedes usar excelentes servicios de hosting. Creé proyectos de ejemplos para que puedas comenzar a jugar de inmediato con diferentes servicios de hospedaje populares que podrías considerar usar:
 
-|                                                                                       | Example Project                                                                      | Example Project                                                             |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------- |
-| **Service**                                                                           | **Static Generated**                                                                 | **Server Rendered**                                                         |
-| [GitHub Pages](https://docs.statusfy.co/guide/deploy.html#github-pages)               | [Sí](https://github.com/juliomrqz/statusfy/tree/develop/examples/github-pages-static) | No                                                                          |
-| [GitLab Pages](https://docs.statusfy.co/guide/deploy.html#gitlab-pages-and-gitlab-ci) | [Sí](https://github.com/juliomrqz/statusfy/tree/develop/examples/gitlab-pages-static) | No                                                                          |
-| [Netlify](https://docs.statusfy.co/guide/deploy.html#netlify)                         | [Sí](https://github.com/juliomrqz/statusfy/tree/develop/examples/netlify-static)      | No                                                                          |
-| [Surge](https://docs.statusfy.co/guide/deploy.html#surge)                             | [Sí](https://github.com/juliomrqz/statusfy/tree/develop/examples/surge-static)        | No                                                                          |
-| [Heroku](https://docs.statusfy.co/guide/deploy.html#heroku)                           | [Sí](https://github.com/juliomrqz/statusfy/tree/develop/examples/heroku-static)       | [Sí](https://github.com/juliomrqz/statusfy/tree/develop/examples/heroku-ssr) |
-| [Now](https://docs.statusfy.co/guide/deploy.html#now)                                 | [Sí](https://github.com/juliomrqz/statusfy/tree/develop/examples/now-v2-static)       | No                                                                          |
+| **Servicio**                                                                          | **Projectos de Ejemplo**                                                              |
+|---------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+| [GitHub Pages](https://docs.statusfy.co/guide/deploy.html#github-pages)               | [Sí](https://github.com/juliomrqz/statusfy/tree/develop/examples/github-pages-static) |
+| [GitLab Pages](https://docs.statusfy.co/guide/deploy.html#gitlab-pages-and-gitlab-ci) | [Sí](https://github.com/juliomrqz/statusfy/tree/develop/examples/gitlab-pages-static) |
+| [Netlify](https://docs.statusfy.co/guide/deploy.html#netlify)                         | [Sí](https://github.com/juliomrqz/statusfy/tree/develop/examples/netlify-static)      |
+| [Surge](https://docs.statusfy.co/guide/deploy.html#surge)                             | [Sí](https://github.com/juliomrqz/statusfy/tree/develop/examples/surge-static)        |
+| [Heroku](https://docs.statusfy.co/guide/deploy.html#heroku)                           | [Sí](https://github.com/juliomrqz/statusfy/tree/develop/examples/heroku-static)       |
+| [Now](https://docs.statusfy.co/guide/deploy.html#now)                                 | [Sí](https://github.com/juliomrqz/statusfy/tree/develop/examples/now-v2-static)       |
 
 ## Creación de un Sistema de Página de Estado
 
@@ -77,19 +81,9 @@ Puedes generar un sitio web Estático con:
 npx statusfy generate # o yarn generate
 ```
 
-o generar un sitio web Renderizado por Servidor con:
-
-```shell
-# generar archivos estáticos
-npm run build # O yarn build
-
-# lanzar el servidor
-npm run start # O yarn start
-```
-
 ## Que sigue
 
-En los próximos meses, continuaremos mejorando la [documentación](https://docs.statusfy.co/es/), [crearé nuevos tutoriales](/es/blog), [corregiré errores](https://github.com/juliomrqz/statusfy), crearemos un Editor de Proyecto y agregaremos [funcionalidades adicionales](https://docs.statusfy.co/es/guide/#por-hacer).
+En los próximos meses, continuaré mejorando la [documentación](https://docs.statusfy.co/es/), [crearé nuevos tutoriales](/es/blog), [corregiré errores](https://github.com/juliomrqz/statusfy), crearemos un Editor de Proyecto y agregaremos [funcionalidades adicionales](https://docs.statusfy.co/es/guide/#por-hacer).
 
 ## Contribuye a Statusfy
 
