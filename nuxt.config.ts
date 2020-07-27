@@ -244,9 +244,9 @@ const config: NuxtConfiguration = {
   },
 
   /*
-   ** Export Configuration
+   ** Generate Configuration
    */
-  export: {
+  generate: {
     fallback: '404.html',
     async routes() {
       const routes: string[] = [
@@ -295,6 +295,15 @@ const config: NuxtConfiguration = {
       })
 
       return routes
+    },
+    cache: {
+      ignore: [
+        'test',
+        'jest.config.js',
+        'jsconfig.json',
+        'renovate.json',
+        'stylelint.config.js',
+      ],
     },
   },
 
