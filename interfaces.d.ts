@@ -71,6 +71,7 @@ export interface Head {
   title: string | VueI18n.TranslateResult
   description: string | VueI18n.TranslateResult
 
+  updatedAt?: string
   publishedAt?: string
 
   noIndex?: boolean
