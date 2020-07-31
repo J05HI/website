@@ -86,10 +86,10 @@
                 :rounded="true"
                 :fluid="false"
                 :src-set="
-                  require('~/assets/images/profile.jpg?resize&sizes[]=24&sizes[]=48&sizes[]=72&sizes[]=96')
+                  require('~/assets/images/profile.jpg?resize&sizes[]=48&sizes[]=96')
                 "
                 :src-set-webp="
-                  require('~/assets/images/profile.jpg?resize&sizes[]=24&sizes[]=48&sizes[]=72&sizes[]=96&format=webp')
+                  require('~/assets/images/profile.jpg?resize&sizes[]=48&sizes[]=96&format=webp')
                 "
                 amp-layout="fixed"
                 alt="Julio Márquez"
@@ -119,10 +119,10 @@
         <div class="-mx-6 mb-8 md:mx-0">
           <ImageResponsive
             :src-set="
-              require(`~/assets/images/content/${post.cover}?resize&sizes[]=400&sizes[]=800&sizes[]=1200&sizes[]=1600`)
+              require(`~/assets/images/content/${post.cover}?resize&sizes[]=400&sizes[]=800&sizes[]=1600`)
             "
             :src-set-webp="
-              require(`~/assets/images/content/${post.cover}?resize&sizes[]=400&sizes[]=800&sizes[]=1200&sizes[]=1600&format=webp`)
+              require(`~/assets/images/content/${post.cover}?resize&sizes[]=400&sizes[]=800&sizes[]=1600&format=webp`)
             "
             :width="1200 / 1.5"
             :height="630 / 1.5"
@@ -168,10 +168,10 @@
           :height="96"
           :rounded="true"
           :src-set="
-            require('~/assets/images/profile.jpg?resize&sizes[]=48&sizes[]=96&sizes[]=144&sizes[]=192')
+            require('~/assets/images/profile.jpg?resize&sizes[]=96&&sizes[]=192')
           "
           :src-set-webp="
-            require('~/assets/images/profile.jpg?resize&sizes[]=48&sizes[]=96&sizes[]=144&sizes[]=192&format=webp')
+            require('~/assets/images/profile.jpg?resize&sizes[]=96&&sizes[]=192&format=webp')
           "
           amp-layout="fixed"
           alt="Julio Márquez"

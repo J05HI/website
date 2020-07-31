@@ -8,13 +8,13 @@
       >
         <ImageResponsive
           :src-set="
-            require(`~/assets/images/content/${attributes.cover}?resize&sizes[]=300&sizes[]=600&sizes[]=900&sizes[]=1200`)
+            require(`~/assets/images/content/${attributes.cover}?resize&sizes[]=420&sizes[]=840`)
           "
           :src-set-webp="
-            require(`~/assets/images/content/${attributes.cover}?resize&sizes[]=300&sizes[]=600&sizes[]=900&sizes[]=1200&format=webp`)
+            require(`~/assets/images/content/${attributes.cover}?resize&sizes[]=420&sizes[]=840&format=webp`)
           "
-          :width="1200 / 2"
-          :height="630 / 2"
+          :width="420"
+          :height="221"
           :alt="attributes.title"
           classes="h-48 w-full object-cover"
         />
