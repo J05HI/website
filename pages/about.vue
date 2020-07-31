@@ -44,13 +44,13 @@
             <div class="relative block w-full rounded-lg overflow-hidden">
               <ImageResponsive
                 :src-set="
-                  require('~/assets/images/profile.jpg?resize&sizes[]=300&sizes[]=600&sizes[]=900&sizes[]=1200')
+                  require('~/assets/images/profile.jpg?resize&sizes[]=450&sizes[]=900')
                 "
                 :src-set-webp="
-                  require('~/assets/images/profile.jpg?resize&sizes[]=300&sizes[]=600&sizes[]=900&sizes[]=1200&format=webp')
+                  require('~/assets/images/profile.jpg?resize&sizes[]=450&sizes[]=900&format=webp')
                 "
-                :width="600"
-                :height="600"
+                :width="450"
+                :height="450"
                 :alt="$t('title')"
                 placeholder-color="#fff"
                 classes="w-full"
