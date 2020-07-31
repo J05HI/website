@@ -86,7 +86,7 @@
                 :rounded="true"
                 :fluid="false"
                 :source="
-                  require('~/assets/images/profile.jpg?resize&sizes=144')
+                  require('~/assets/images/profile.jpg?resize&size=144')
                 "
                 amp-layout="fixed"
                 alt="Julio Márquez"
@@ -161,7 +161,7 @@
           :width="96"
           :height="96"
           :rounded="true"
-          :source="require('~/assets/images/profile.jpg?resize&sizes=192')"
+          :source="require('~/assets/images/profile.jpg?resize&size=192')"
           amp-layout="fixed"
           alt="Julio Márquez"
           class="w-24 h-24 mx-auto"
