@@ -69,8 +69,11 @@
 
             <div class="mt-10 -mx-4 relative lg:mt-0 lg:col-start-1">
               <ImageResponsive
-                :source="
-                  require('~/assets/images/work.jpg?resize&sizes[]=600&sizes[]=900&sizes[]=1200')
+                :src-set="
+                  require('~/assets/images/work.jpg?resize&sizes[]=300&sizes[]=600&sizes[]=900&sizes[]=1200')
+                "
+                :src-set-webp="
+                  require('~/assets/images/work.jpg?resize&sizes[]=300&sizes[]=600&sizes[]=900&sizes[]=1200&format=webp')
                 "
                 :width="1200 / 2"
                 :height="784 / 2"

@@ -7,8 +7,11 @@
         "
       >
         <ImageResponsive
-          :source="
-            require(`~/assets/images/content/${attributes.cover}?resize&sizes[]=600&sizes[]=900&sizes[]=1200`)
+          :src-set="
+            require(`~/assets/images/content/${attributes.cover}?resize&sizes[]=300&sizes[]=600&sizes[]=900&sizes[]=1200`)
+          "
+          :src-set-webp="
+            require(`~/assets/images/content/${attributes.cover}?resize&sizes[]=300&sizes[]=600&sizes[]=900&sizes[]=1200&format=webp`)
           "
           :width="1200 / 2"
           :height="630 / 2"

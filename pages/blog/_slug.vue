@@ -85,8 +85,11 @@
                 :height="48"
                 :rounded="true"
                 :fluid="false"
-                :source="
-                  require('~/assets/images/profile.jpg?resize&size=144')
+                :src-set="
+                  require('~/assets/images/profile.jpg?resize&sizes[]=24&sizes[]=48&sizes[]=72&sizes[]=96')
+                "
+                :src-set-webp="
+                  require('~/assets/images/profile.jpg?resize&sizes[]=24&sizes[]=48&sizes[]=72&sizes[]=96&format=webp')
                 "
                 amp-layout="fixed"
                 alt="Julio Márquez"
@@ -115,8 +118,11 @@
 
         <div class="-mx-6 mb-8 md:mx-0">
           <ImageResponsive
-            :source="
-              require(`~/assets/images/content/${post.cover}?resize&sizes[]=800&sizes[]=1200`)
+            :src-set="
+              require(`~/assets/images/content/${post.cover}?resize&sizes[]=400&sizes[]=800&sizes[]=1200&sizes[]=1600`)
+            "
+            :src-set-webp="
+              require(`~/assets/images/content/${post.cover}?resize&sizes[]=400&sizes[]=800&sizes[]=1200&sizes[]=1600&format=webp`)
             "
             :width="1200 / 1.5"
             :height="630 / 1.5"
@@ -161,7 +167,12 @@
           :width="96"
           :height="96"
           :rounded="true"
-          :source="require('~/assets/images/profile.jpg?resize&size=192')"
+          :src-set="
+            require('~/assets/images/profile.jpg?resize&sizes[]=48&sizes[]=96&sizes[]=144&sizes[]=192')
+          "
+          :src-set-webp="
+            require('~/assets/images/profile.jpg?resize&sizes[]=48&sizes[]=96&sizes[]=144&sizes[]=192&format=webp')
+          "
           amp-layout="fixed"
           alt="Julio Márquez"
           class="w-24 h-24 mx-auto"

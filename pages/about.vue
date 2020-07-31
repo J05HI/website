@@ -43,8 +43,11 @@
           <div class="relative mx-auto w-full rounded-lg lg:max-w-md">
             <div class="relative block w-full rounded-lg overflow-hidden">
               <ImageResponsive
-                :source="
-                  require('~/assets/images/profile.jpg?resize&sizes[]=600&sizes[]=900&sizes[]=1200')
+                :src-set="
+                  require('~/assets/images/profile.jpg?resize&sizes[]=300&sizes[]=600&sizes[]=900&sizes[]=1200')
+                "
+                :src-set-webp="
+                  require('~/assets/images/profile.jpg?resize&sizes[]=300&sizes[]=600&sizes[]=900&sizes[]=1200&format=webp')
                 "
                 :width="600"
                 :height="600"
@@ -202,11 +205,14 @@
 
             <div class="mt-10 -mx-4 relative lg:mt-0">
               <ImageResponsive
-                :source="
-                  require('~/assets/images/honors-awards.jpg?resize&sizes[]=600&sizes[]=900&sizes[]=1200')
+                :src-set="
+                  require('~/assets/images/honors-awards.jpg?resize&sizes[]=225&sizes[]=450&sizes[]=675&sizes[]=900')
                 "
-                :width="600"
-                :height="400"
+                :src-set-webp="
+                  require('~/assets/images/honors-awards.jpg?resize&sizes[]=225&sizes[]=450&sizes[]=675&sizes[]=900&format=webp')
+                "
+                :width="450"
+                :height="450"
                 :alt="$t('about.awards.title')"
                 class="sm:shadow-lg sm:rounded-lg"
                 classes="relative mx-auto"

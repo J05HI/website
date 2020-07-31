@@ -16,10 +16,16 @@
         "
       >
         <ImageResponsive
-          :source="
+          :src-set="
+            require(`~/assets/images/projects/${project.id}.png?resize&sizes[]=300&sizes[]=600&sizes[]=900&sizes[]=1200`)
+          "
+          :src-set-webp="
+            require(`~/assets/images/projects/${project.id}.png?resize&sizes[]=300&sizes[]=600&sizes[]=900&sizes[]=1200&format=webp`)
+          "
+          :src-svg="
             project.category === 'open-source'
               ? require(`~/assets/images/projects/${project.id}.svg`)
-              : require(`~/assets/images/projects/${project.id}.jpg?resize&sizes[]=600&sizes[]=900&sizes[]=1200`)
+              : undefined
           "
           :width="1200 / 2"
           :height="630 / 2"

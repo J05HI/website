@@ -1,6 +1,6 @@
 <template lang="html">
   <ImageResponsive
-    :source="image"
+    :src-set="srcSet"
     :width="width"
     :height="height"
     :classes="classes"
@@ -36,8 +36,22 @@ export default Vue.extend({
     },
   },
   computed: {
-    image() {
-      return require(`~/assets/images/content/${this.src}`)
+    // sizes(): string {
+    //   return [0.5, 1, 1.5, 2]
+    //     .map((factor) => `sizes[]=${Number(this.width) * factor}`)
+    //     .join('&')
+    // },
+    srcSet() {
+      // TODO: support diferent sizes
+      return {
+        images: [
+          {
+            height: Number(this.height),
+            width: Number(this.width),
+            path: require(`~/assets/images/content/${this.src}`),
+          },
+        ],
+      }
     },
   },
 })
