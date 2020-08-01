@@ -69,7 +69,7 @@
             :datetime="post.publishedAt"
             class="block mb-2 text-base leading-6 font-medium text-gray-600 dark:text-gray-300"
           >
-            {{ formatDate(post.publishedAt) }}
+            {{ formattedPublishedAt }}
           </time>
           <h1
             itemprop="name headline"
@@ -150,7 +150,7 @@
             >{{ getDomain(post.canonical) }}</a
           >
 
-          {{ $t('blog.on') }} {{ formatDate(post.createdAt) }}.
+          {{ $t('blog.on') }} {{ formattedCreatedAt }}.
         </aside>
       </div>
     </LazyHydrate>
@@ -203,7 +203,7 @@ import Url from 'url-parse'
 import isAlphanumeric from 'validator/lib/isAlphanumeric'
 
 import SeoHead from '~/components/mixins/SeoHead'
-import FormatDate from '~/components/mixins/FormatDate'
+import { formatDate } from '~/utils/date'
 
 import { BlogPostContent, Head } from '~/interfaces'
 
@@ -211,10 +211,12 @@ interface Data {
   html: string
   attributes: { [key: string]: any }
   head: MetaInfo
+  formattedPublishedAt: string
+  formattedCreatedAt: string
 }
 
 export default Vue.extend({
-  mixins: [SeoHead, FormatDate],
+  mixins: [SeoHead],
   async asyncData({ app, params, $sentryReady, $content, $config }) {
     try {
       const { slug } = params
@@ -238,8 +240,19 @@ export default Vue.extend({
 
       const image = require(`~/assets/images/content/${post.cover}`)
 
+      const formattedPublishedAt = await formatDate(
+        post.publishedAt,
+        app.i18n.locale
+      )
+      const formattedCreatedAt = await formatDate(
+        post.createdAt,
+        app.i18n.locale
+      )
+
       return {
         post,
+        formattedPublishedAt,
+        formattedCreatedAt,
         head: {
           image,
           title,

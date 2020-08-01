@@ -45,9 +45,9 @@
       </div>
       <div class="mt-6 flex items-center">
         <div class="flex text-sm leading-5 text-gray-500 dark:text-gray-300">
-          <time :datetime="attributes.publishedAt">
-            {{ formatDate(attributes.publishedAt) }}
-          </time>
+          <time :datetime="attributes.publishedAt">{{
+            formattedPublishedAt
+          }}</time>
         </div>
       </div>
     </div>
@@ -57,16 +57,23 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import FormatDate from '~/components/mixins/FormatDate'
+import { formatDate } from '~/utils/date'
 
 export default Vue.extend({
-  mixins: [FormatDate],
   props: {
     attributes: {
       type: Object,
       required: true,
       default: () => {},
     },
+  },
+  data: () => ({ formattedPublishedAt: '' }),
+
+  async created() {
+    this.formattedPublishedAt = await formatDate(
+      this.attributes.publishedAt,
+      this.$i18n.locale
+    )
   },
 })
 </script>
