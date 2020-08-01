@@ -38,6 +38,7 @@ type ResponsiveImage = {
 }
 
 interface Computed {
+  source: string
   sourceSet: string
   sourceSetWebp?: string
   placeholder: string
@@ -129,6 +130,9 @@ export default Vue.extend<{}, {}, Computed, Props>({
         return undefined
       }
     },
+    source() {
+      return this.sourceSet.split(',')[0].split(' ')[0]
+    },
     placeholder() {
       const width = Number(this.width) * 2
       const height = Number(this.height) * 2
@@ -144,8 +148,6 @@ export default Vue.extend<{}, {}, Computed, Props>({
       return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(image)}`
     },
     imageProperties() {
-      const source = this.sourceSet.split(',')[0]
-
       let properties: { [key: string]: any } = {
         width: `${this.width}`,
         height: `${this.height}`,
@@ -160,14 +162,15 @@ export default Vue.extend<{}, {}, Computed, Props>({
       }
 
       if (this.$isAMP) {
-        properties.src = source
+        properties.src = this.source
         properties.layout = this.ampLayout
+        properties.srcset = this.sourceSet
       } else {
         properties = {
           ...properties,
           // @ts-ignore
           src: this.placeholder,
-          'data-src': source,
+          'data-src': this.source,
           // @ts-ignore
           'data-srcset': this.sourceSet,
           class: {
