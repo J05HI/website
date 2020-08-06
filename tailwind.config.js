@@ -170,12 +170,8 @@ module.exports = {
     }),
   ],
   purge: {
-    enabled: true,
     content: [
       'content/**/*.md',
-      'components/**/*.vue',
-      'layouts/**/*.vue',
-      'pages/**/*.vue',
       'plugins/**/*.ts',
       'locales/**/*.js',
       'nuxt.config.ts',
