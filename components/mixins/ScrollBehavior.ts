@@ -11,7 +11,7 @@ export default Vue.extend({
 
   methods: {
     scrollTo(target: string) {
-      document.querySelector(target).scrollIntoView({
+      document.querySelector(target)?.scrollIntoView({
         behavior: 'smooth',
       })
     },
