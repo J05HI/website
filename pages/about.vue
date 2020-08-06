@@ -29,9 +29,9 @@
           <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
             <div class="rounded-md shadow">
               <a
-                v-scroll-to="'#instroductionTitle'"
                 href="#instroductionTitle"
                 class="w-full flex items-center justify-center px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 bg-gray-900 hover:bg-gray-800 dark:text-gray-900 dark:bg-gray-200 dark-hover:bg-gray-50 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
+                @click.prevent="scrollTo('#instroductionTitle')"
                 >{{ $t('links.more') }}</a
               >
             </div>
@@ -229,14 +229,12 @@
 import Vue from 'vue'
 
 import '~/components/icons'
-import { loadVueScrollTo } from '~/utils/vue-scrollto'
+import ScrollBehavior from '@/components/mixins/ScrollBehavior'
 import SeoHead from '~/components/mixins/SeoHead'
 import { Head } from '~/interfaces'
 
-loadVueScrollTo()
-
 export default Vue.extend({
-  mixins: [SeoHead],
+  mixins: [SeoHead, ScrollBehavior],
   data() {
     const $t = this.$t.bind(this)
 

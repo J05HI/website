@@ -23,9 +23,9 @@
             >
               <div class="rounded-md shadow">
                 <a
-                  v-scroll-to="'#moreInfo'"
                   href="#moreInfo"
                   class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 dark:text-gray-900 dark:bg-gray-200 dark-hover:bg-gray-50 focus:outline-none focus:shadow-outline-gray transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
+                  @click.prevent="scrollTo('#moreInfo')"
                   >{{ $t('links.more2') }}</a
                 >
               </div>
@@ -175,13 +175,11 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import { loadVueScrollTo } from '~/utils/vue-scrollto'
+import ScrollBehavior from '@/components/mixins/ScrollBehavior'
 import SeoHead from '~/components/mixins/SeoHead'
 import { projects } from '~/data/projects'
 
 import { BlogPostContent, Head } from '~/interfaces'
-
-loadVueScrollTo()
 
 type Posts = Pick<
   BlogPostContent,
@@ -189,7 +187,7 @@ type Posts = Pick<
 >[]
 
 export default Vue.extend({
-  mixins: [SeoHead],
+  mixins: [SeoHead, ScrollBehavior],
   async asyncData({ app, $sentryReady, $content }) {
     const title = `${app.i18n.t('subTitle')} ${app.i18n.t('title')}`
     let posts: Posts = []

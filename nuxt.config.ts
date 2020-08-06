@@ -169,7 +169,6 @@ const config: NuxtConfiguration = {
         debug: !isProd,
       },
     ],
-    ['vue-scrollto/nuxt', { offset: -40 }],
     '@nuxtjs/sentry',
   ],
 
@@ -191,7 +190,6 @@ const config: NuxtConfiguration = {
    ** Build configuration
    */
   build: {
-    transpile: ['vue-scrollto'],
     // @ts-ignore
     postcss: {
       plugins: {

@@ -32,9 +32,9 @@
             </div>
             <div class="mt-3 sm:mt-0 sm:ml-3">
               <a
-                v-scroll-to="'#features'"
                 href="#features"
                 class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-blue-700 bg-blue-100 hover:text-blue-600 hover:bg-blue-50 focus:outline-none focus:shadow-outline focus:border-blue-300 transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
+                @click.prevent="scrollTo('#features')"
                 >{{ $t('statusfy.buttons.learnMore') }}</a
               >
             </div>
@@ -365,19 +365,17 @@
 import Vue from 'vue'
 
 import '@/components/icons/statusfy'
-import { loadVueScrollTo } from '~/utils/vue-scrollto'
 // import Subscribe from '../../../common/components/Subscribe.vue'
+import ScrollBehavior from '@/components/mixins/ScrollBehavior'
 import SeoHead from '~/components/mixins/SeoHead'
 import { Head } from '~/interfaces'
-
-loadVueScrollTo()
 
 export default Vue.extend({
   name: 'StatusfyPage',
   // components: {
   //   Subscribe,
   // },
-  mixins: [SeoHead],
+  mixins: [SeoHead, ScrollBehavior],
   data() {
     const head: Head = {
       title: `Statusfy: ${this.$t('statusfy.title')}`,
