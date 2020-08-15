@@ -1,7 +1,35 @@
-export const formatDate = async (
-  date: Date | string,
-  locale: string
-): Promise<string> => {
+const months: { [key: string]: string[] } = {
+  en: [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ],
+  es: [
+    'enero',
+    'febrero',
+    'marzo',
+    'abril',
+    'mayo',
+    'junio',
+    'julio',
+    'agosto',
+    'septiembre',
+    'octubre',
+    'noviembre',
+    'diciembre',
+  ],
+}
+
+export const formatDate = (date: Date | string, locale: string): string => {
   const dateObject = new Date(date)
 
   try {
@@ -11,18 +39,17 @@ export const formatDate = async (
       day: 'numeric',
     })
   } catch (error) {
-    const { format } = await import(
-      /* webpackChunkName: 'date-fns' */ 'date-fns'
-    )
-    const { default: esLocale } = await import(
-      /* webpackChunkName: 'date-fns/locale/es' */ 'date-fns/locale/es'
-    )
+    const enFormat = (day: number, month: string, year: number) =>
+      `${month} ${day}, ${year}`
+    const esFormat = (day: number, month: string, year: number) =>
+      `${day} de ${month} de ${year}`
 
-    const enDate = format(dateObject, 'MMMM dd, yyyy')
-    const esDate = format(dateObject, "dd' de 'LLLL' de 'yyyy", {
-      locale: esLocale,
-    })
+    const day = dateObject.getDate()
+    const month = months[locale][dateObject.getMonth()]
+    const year = dateObject.getFullYear()
 
-    return locale === 'en' ? enDate : esDate
+    return locale === 'en'
+      ? enFormat(day, month, year)
+      : esFormat(day, month, year)
   }
 }

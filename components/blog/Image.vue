@@ -1,10 +1,10 @@
-<template lang="html">
+<template functional>
   <ImageResponsive
-    :src-set="srcSet"
-    :width="width"
-    :height="height"
-    :classes="classes"
-    :alt="alt"
+    :src-set="$options.getSrcSet(props)"
+    :width="props.width"
+    :height="props.height"
+    :classes="props.classes"
+    :alt="props.alt"
     class="mt-4 rounded-lg"
   />
 </template>
@@ -12,7 +12,16 @@
 <script lang="ts">
 import Vue from 'vue'
 
-export default Vue.extend({
+interface Props {
+  src: string
+  alt: string
+  width: string | number
+  height: string | number
+  classes: string
+}
+
+export default Vue.extend<Props>({
+  functional: true,
   props: {
     src: {
       type: String,
@@ -35,24 +44,18 @@ export default Vue.extend({
       default: '',
     },
   },
-  computed: {
-    // sizes(): string {
-    //   return [0.5, 1, 1.5, 2]
-    //     .map((factor) => `sizes[]=${Number(this.width) * factor}`)
-    //     .join('&')
-    // },
-    srcSet() {
-      // TODO: support diferent sizes
-      return {
-        images: [
-          {
-            height: Number(this.height),
-            width: Number(this.width),
-            path: require(`~/assets/images/content/${this.src}`),
-          },
-        ],
-      }
-    },
+  // @ts-ignore
+  getSrcSet(props: Props) {
+    // TODO: support diferent sizes
+    return {
+      images: [
+        {
+          height: Number(props.height),
+          width: Number(props.width),
+          path: require(`~/assets/images/content/${props.src}`),
+        },
+      ],
+    }
   },
 })
 </script>

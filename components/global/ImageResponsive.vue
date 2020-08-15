@@ -3,7 +3,7 @@
     :is="parent.$isAMP ? 'div' : 'picture'"
     :class="{
       'rounded-full': props.rounded,
-      [data.staticClass]: !!data.staticClass,
+      [`${data.staticClass} ${data.class}`]: data.staticClass || data.class,
     }"
     class="overflow-hidden leading-none responsive-image block"
     v-bind="data.attrs"

@@ -226,14 +226,8 @@ export default Vue.extend({
 
       const image = require(`~/assets/images/content/${post.cover}`)
 
-      const formattedPublishedAt = await formatDate(
-        post.publishedAt,
-        app.i18n.locale
-      )
-      const formattedCreatedAt = await formatDate(
-        post.createdAt,
-        app.i18n.locale
-      )
+      const formattedPublishedAt = formatDate(post.publishedAt, app.i18n.locale)
+      const formattedCreatedAt = formatDate(post.createdAt, app.i18n.locale)
 
       return {
         post,

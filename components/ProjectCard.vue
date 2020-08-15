@@ -1,35 +1,35 @@
-<template>
+<template functional>
   <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
     <div class="flex-shrink-0">
       <Component
-        :is="variant === 'simple' ? 'a' : 'NuxtLink'"
-        :href="variant === 'simple' ? project.url : undefined"
-        :target="variant === 'simple' ? '_blank' : undefined"
-        :rel="variant === 'simple' ? 'noopener noreferrer' : undefined"
+        :is="props.variant === 'simple' ? 'a' : 'NuxtLink'"
+        :href="props.variant === 'simple' ? props.project.url : undefined"
+        :target="props.variant === 'simple' ? '_blank' : undefined"
+        :rel="props.variant === 'simple' ? 'noopener noreferrer' : undefined"
         :to="
-          variant === 'docs'
-            ? localePath({
+          props.variant === 'docs'
+            ? parent.localePath({
                 name: 'docs-project-slug',
-                params: { project: project.id },
+                params: { project: props.project.id },
               })
             : undefined
         "
       >
         <ImageResponsive
           :src-set="
-            require(`~/assets/images/projects/${project.id}.png?resize&sizes[]=420&sizes[]=840`)
+            require(`~/assets/images/projects/${props.project.id}.png?resize&sizes[]=420&sizes[]=840`)
           "
           :src-set-webp="
-            require(`~/assets/images/projects/${project.id}.png?resize&sizes[]=420&sizes[]=840&format=webp`)
+            require(`~/assets/images/projects/${props.project.id}.png?resize&sizes[]=420&sizes[]=840&format=webp`)
           "
           :src-svg="
-            project.category === 'open-source'
-              ? require(`~/assets/images/projects/${project.id}.svg`)
+            props.project.category === 'open-source'
+              ? require(`~/assets/images/projects/${props.project.id}.svg`)
               : undefined
           "
           :width="420"
           :height="221"
-          :alt="project.title[$i18n.locale]"
+          :alt="props.project.title[parent.$i18n.locale]"
           classes="h-48 w-full object-cover"
         />
       </Component>
@@ -42,18 +42,19 @@
           <span
             :class="{
               'bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50':
-                project.category === 'open-source',
-              'bg-gray-900 text-gray-100': project.category === 'closed-source',
+                props.project.category === 'open-source',
+              'bg-gray-900 text-gray-100':
+                props.project.category === 'closed-source',
               'border border-gray-900 dark:border-gray-100':
-                project.category === 'research',
+                props.project.category === 'research',
             }"
             class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium leading-5"
           >
-            {{ $t(`projects.categories.${project.category}`) }}
+            {{ parent.$t(`projects.categories.${props.project.category}`) }}
           </span>
         </div>
         <a
-          :href="project.url"
+          :href="props.project.url"
           target="_blank"
           rel="noopener noreferrer"
           class="block"
@@ -61,40 +62,40 @@
           <h3
             class="mt-2 text-xl leading-7 font-semibold text-gray-900 dark:text-gray-100"
           >
-            {{ project.title[$i18n.locale] }}
+            {{ props.project.title[parent.$i18n.locale] }}
           </h3>
 
           <!-- eslint-disable vue/no-v-html -->
           <p
             class="mt-3 text-base leading-6 text-gray-500 dark:text-gray-300"
-            v-html="project.description[$i18n.locale]"
+            v-html="props.project.description[parent.$i18n.locale]"
           />
         </a>
       </div>
     </div>
 
     <div
-      v-if="variant === 'docs'"
+      v-if="props.variant === 'docs'"
       class="flex flex-wrap justify-around text-center w-full bg-gray-50 px-4 py-4 sm:px-6 dark:bg-gray-700"
     >
       <a
-        :href="project.url"
+        :href="props.project.url"
         target="_blank"
         rel="noopener noreferrer"
         class="flex-1 text-gray-600 font-medium hover:text-gray-900 hover:underline dark:text-gray-200 dark-hover:text-gray-300"
       >
-        {{ $t('docs.labels.moreInfo') }}
+        {{ parent.$t('docs.labels.moreInfo') }}
       </a>
       <NuxtLink
         :to="
-          localePath({
+          parent.localePath({
             name: 'docs-project-slug',
-            params: { project: project.id },
+            params: { project: props.project.id },
           })
         "
         class="flex-1 text-gray-600 font-medium hover:text-gray-900 hover:underline dark:text-gray-200 dark-hover:text-gray-300"
       >
-        {{ $t('docs.labels.goToDocs') }}
+        {{ parent.$t('docs.labels.goToDocs') }}
       </NuxtLink>
     </div>
   </div>

@@ -1,21 +1,24 @@
-<template>
+<template functional>
   <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
     <div class="flex-shrink-0">
       <NuxtLink
         :to="
-          localePath({ name: 'blog-slug', params: { slug: attributes.slug } })
+          parent.localePath({
+            name: 'blog-slug',
+            params: { slug: props.attributes.slug },
+          })
         "
       >
         <ImageResponsive
           :src-set="
-            require(`~/assets/images/content/${attributes.cover}?resize&sizes[]=420&sizes[]=840`)
+            require(`~/assets/images/content/${props.attributes.cover}?resize&sizes[]=420&sizes[]=840`)
           "
           :src-set-webp="
-            require(`~/assets/images/content/${attributes.cover}?resize&sizes[]=420&sizes[]=840&format=webp`)
+            require(`~/assets/images/content/${props.attributes.cover}?resize&sizes[]=420&sizes[]=840&format=webp`)
           "
           :width="420"
           :height="221"
-          :alt="attributes.title"
+          :alt="props.attributes.title"
           classes="h-48 w-full object-cover"
         />
       </NuxtLink>
@@ -26,28 +29,31 @@
       <div class="flex-1">
         <NuxtLink
           :to="
-            localePath({ name: 'blog-slug', params: { slug: attributes.slug } })
+            parent.localePath({
+              name: 'blog-slug',
+              params: { slug: props.attributes.slug },
+            })
           "
           class="block"
         >
           <h3
             class="mt-2 text-xl leading-7 font-semibold text-gray-900 dark:text-gray-100"
           >
-            {{ attributes.title }}
+            {{ props.attributes.title }}
           </h3>
 
           <!-- eslint-disable vue/no-v-html -->
           <p
             class="mt-3 text-base leading-6 text-gray-500 dark:text-gray-300"
-            v-html="attributes.description"
+            v-html="props.attributes.description"
           />
         </NuxtLink>
       </div>
       <div class="mt-6 flex items-center">
         <div class="flex text-sm leading-5 text-gray-500 dark:text-gray-300">
-          <time :datetime="attributes.publishedAt">{{
-            formattedPublishedAt
-          }}</time>
+          <time :datetime="props.attributes.publishedAt">
+            {{ $options.getFormattedPublishedAt(props, parent) }}
+          </time>
         </div>
       </div>
     </div>
@@ -59,7 +65,12 @@ import Vue from 'vue'
 
 import { formatDate } from '~/utils/date'
 
-export default Vue.extend({
+interface Props {
+  attributes: { [key: string]: any }
+}
+
+export default Vue.extend<Props>({
+  functional: true,
   props: {
     attributes: {
       type: Object,
@@ -67,13 +78,9 @@ export default Vue.extend({
       default: () => {},
     },
   },
-  data: () => ({ formattedPublishedAt: '' }),
-
-  async created() {
-    this.formattedPublishedAt = await formatDate(
-      this.attributes.publishedAt,
-      this.$i18n.locale
-    )
+  // @ts-ignore
+  getFormattedPublishedAt(props: Props, parent: any) {
+    return formatDate(props.attributes.publishedAt, parent.$i18n.locale)
   },
 })
 </script>
