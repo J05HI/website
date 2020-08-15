@@ -6,6 +6,8 @@ import readingTime from 'reading-time'
 import colors from '@tailwindcss/ui/colors'
 // @ts-ignore
 import { $content } from '@nuxt/content'
+// @ts-ignore
+import responsiveLoaderSharpAdapter from 'responsive-loader/sharp'
 
 import pkg from './package.json'
 import { ampify } from './utils/ampify'
@@ -535,6 +537,12 @@ const config: NuxtConfiguration = {
     { path: '/api/cms/auth', handler: '~/api/_dev/cms/auth.js' },
     { path: '/api/cms/complete', handler: '~/api/_dev/cms/complete.js' },
   ],
+
+  optimizedImages: {
+    responsive: {
+      adapter: responsiveLoaderSharpAdapter,
+    },
+  },
 }
 
 export default config
