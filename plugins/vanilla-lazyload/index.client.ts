@@ -3,8 +3,8 @@ import { Plugin } from '@nuxt/types'
 
 import { Lazyload } from './lazyload'
 
-const LazyLoadPlugin: Plugin = async () => {
-  const lazy = new Lazyload()
+const LazyLoadPlugin: Plugin = async ({ isDev }) => {
+  const lazy = new Lazyload(isDev)
   await lazy.init()
 
   const lazyLoadPlugin: PluginObject<any> = {

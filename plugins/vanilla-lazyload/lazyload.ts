@@ -11,10 +11,10 @@ export class Lazyload {
 
   private throttledUpdate: () => void
 
-  constructor() {
+  constructor(isDev: boolean) {
     this.isNativeSupported = 'loading' in HTMLImageElement.prototype
 
-    this.throttledUpdate = throttle(this.updateLazyload, 150)
+    this.throttledUpdate = throttle(this.updateLazyload, isDev ? 150 : 50)
   }
 
   async init() {
