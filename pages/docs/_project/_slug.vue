@@ -4,81 +4,80 @@
       class="w-full py-4 lg:pt-8 lg:pb-4 dark:border-gray-800 lg:border-l lg:border-r"
       :class="{ '': doc.toc && doc.toc.length, 'lg:w-3/4': !doc.fullscreen }"
     >
-      <LazyHydrate v-if="head && doc" when-idle>
-        <article
-          itemscope
-          itemtype="http://schema.org/TechArticle"
-          class="prose prose-lg lg:px-8 dark:prose-dark-mode"
-        >
-          <meta itemprop="dateCreated" :content="head.createdAt" />
-          <meta itemprop="datePublished" :content="head.publishedAt" />
-          <meta itemprop="dateModified" :content="head.updatedAt" />
-          <meta
-            itemprop="headline"
-            :content="`${doc.title} - ${currentProject.title[$i18n.locale]}`"
-          />
-          <meta itemprop="description" :content="doc.description" />
-          <meta itemprop="inLanguage" :content="$i18n.locale" />
-          <meta
-            itemprop="mainEntityOfPage"
-            :content="'https://marquez.co' + $route.path"
-          />
-          <meta itemprop="mainEntityOfPage" :content="head.canonical" />
+      <article
+        v-if="head && doc"
+        itemscope
+        itemtype="http://schema.org/TechArticle"
+        class="prose prose-lg lg:px-8 dark:prose-dark-mode"
+      >
+        <meta itemprop="dateCreated" :content="head.createdAt" />
+        <meta itemprop="datePublished" :content="head.publishedAt" />
+        <meta itemprop="dateModified" :content="head.updatedAt" />
+        <meta
+          itemprop="headline"
+          :content="`${doc.title} - ${currentProject.title[$i18n.locale]}`"
+        />
+        <meta itemprop="description" :content="doc.description" />
+        <meta itemprop="inLanguage" :content="$i18n.locale" />
+        <meta
+          itemprop="mainEntityOfPage"
+          :content="'https://marquez.co' + $route.path"
+        />
+        <meta itemprop="mainEntityOfPage" :content="head.canonical" />
 
+        <div
+          itemscope
+          itemprop="image"
+          itemtype="http://schema.org/ImageObject"
+        >
+          <meta
+            itemprop="url"
+            :content="
+              'https://marquez.co' +
+              require(`~/assets/images/projects/${currentProject.id}.png`)
+            "
+          />
+          <meta itemprop="width" content="1200px" />
+          <meta itemprop="height" content="630px" />
+        </div>
+        <meta itemprop="timeRequired" :content="`PT${doc.readingTime}M`" />
+
+        <meta itemprop="version" :content="currentProject.version" />
+
+        <div
+          itemscope
+          itemprop="author"
+          itemtype="http://schema.org/Organization"
+        >
+          <meta itemprop="name" content="Julio Marquez" />
+          <meta itemprop="url" content="https://marquez.co" />
+        </div>
+        <div
+          itemscope
+          itemprop="publisher"
+          itemtype="http://schema.org/Organization"
+        >
+          <meta itemprop="name" content="Julio Márquez" />
+          <meta itemprop="url" content="https://marquez.co" />
           <div
             itemscope
-            itemprop="image"
+            itemprop="logo"
             itemtype="http://schema.org/ImageObject"
           >
             <meta
               itemprop="url"
               :content="
-                'https://marquez.co' +
-                require(`~/assets/images/projects/${currentProject.id}.png`)
+                'https://marquez.co' + require('~/assets/images/logotype.jpg')
               "
             />
             <meta itemprop="width" content="1200px" />
             <meta itemprop="height" content="630px" />
           </div>
-          <meta itemprop="timeRequired" :content="`PT${doc.readingTime}M`" />
+        </div>
 
-          <meta itemprop="version" :content="currentProject.version" />
-
-          <div
-            itemscope
-            itemprop="author"
-            itemtype="http://schema.org/Organization"
-          >
-            <meta itemprop="name" content="Julio Marquez" />
-            <meta itemprop="url" content="https://marquez.co" />
-          </div>
-          <div
-            itemscope
-            itemprop="publisher"
-            itemtype="http://schema.org/Organization"
-          >
-            <meta itemprop="name" content="Julio Márquez" />
-            <meta itemprop="url" content="https://marquez.co" />
-            <div
-              itemscope
-              itemprop="logo"
-              itemtype="http://schema.org/ImageObject"
-            >
-              <meta
-                itemprop="url"
-                :content="
-                  'https://marquez.co' + require('~/assets/images/logotype.jpg')
-                "
-              />
-              <meta itemprop="width" content="1200px" />
-              <meta itemprop="height" content="630px" />
-            </div>
-          </div>
-
-          <h1 v-if="Boolean($route.params.slug)">{{ doc.title }}</h1>
-          <NuxtContent :document="doc" />
-        </article>
-      </LazyHydrate>
+        <h1 v-if="Boolean($route.params.slug)">{{ doc.title }}</h1>
+        <NuxtContent :document="doc" />
+      </article>
 
       <aside>
         <DocsEditOnGithub

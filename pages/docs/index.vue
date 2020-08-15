@@ -1,32 +1,30 @@
 <template>
-  <LazyHydrate when-idle>
-    <section class="pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-24 lg:px-8">
-      <div class="relative max-w-7xl mx-auto">
-        <div class="text-center">
-          <h1
-            class="text-3xl leading-9 tracking-tight font-extrabold text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10"
-          >
-            {{ $t('docs.title') }}
-          </h1>
-          <p
-            class="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500 dark:text-gray-300 m:mt-4 md:pb-8"
-          >
-            {{ $t('docs.description') }}
-          </p>
-        </div>
-        <div
-          class="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none"
+  <section class="pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-24 lg:px-8">
+    <div class="relative max-w-7xl mx-auto">
+      <div class="text-center">
+        <h1
+          class="text-3xl leading-9 tracking-tight font-extrabold text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10"
         >
-          <ProjectCard
-            v-for="project in projects"
-            :key="project.id"
-            :project="project"
-            variant="docs"
-          />
-        </div>
+          {{ $t('docs.title') }}
+        </h1>
+        <p
+          class="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500 dark:text-gray-300 m:mt-4 md:pb-8"
+        >
+          {{ $t('docs.description') }}
+        </p>
       </div>
-    </section>
-  </LazyHydrate>
+      <div
+        class="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none"
+      >
+        <ProjectCard
+          v-for="project in projects"
+          :key="project.id"
+          :project="project"
+          variant="docs"
+        />
+      </div>
+    </div>
+  </section>
 </template>
 
 <script lang="ts">

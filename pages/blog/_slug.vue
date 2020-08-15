@@ -4,156 +4,142 @@
     itemscope
     itemtype="http://schema.org/BlogPosting"
   >
-    <LazyHydrate v-if="head && post" when-idle>
-      <div>
-        <meta itemprop="dateCreated" :content="head.createdAt" />
-        <meta itemprop="datePublished" :content="head.publishedAt" />
-        <meta itemprop="dateModified" :content="head.updatedAt" />
-        <meta itemprop="description" :content="post.description" />
-        <meta itemprop="timeRequired" :content="`PT${post.readingTime}M`" />
-        <meta itemprop="inLanguage" :content="$i18n.locale" />
-        <meta
-          itemprop="mainEntityOfPage"
-          :content="`https://marquez.co${localePath({
-            name: 'blog-slug',
-            params: { slug: post.slug },
-          })}`"
-        />
+    <div v-if="head && post">
+      <meta itemprop="dateCreated" :content="head.createdAt" />
+      <meta itemprop="datePublished" :content="head.publishedAt" />
+      <meta itemprop="dateModified" :content="head.updatedAt" />
+      <meta itemprop="description" :content="post.description" />
+      <meta itemprop="timeRequired" :content="`PT${post.readingTime}M`" />
+      <meta itemprop="inLanguage" :content="$i18n.locale" />
+      <meta
+        itemprop="mainEntityOfPage"
+        :content="`https://marquez.co${localePath({
+          name: 'blog-slug',
+          params: { slug: post.slug },
+        })}`"
+      />
 
-        <div
-          itemscope
-          itemprop="image"
-          itemtype="http://schema.org/ImageObject"
-        >
+      <div itemscope itemprop="image" itemtype="http://schema.org/ImageObject">
+        <meta
+          itemprop="url"
+          :content="require(`~/assets/images/content/${post.cover}`)"
+        />
+        <meta itemprop="width" content="1200px" />
+        <meta itemprop="height" content="630px" />
+      </div>
+      <div itemscope itemprop="author" itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Julio Márquez" />
+      </div>
+      <meta itemprop="copyrightYear" :content="new Date().getFullYear()" />
+      <div
+        v-for="prop in ['publisher', 'copyrightHolder', 'contributor']"
+        :key="prop"
+        itemscope
+        :itemprop="prop"
+        itemtype="http://schema.org/Organization"
+      >
+        <meta itemprop="legalName" content="Julio Márquez" />
+        <meta itemprop="name" content="Julio Márquez" />
+        <meta itemprop="url" content="https://marquez.co" />
+        <div itemscope itemprop="logo" itemtype="http://schema.org/ImageObject">
           <meta
             itemprop="url"
-            :content="require(`~/assets/images/content/${post.cover}`)"
+            content="https://mauferzone.com/static/icon.png"
           />
-          <meta itemprop="width" content="1200px" />
-          <meta itemprop="height" content="630px" />
-        </div>
-        <div itemscope itemprop="author" itemtype="http://schema.org/Person">
-          <meta itemprop="name" content="Julio Márquez" />
-        </div>
-        <meta itemprop="copyrightYear" :content="new Date().getFullYear()" />
-        <div
-          v-for="prop in ['publisher', 'copyrightHolder', 'contributor']"
-          :key="prop"
-          itemscope
-          :itemprop="prop"
-          itemtype="http://schema.org/Organization"
-        >
-          <meta itemprop="legalName" content="Julio Márquez" />
-          <meta itemprop="name" content="Julio Márquez" />
-          <meta itemprop="url" content="https://marquez.co" />
-          <div
-            itemscope
-            itemprop="logo"
-            itemtype="http://schema.org/ImageObject"
-          >
-            <meta
-              itemprop="url"
-              content="https://mauferzone.com/static/icon.png"
-            />
-            <meta itemprop="width" content="512px" />
-            <meta itemprop="height" content="512px" />
-          </div>
+          <meta itemprop="width" content="512px" />
+          <meta itemprop="height" content="512px" />
         </div>
       </div>
-    </LazyHydrate>
+    </div>
 
-    <LazyHydrate v-if="post" when-idle>
-      <div>
-        <div class="pb-4">
-          <time
-            :datetime="post.publishedAt"
-            class="block mb-2 text-base leading-6 font-medium text-gray-600 dark:text-gray-300"
-          >
-            {{ formattedPublishedAt }}
-          </time>
-          <h1
-            itemprop="name headline"
-            class="text-3xl leading-9 font-extrabold text-gray-900 mb-8 tracking-tight sm:leading-10 md:text-4xl md:leading-14 dark:text-gray-100"
-          >
-            {{ post.title }}
-          </h1>
+    <div v-if="post">
+      <div class="pb-4">
+        <time
+          :datetime="post.publishedAt"
+          class="block mb-2 text-base leading-6 font-medium text-gray-600 dark:text-gray-300"
+        >
+          {{ formattedPublishedAt }}
+        </time>
+        <h1
+          itemprop="name headline"
+          class="text-3xl leading-9 font-extrabold text-gray-900 mb-8 tracking-tight sm:leading-10 md:text-4xl md:leading-14 dark:text-gray-100"
+        >
+          {{ post.title }}
+        </h1>
 
-          <div class="flex flex-wrap">
-            <div class="flex items-center pr-5 mr-5 mb-4">
-              <ImageResponsive
-                :width="48"
-                :height="48"
-                :rounded="true"
-                :fluid="false"
-                :src-set="
-                  require('~/assets/images/profile.jpg?resize&sizes[]=48&sizes[]=96')
-                "
-                :src-set-webp="
-                  require('~/assets/images/profile.jpg?resize&sizes[]=48&sizes[]=96&format=webp')
-                "
-                amp-layout="fixed"
-                alt="Julio Márquez"
-                classes="w-12 h-12 border border-gray-300"
-              />
-              <div class="flex flex-col leading-tight ml-3">
-                <span class="font-medium dark:text-gray-100"
-                  >Julio Márquez</span
-                >
-                <a
-                  href="https://github.com/juliomrqz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-gray-600 hover:text-gray-700 dark:text-gray-300 dark-hover:text-gray-200"
-                >
-                  @juliomrqz
-                </a>
-              </div>
+        <div class="flex flex-wrap">
+          <div class="flex items-center pr-5 mr-5 mb-4">
+            <ImageResponsive
+              :width="48"
+              :height="48"
+              :rounded="true"
+              :fluid="false"
+              :src-set="
+                require('~/assets/images/profile.jpg?resize&sizes[]=48&sizes[]=96')
+              "
+              :src-set-webp="
+                require('~/assets/images/profile.jpg?resize&sizes[]=48&sizes[]=96&format=webp')
+              "
+              amp-layout="fixed"
+              alt="Julio Márquez"
+              classes="w-12 h-12 border border-gray-300"
+            />
+            <div class="flex flex-col leading-tight ml-3">
+              <span class="font-medium dark:text-gray-100">Julio Márquez</span>
+              <a
+                href="https://github.com/juliomrqz"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-600 hover:text-gray-700 dark:text-gray-300 dark-hover:text-gray-200"
+              >
+                @juliomrqz
+              </a>
             </div>
           </div>
         </div>
-
-        <div itemprop="description" class="text-xl mb-8 mt-4">
-          {{ post.description }}
-        </div>
-
-        <div class="-mx-6 mb-8 md:mx-0">
-          <ImageResponsive
-            :src-set="
-              require(`~/assets/images/content/${post.cover}?resize&sizes[]=400&sizes[]=800&sizes[]=1600`)
-            "
-            :src-set-webp="
-              require(`~/assets/images/content/${post.cover}?resize&sizes[]=400&sizes[]=800&sizes[]=1600&format=webp`)
-            "
-            :width="1200 / 1.5"
-            :height="630 / 1.5"
-            :alt="post.title"
-            class="md:shadow-lg md:rounded-lg"
-            classes="w-full md:rounded-lg"
-          />
-        </div>
-
-        <div class="max-w-none prose prose-lg dark:prose-dark-mode">
-          <NuxtContent :document="post" itemprop="articleBody" />
-        </div>
-
-        <aside
-          v-if="post.canonical"
-          class="mb-12 mt-8 py-4 border-t border-grey-600 text-base"
-        >
-          {{ $t('blog.publishedAt') }}
-
-          <a
-            :href="`${post.canonical}?ref=marquez-blog`"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="underline text-blue-600 dark:text-blue-400"
-            >{{ getDomain(post.canonical) }}</a
-          >
-
-          {{ $t('blog.on') }} {{ formattedCreatedAt }}.
-        </aside>
       </div>
-    </LazyHydrate>
+
+      <div itemprop="description" class="text-xl mb-8 mt-4">
+        {{ post.description }}
+      </div>
+
+      <div class="-mx-6 mb-8 md:mx-0">
+        <ImageResponsive
+          :src-set="
+            require(`~/assets/images/content/${post.cover}?resize&sizes[]=400&sizes[]=800&sizes[]=1600`)
+          "
+          :src-set-webp="
+            require(`~/assets/images/content/${post.cover}?resize&sizes[]=400&sizes[]=800&sizes[]=1600&format=webp`)
+          "
+          :width="1200 / 1.5"
+          :height="630 / 1.5"
+          :alt="post.title"
+          class="md:shadow-lg md:rounded-lg"
+          classes="w-full md:rounded-lg"
+        />
+      </div>
+
+      <div class="max-w-none prose prose-lg dark:prose-dark-mode">
+        <NuxtContent :document="post" itemprop="articleBody" />
+      </div>
+
+      <aside
+        v-if="post.canonical"
+        class="mb-12 mt-8 py-4 border-t border-grey-600 text-base"
+      >
+        {{ $t('blog.publishedAt') }}
+
+        <a
+          :href="`${post.canonical}?ref=marquez-blog`"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline text-blue-600 dark:text-blue-400"
+          >{{ getDomain(post.canonical) }}</a
+        >
+
+        {{ $t('blog.on') }} {{ formattedCreatedAt }}.
+      </aside>
+    </div>
 
     <div
       class="mt-12 border-t border-dashed border-gray-400 rounded-lg dark:border-gray-200"
