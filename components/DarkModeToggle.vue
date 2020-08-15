@@ -1,27 +1,27 @@
-<template>
+<template functional>
   <Component
-    :is="$isAMP ? 'a' : 'button'"
-    :href="$isAMP ? toggleAmpLink : undefined"
-    :aria-label="$t('actions.toggleDarkMode')"
+    :is="parent.$isAMP ? 'a' : 'button'"
+    :href="parent.$isAMP ? $options.getToggleAmpLink(parent) : undefined"
+    :aria-label="parent.$t('actions.toggleDarkMode')"
     class="relative overflow-hidden inline-flex items-center justify-center p-2 rounded-md text-gray-900 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-gray-100 dark-hover:bg-gray-800 dark-focus:bg-gray-800 transition duration-150 ease-in-out"
-    @click="setCurrentTheme"
+    @click="$options.setCurrentTheme(parent)"
   >
     <span
-      class="relative overflow-hidden inline-block w-6 h-6 flex items-center justify-center"
+      class="relative overflow-hidden w-6 h-6 flex items-center justify-center"
     >
       <SvgIcon
         name="moon"
         width="24"
         height="24"
         class="h-6 w-6 absolute"
-        :class="$colorMode.preference === 'light' ? 'show' : 'hide'"
+        :class="parent.$colorMode.preference === 'light' ? 'show' : 'hide'"
       />
       <SvgIcon
         name="sun"
         width="24"
         height="24"
         class="h-6 w-6 absolute"
-        :class="$colorMode.preference === 'dark' ? 'show' : 'hide'"
+        :class="parent.$colorMode.preference === 'dark' ? 'show' : 'hide'"
       />
     </span>
   </Component>
@@ -33,28 +33,29 @@ import Vue from 'vue'
 import '~/components/icons/sun'
 import '~/components/icons/moon'
 
-export default Vue.extend({
-  computed: {
-    toggleAmpLink() {
-      const canonicalPath: string = this.$route.fullPath.replace(
-        /^\/amp(\/.*)?/,
-        '$1'
-      )
-      const fullPath = canonicalPath === '' ? '/' : canonicalPath
+interface Props {}
 
-      return `${fullPath}?amp-dark-mode`
-    },
+export default Vue.extend<Props>({
+  functional: true,
+
+  // @ts-ignore
+  getToggleAmpLink(parent: Vue) {
+    const canonicalPath: string = parent.$route.fullPath.replace(
+      /^\/amp(\/.*)?/,
+      '$1'
+    )
+    const fullPath = canonicalPath === '' ? '/' : canonicalPath
+
+    return `${fullPath}?amp-dark-mode`
   },
 
-  methods: {
-    setCurrentTheme() {
-      this.$colorMode.preference =
-        this.$colorMode.preference === 'system'
-          ? 'light'
-          : this.$colorMode.preference === 'light'
-          ? 'dark'
-          : 'light'
-    },
+  setCurrentTheme(parent: Vue) {
+    parent.$colorMode.preference =
+      parent.$colorMode.preference === 'system'
+        ? 'light'
+        : parent.$colorMode.preference === 'light'
+        ? 'dark'
+        : 'light'
   },
 })
 </script>
