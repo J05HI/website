@@ -10,12 +10,14 @@
       v-if="!$isAMP && sourceSetWebp"
       type="image/webp"
       :data-srcset="sourceSetWebp"
+      class="lazyload"
     />
 
     <source
       v-if="!$isAMP && srcSvg"
       type="image/svg+xml"
       :data-srcset="srcSvg"
+      class="lazyload"
     />
 
     <Component
@@ -159,6 +161,7 @@ export default Vue.extend<{}, {}, Computed, Props>({
         },
         // srcSet: this.sourceSet,
         alt: this.alt,
+        loading: 'lazy',
       }
 
       if (this.$isAMP) {
@@ -177,7 +180,6 @@ export default Vue.extend<{}, {}, Computed, Props>({
             ...properties.class,
             lazy: true,
           },
-          // loading: 'lazy'
         }
       }
 

@@ -131,7 +131,7 @@ const config: NuxtConfiguration = {
   plugins: [
     '~/plugins/vue-svgicon',
     '~/plugins/global-components',
-    '~/plugins/vanilla-lazyload.client',
+    '~/plugins/vanilla-lazyload/index.client',
   ],
 
   /*
