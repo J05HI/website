@@ -25,8 +25,8 @@ export const ampify = async (debug: boolean, html: string) => {
 
   $('g').removeAttr('_stroke').removeAttr('_fill')
 
-  /* remove modulepreload */
-  $('link[modulepreload]').remove()
+  /* remove link with as attribute */
+  $('link[as]').remove()
 
   /* remove math element */
   $('math').remove()
