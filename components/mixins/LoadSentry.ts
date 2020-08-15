@@ -44,7 +44,7 @@ export const LoadSentry = Vue.extend({
         () => {
           this.$sentryLoad().then(() => cancelIdleCallback(id))
         },
-        { timeout: 2000 }
+        { timeout: 1000 }
       )
     },
   },
