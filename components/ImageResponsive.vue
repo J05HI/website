@@ -156,7 +156,6 @@ export default Vue.extend<Props>({
       },
       // srcSet: sourceSet,
       alt: props.alt,
-      loading: 'lazy',
     }
 
     if (parent.$isAMP) {
@@ -173,6 +172,7 @@ export default Vue.extend<Props>({
           ...properties.class,
           lazy: true,
         },
+        loading: 'lazy',
       }
     }
 
