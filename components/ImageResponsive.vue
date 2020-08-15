@@ -1,28 +1,31 @@
-<template>
+<template functional>
   <Component
-    :is="$isAMP ? 'div' : 'picture'"
+    :is="parent.$isAMP ? 'div' : 'picture'"
     :class="{
-      'rounded-full': rounded,
+      'rounded-full': props.rounded,
+      [data.staticClass]: !!data.staticClass,
     }"
     class="overflow-hidden leading-none responsive-image block"
+    v-bind="data.attrs"
+    v-on="listeners"
   >
     <source
-      v-if="!$isAMP && sourceSetWebp"
+      v-if="!parent.$isAMP && props.srcSetWebp"
       type="image/webp"
-      :data-srcset="sourceSetWebp"
+      :data-srcset="$options.getSourceSetWebp(props)"
       class="lazyload"
     />
 
     <source
-      v-if="!$isAMP && srcSvg"
+      v-if="!parent.$isAMP && props.srcSvg"
       type="image/svg+xml"
-      :data-srcset="srcSvg"
+      :data-srcset="props.srcSvg"
       class="lazyload"
     />
 
     <Component
-      :is="$isAMP ? 'amp-img' : 'img'"
-      v-bind="imageProperties"
+      :is="parent.$isAMP ? 'amp-img' : 'img'"
+      v-bind="$options.getImageProperties(props, parent)"
       class="transition-all ease-in duration-200"
     />
   </Component>
@@ -39,14 +42,6 @@ type ResponsiveImage = {
   src: string
 }
 
-interface Computed {
-  source: string
-  sourceSet: string
-  sourceSetWebp?: string
-  placeholder: string
-  imageProperties: { [key: string]: any }
-}
-
 interface Props {
   srcSet: ResponsiveImage
   srcSetWebp?: ResponsiveImage
@@ -61,6 +56,21 @@ interface Props {
   ampLayout: string
 }
 
+function generatePlaceholder(props: Props, parent: any) {
+  const width = Number(props.width) * 2
+  const height = Number(props.height) * 2
+  const placeholderColor = props.placeholderColor || parent.$config.mainColor
+
+  const image =
+    `<svg width="${width}" height="${height}" ` +
+    'xmlns="http://www.w3.org/2000/svg" ' +
+    `viewBox="0 0 ${width} ${height}" preserveAspectRatio="none">` +
+    `<rect width="100%" height="100%" style="fill:${placeholderColor.toLowerCase()};"></rect>` +
+    '</svg>'
+
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(image)}`
+}
+
 function generateSrcSet(src: ResponsiveImage, width: string | number) {
   const defaultSrcSetParts = src.images.map((image) => {
     const size = (image.width / parseInt(`${width}`, 10)).toString(10)
@@ -73,7 +83,8 @@ function generateSrcSet(src: ResponsiveImage, width: string | number) {
   return defaultSrcSetParts.filter(Boolean).join(',')
 }
 
-export default Vue.extend<{}, {}, Computed, Props>({
+export default Vue.extend<Props>({
+  functional: true,
   props: {
     srcSet: {
       type: Object,
@@ -121,70 +132,51 @@ export default Vue.extend<{}, {}, Computed, Props>({
       default: 'intrinsic',
     },
   },
-  computed: {
-    sourceSet() {
-      return generateSrcSet(this.srcSet, this.width)
-    },
-    sourceSetWebp() {
-      if (this.srcSetWebp) {
-        return generateSrcSet(this.srcSetWebp, this.width)
-      } else {
-        return undefined
-      }
-    },
-    source() {
-      return this.sourceSet.split(',')[0].split(' ')[0]
-    },
-    placeholder() {
-      const width = Number(this.width) * 2
-      const height = Number(this.height) * 2
-      const placeholderColor = this.placeholderColor || this.$config.mainColor
+  /** Options */
+  // @ts-ignore
+  getSourceSetWebp(props: Props) {
+    if (props.srcSetWebp) {
+      return generateSrcSet(props.srcSetWebp, props.width)
+    } else {
+      return undefined
+    }
+  },
+  getImageProperties(props: Props, parent: any) {
+    const sourceSet = generateSrcSet(props.srcSet, props.width)
+    const source = sourceSet.split(',')[0].split(' ')[0]
+    const placeholder = generatePlaceholder(props, parent)
 
-      const image =
-        `<svg width="${width}" height="${height}" ` +
-        'xmlns="http://www.w3.org/2000/svg" ' +
-        `viewBox="0 0 ${width} ${height}" preserveAspectRatio="none">` +
-        `<rect width="100%" height="100%" style="fill:${placeholderColor.toLowerCase()};"></rect>` +
-        '</svg>'
+    let properties: { [key: string]: any } = {
+      width: props.width,
+      height: props.height,
+      class: {
+        'w-full h-auto': props.fluid,
+        'rounded-full': props.rounded,
+        [props.classes]: true,
+      },
+      // srcSet: sourceSet,
+      alt: props.alt,
+      loading: 'lazy',
+    }
 
-      return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(image)}`
-    },
-    imageProperties() {
-      let properties: { [key: string]: any } = {
-        width: `${this.width}`,
-        height: `${this.height}`,
+    if (parent.$isAMP) {
+      properties.src = source
+      properties.layout = props.ampLayout
+      properties.srcset = sourceSet
+    } else {
+      properties = {
+        ...properties,
+        src: placeholder,
+        'data-src': source,
+        'data-srcset': sourceSet,
         class: {
-          'w-full h-auto': this.fluid,
-          'rounded-full': this.rounded,
-          // @ts-ignore
-          [this.classes]: true,
+          ...properties.class,
+          lazy: true,
         },
-        // srcSet: this.sourceSet,
-        alt: this.alt,
-        loading: 'lazy',
       }
+    }
 
-      if (this.$isAMP) {
-        properties.src = this.source
-        properties.layout = this.ampLayout
-        properties.srcset = this.sourceSet
-      } else {
-        properties = {
-          ...properties,
-          // @ts-ignore
-          src: this.placeholder,
-          'data-src': this.source,
-          // @ts-ignore
-          'data-srcset': this.sourceSet,
-          class: {
-            ...properties.class,
-            lazy: true,
-          },
-        }
-      }
-
-      return properties
-    },
+    return properties
   },
 })
 </script>
