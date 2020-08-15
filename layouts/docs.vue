@@ -1,16 +1,16 @@
 <template>
   <div class="pt-16">
-    <DocsNavbar />
+    <LazyDocsNavbar />
 
     <main class="container mx-auto px-4 lg:px-8">
       <div class="flex flex-wrap relative">
-        <DocsMainNavigation />
+        <LazyDocsMainNavigation />
 
         <Nuxt class="w-full lg:w-4/5" />
       </div>
     </main>
 
-    <TheFooter class="border-t dark:border-gray-800" />
+    <LazyTheFooter class="border-t dark:border-gray-800" />
   </div>
 </template>
 

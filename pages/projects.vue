@@ -29,17 +29,21 @@
 <script lang="ts">
 import Vue from 'vue'
 import SeoHead from '~/components/mixins/SeoHead'
-import { projects } from '~/data/projects'
 
-import { Head } from '~/interfaces'
+import { Head, Project } from '~/interfaces'
 
 export default Vue.extend({
   mixins: [SeoHead],
+  async fetch() {
+    const { projects } = await import('~/data/projects')
+
+    this.projects = projects
+  },
   data() {
     const $t = this.$t.bind(this)
 
     return {
-      projects,
+      projects: [] as Project[],
       head: {
         title: $t('projects.title'),
         description: $t('projects.description'),

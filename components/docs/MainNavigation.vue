@@ -171,7 +171,7 @@
         class="min-h-full p-4 lg:min-h-screen lg:ml-1 lg:pb-8 lg:pl-0 lg:pr-8"
       >
         <li class="mb-4 lg:hidden">
-          <DocsSearchInput />
+          <LazyDocsSearchInput />
         </li>
         <li v-for="(docs, category) in categories" :key="category" class="mb-4">
           <h3
@@ -215,7 +215,7 @@
               </a>
             </li>
             <li>
-              <DarkModeToggle />
+              <LazyDarkModeToggle />
             </li>
           </ul>
         </li>
@@ -232,7 +232,6 @@ import vClickOutside from 'v-click-outside'
 import '~/components/icons/menu-open'
 import '~/components/icons/checkmark'
 
-import { docsProjects } from '~/data/projects'
 import { DocsProject } from '~/interfaces'
 
 interface Data {
@@ -263,12 +262,15 @@ export default Vue.extend<Data, Methods, Computed, {}>({
   },
 
   async fetch() {
+    const { docsProjects } = await import('~/data/projects')
     await this.fetchCategories()
+
+    this.projects = docsProjects
   },
-  data: () => ({ projects: docsProjects, isProjectSelectOpen: false }),
+  data: () => ({ projects: [], isProjectSelectOpen: false }),
   computed: {
     currentProject() {
-      return docsProjects.find((p) => p.id === this.$route.params.project)
+      return this.projects.find((p) => p.id === this.$route.params.project)
     },
     menu: {
       get() {

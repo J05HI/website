@@ -107,7 +107,6 @@ import Clipboard from 'clipboard'
 import { RawLocation } from 'vue-router'
 
 import SeoHead from '~/components/mixins/SeoHead'
-import { docsProjects } from '~/data/projects'
 import { DocArticleContent, Head } from '~/interfaces'
 
 interface Data {
@@ -138,6 +137,7 @@ export default Vue.extend<Data, {}, {}>({
   mixins: [SeoHead],
   // middleware: 'docs-categories',
   async asyncData({ $content, app, params, error }) {
+    const { docsProjects } = await import('~/data/projects')
     const getToLink = (slug?: string) => toLink(project, app.localePath, slug)
 
     const slug = params.slug || 'README'

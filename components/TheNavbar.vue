@@ -63,7 +63,7 @@
           <div
             class="ml-3 md:absolute md:ml-0 md:flex md:items-center md:justify-end md:inset-y-0 md:right-0"
           >
-            <DarkModeToggle />
+            <LazyDarkModeToggle />
           </div>
         </nav>
       </div>

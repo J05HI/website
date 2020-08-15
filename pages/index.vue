@@ -165,7 +165,6 @@ import Vue from 'vue'
 
 import ScrollBehavior from '@/components/mixins/ScrollBehavior'
 import SeoHead from '~/components/mixins/SeoHead'
-import { projects } from '~/data/projects'
 
 import { BlogPostContent, Head } from '~/interfaces'
 
@@ -177,6 +176,7 @@ type Posts = Pick<
 export default Vue.extend({
   mixins: [SeoHead, ScrollBehavior],
   async asyncData({ app, $sentryReady, $content }) {
+    const { projects } = await import('~/data/projects')
     const title = `${app.i18n.t('subTitle')} ${app.i18n.t('title')}`
     let posts: Posts = []
 
@@ -192,6 +192,7 @@ export default Vue.extend({
 
     return {
       posts: posts.slice(0, 3),
+      projects: projects.slice(0, 3),
       head: {
         titleTemplate: '%s',
         title: `${title} - ${app.i18n.t('slogan')}`,
@@ -199,9 +200,6 @@ export default Vue.extend({
       } as Head,
     }
   },
-  data: () => ({
-    projects: projects.slice(0, 3),
-  }),
 })
 </script>
 

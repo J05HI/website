@@ -1,12 +1,12 @@
 <template>
   <div>
-    <TheNavbar />
+    <LazyTheNavbar />
 
     <main class="main-container">
       <Nuxt />
     </main>
 
-    <TheFooter class="mt-5" />
+    <LazyTheFooter class="mt-5" />
   </div>
 </template>
 

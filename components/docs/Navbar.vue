@@ -28,7 +28,7 @@
         <div
           class="hidden flex-1 lg:flex justify-center ml-4 mr-2 lg:mx-8 w-4/6"
         >
-          <DocsSearchInput v-if="!$isAMP" />
+          <LazyDocsSearchInput v-if="!$isAMP" />
         </div>
         <div class="flex items-center justify-end w-1/6">
           <a
@@ -42,10 +42,10 @@
             <SvgIcon name="github" width="24" height="24" class="w-6 h-6" />
           </a>
 
-          <DarkModeToggle class="hidden lg:block" />
+          <LazyDarkModeToggle class="hidden lg:block" />
 
           <button
-            class="lg:hidden p-2 rounded-md hover:text-gray-500 focus:outline-none focus:outline-none -mr-2"
+            class="lg:hidden p-2 rounded-md hover:text-gray-500 focus:outline-none -mr-2"
             aria-label="Hamburger Menu"
             @click.stop="menu = !menu"
           >
