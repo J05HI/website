@@ -32,24 +32,16 @@ const months: { [key: string]: string[] } = {
 export const formatDate = (date: Date | string, locale: string): string => {
   const dateObject = new Date(date)
 
-  try {
-    return dateObject.toLocaleDateString(`${locale}-US`, {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    })
-  } catch (error) {
-    const enFormat = (day: number, month: string, year: number) =>
-      `${month} ${day}, ${year}`
-    const esFormat = (day: number, month: string, year: number) =>
-      `${day} de ${month} de ${year}`
+  const enFormat = (day: number, month: string, year: number) =>
+    `${month} ${day}, ${year}`
+  const esFormat = (day: number, month: string, year: number) =>
+    `${day} de ${month} de ${year}`
 
-    const day = dateObject.getDate()
-    const month = months[locale][dateObject.getMonth()]
-    const year = dateObject.getFullYear()
+  const day = dateObject.getDate()
+  const month = months[locale][dateObject.getMonth()]
+  const year = dateObject.getFullYear()
 
-    return locale === 'en'
-      ? enFormat(day, month, year)
-      : esFormat(day, month, year)
-  }
+  return locale === 'en'
+    ? enFormat(day, month, year)
+    : esFormat(day, month, year)
 }
