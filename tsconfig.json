@@ -33,6 +33,7 @@
       "@nuxt/content",
       "@nuxt/components",
       "@nuxtjs/sentry",
+      "@nuxtjs/pwa",
       "nuxt-i18n"
     ]
   },
