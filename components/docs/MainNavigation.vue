@@ -10,6 +10,7 @@
       <div class="p-4 pb-0 lg:ml-1 lg:pt-8 lg:pl-0 lg:pr-8">
         <div v-if="!$isAMP">
           <select
+            v-if="currentProject"
             :value="currentProject.id"
             class="block mt-1 form-select w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 lg:hidden sm:text-sm sm:leading-5"
             @input="changeProject"
@@ -18,8 +19,9 @@
               v-for="project in projects"
               :key="`simple-select-${project.id}`"
               :value="project.id"
-              >{{ project.title[$i18n.locale] }}</option
             >
+              {{ project.title[$i18n.locale] }}
+            </option>
           </select>
 
           <div
@@ -28,6 +30,7 @@
           >
             <span class="inline-block w-full rounded-md shadow-sm">
               <button
+                v-if="currentProject"
                 type="button"
                 aria-haspopup="listbox"
                 aria-expanded="true"
@@ -101,7 +104,10 @@
 
         <div v-else>
           <div class="lg:relative">
-            <span class="inline-block w-full rounded-md shadow-sm">
+            <span
+              v-if="currentProject"
+              class="inline-block w-full rounded-md shadow-sm"
+            >
               <NuxtLink
                 :to="
                   localePath({
@@ -135,6 +141,7 @@
       >
         <Component
           :is="isOpenSource(currentProject) ? 'a' : 'div'"
+          v-if="currentProject"
           :href="
             isOpenSource(currentProject)
               ? `https://github.com/juliomrqz/${currentProject.id}/releases`
@@ -153,7 +160,7 @@
         </Component>
 
         <a
-          v-if="!$isAMP && isOpenSource(currentProject)"
+          v-if="currentProject && !$isAMP && isOpenSource(currentProject)"
           :href="`https://github.com/juliomrqz/${currentProject.id}`"
           target="_blank"
           rel="noopener noreferrer"
