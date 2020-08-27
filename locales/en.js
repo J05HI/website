@@ -134,7 +134,7 @@ export default {
   },
   error: {
     'go-back-link': 'Go back to homepage',
-    '404': {
+    404: {
       title: 'Page not found',
       title2: '404',
       description: 'The page you were looking for was not found',
