@@ -46,6 +46,14 @@ The work done on this project taught me many things: statistics, data analysis, 
 
 If you want to know more about this research you can download for free the Article in PDF format at the [Geophysical Journal International](https://academic.oup.com/gji/article/214/3/1986/5035819).
 
+
+
+
+
+
+
+
+
 ## Latest Words
 
 Creating new things is a great experience and combine it with Programming can make you a Marvelous Professional. It's important to keep learning and do your best to achieve great things.
