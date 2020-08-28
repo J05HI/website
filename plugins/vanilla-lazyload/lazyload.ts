@@ -1,11 +1,11 @@
 import throttle from 'lodash/throttle'
-import VanillaLazyload from 'vanilla-lazyload'
+import { ILazyLoadInstance } from 'vanilla-lazyload'
 import { loadIntersectionObserver } from '~/utils/intersection-observer'
 
 export class Lazyload {
-  private lazyLoadInstance: typeof VanillaLazyload | null = null
+  private lazyLoadInstance: ILazyLoadInstance | null = null
 
-  private LazyLoad: typeof VanillaLazyload | null = null
+  private LazyLoad: ILazyLoadInstance | null = null
 
   private isNativeSupported = false
 
@@ -26,11 +26,11 @@ export class Lazyload {
   private async _initVanillaLazyload() {
     await loadIntersectionObserver()
 
-    this.LazyLoad = (
-      await import(
-        /* webpackChunkName: 'vanilla-lazyload' */ 'vanilla-lazyload'
-      )
-    ).default
+    const { default: LazyLoad } = await import(
+      /* webpackChunkName: 'vanilla-lazyload' */ 'vanilla-lazyload'
+    )
+
+    this.LazyLoad = new LazyLoad()
   }
 
   update() {
