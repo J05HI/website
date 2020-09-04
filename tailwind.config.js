@@ -26,6 +26,10 @@ const inlineCodeDarkStyles = {
 }
 
 module.exports = {
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+  },
   corePlugins: {
     textOpacity: false,
     backgroundOpacity: false,
