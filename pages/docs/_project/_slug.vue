@@ -113,6 +113,11 @@ interface Data {
   doc: DocArticleContent
 }
 
+interface PrevNext {
+  title: string
+  slug: string
+}
+
 function toLink(
   project: string,
   localePath: (route: RawLocation, locale?: string) => string,
@@ -158,7 +163,7 @@ export default Vue.extend<Data, {}, {}>({
       .only(['title', 'slug'])
       .sortBy('position', 'asc')
       .surround(slug, { before: 1, after: 1 })
-      .fetch()
+      .fetch<(PrevNext | undefined)[]>()
 
     const currentProject = docsProjects.find((p) => p.id === project)
     const projectName = currentProject?.title[locale]
