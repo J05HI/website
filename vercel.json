@@ -20,6 +20,9 @@
       },
       "continue": true
     },
+    
+    { "src": "/docs/statusfy", "headers": { "location": "https://docs.statusfy.co/" }, "status": 302 },
+    { "src": "/es/docs/statusfy", "headers": { "location": "https://docs.statusfy.co/es/" }, "status": 302 },
 
     { "src": "/contact", "headers": { "location": "/" }, "status": 301 },
     { "src": "/es/contact", "headers": { "location": "/" }, "status": 301 },
